@@ -1,20 +1,40 @@
 import React from 'react';
 import './Nav.scss';
+import {
+  BrowserRouter as Router,
+  Link, Switch, Route
+} from "react-router-dom";
+import Home from '../Home/Home';
+import Products from '../Products/Products';
+import Login from '../Login/Login';
+import Register from '../Register/Register';
+import CartButton from '../Common/Widgets/Buttons/CartButton/CartButton';
 
-function Nav() {
+function Nav(props) {
   return (
-    <div className="Nav">
-      <img src={process.env.PUBLIC_URL + '/images/logo.png'} alt="Sabka Bazaar" className="logo"></img>
-      <div>
-        <a href="">Home</a>
-        <a href="">Products</a>
+    <Router>
+      <div className="Nav">
+        <img src={process.env.PUBLIC_URL + '/images/logo.png'} alt="Sabka Bazaar" className="logo"></img>
+        <div className="tabs">
+          <Link to="/">Home</Link>
+          <Link to="/products">Products</Link>
+        </div>
+        <div className="vertAlign">
+          <div>
+            <Link to="/login">Sign in</Link>
+            <Link to="/register">Register</Link>
+          </div>
+          <CartButton src={process.env.PUBLIC_URL + '/images/cart.svg'} alt="Cart" cartItems={props.cartItems}/>
+        </div>
       </div>
-      <div>
-        <a href="">Sign in</a>
-        <a href="">Register</a>
-        <button></button>
-      </div>
-    </div>
+      
+      <Switch>
+        <Route path="/products" component="Products"></Route>
+        <Route path="/login" component="Login"></Route>
+        <Route path="/register" component="Register"></Route>
+        <Route path="/" component="Home"></Route>
+      </Switch>
+    </Router>
   );
 }
 

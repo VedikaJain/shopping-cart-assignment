@@ -1,0 +1,12 @@
+button.cartButton {
+    margin: 1vh 0;
+    padding: 1vh;
+    background-color: lightblue;
+    border: none;
+    color: black;
+    
+    .cart {
+        height: 4vh;
+        vertical-align: middle;
+    }
+}
