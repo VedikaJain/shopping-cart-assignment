@@ -1,0 +1,12 @@
+$flexDirection: flexDirection;
+
+.Category {
+  display: flex;
+  @if $flexDirection == 'left' {
+    flex-direction: row;
+  } @else {
+    flex-direction: row-reverse;
+  }
+  justify-content: space-evenly;
+  align-items: center;
+}

@@ -5,7 +5,7 @@ import {
   Link, Switch, Route
 } from "react-router-dom";
 import Home from '../Home/Home';
-import Products from '../Products/Products';
+import Plp from '../Plp/Plp';
 import Login from '../Login/Login';
 import Register from '../Register/Register';
 import CartButton from '../Common/Widgets/Buttons/CartButton/CartButton';
@@ -17,7 +17,7 @@ function Nav(props) {
         <img src={process.env.PUBLIC_URL + '/images/logo.png'} alt="Sabka Bazaar" className="logo"></img>
         <div className="tabs">
           <Link to="/">Home</Link>
-          <Link to="/products">Products</Link>
+          <Link to="/plp">Products</Link>
         </div>
         <div className="vertAlign">
           <div>
@@ -29,7 +29,7 @@ function Nav(props) {
       </div>
       
       <Switch>
-        <Route path="/products" component="Products"></Route>
+        <Route path="/plp" component="Plp"></Route>
         <Route path="/login" component="Login"></Route>
         <Route path="/register" component="Register"></Route>
         <Route path="/" component="Home"></Route>
