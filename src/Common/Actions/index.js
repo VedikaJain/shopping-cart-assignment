@@ -19,12 +19,13 @@ export const fetchData = (url) => {
             'Content-Type': 'application/json',
             "Access-Control-Allow-Origin": 'http://localhost:3000/',
             "cross-origin": true,
-            "Access-Control-Allow-Methods": 'options',
+            "Access-Control-Allow-Methods": 'options, get, put, post, delete',
         }
     }
     return async (dispatch) => {
         try {
-            const response = await axios.get(`http://localhost:5000/${url}.json`, config);
+            const response = await axios.get(`http://localhost:5000/${url}`, config);
+            console.log("response is: "+ response);
             switch(url) {
                 case 'categories': dispatch(setCategories(response.data));
                 case 'banners': dispatch(setBanners(response.data));
@@ -32,6 +33,7 @@ export const fetchData = (url) => {
             }
         }
         catch (error) {
+            console.log("error is: " + error);
             throw (error);
         }
     };
