@@ -1,21 +1,15 @@
 import React from 'react';
 import './Products.scss';
-import PinkButton from '../Buttons/PinkButton/PinkButton';
+import Product from '../Product/Product';
 
-function Category(props) {
-  let flexDirection = props.imgAlign;
+function Products(props) {
   return (
     <div className="Products">
-      <div>
-        <img src={process.env.PUBLIC_URL + '/images/logo.png'} alt="Sabka Bazaar" className="logo"></img>
-      </div>
-      <div>
-        <h3>{flexDirection}</h3>
-        <p>Products</p>
-        <PinkButton text={'Explore ' + props.cat}/>
-      </div>
+      {props.products.map((product, i)=>
+        <Product key={i} product={product}/>
+      )}
     </div>
   );
 }
 
-export default Category;
+export default Products;

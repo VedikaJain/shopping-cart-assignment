@@ -3,11 +3,11 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  height: 10vh;
-  width: 90vw;
+  height: 5em;
+  width: 100%;
 
   .logo {
-    height: 10vmin;
+    height: 6em;
     align-self: left;
   }
 
@@ -17,10 +17,11 @@
   }
 
   .tabs a{
-    color: #111111d1;
+    color: #737171;
+    font-weight: 600;
   }
 
   div a:not(:last-of-type) {
-    margin-right: 5vh;
+    margin-right: 2em;
   }
 }

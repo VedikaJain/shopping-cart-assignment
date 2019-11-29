@@ -3,7 +3,7 @@ import './PinkButton.scss';
 
 function PinkButton(props) {
   return (
-    <button>{props.text}</button>
+    <button className='set-pink-btn'>{props.text}</button>
   );
 }
 

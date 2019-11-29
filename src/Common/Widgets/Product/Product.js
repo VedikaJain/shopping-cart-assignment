@@ -5,13 +5,13 @@ import PinkButton from '../Buttons/PinkButton/PinkButton';
 function Product(props) {
   return (
     <div className="Product">
-      <h3>{props.prod.name} abcd</h3>
-      <img src={process.env.PUBLIC_URL + props.prod.imageURL}
-        alt={props.prod.name} className="prodImg"/>
-      <p>{props.prod.description}</p>
+      <h3>{props.product.name}</h3>
+      <img src={process.env.PUBLIC_URL + props.product.imageURL}
+        alt={props.product.name} className="prodImg"/>
+      <p>{props.product.description}</p>
       <div>
-        MRP Rs.{props.prod.price}
-        <PinkButton text='Buy Now'/>
+        <span>MRP Rs.{props.product.price}</span>
+        <PinkButton className="pinkBtn" style={{color: 'black'}} text='Buy Now'></PinkButton>
       </div>
     </div>
   );

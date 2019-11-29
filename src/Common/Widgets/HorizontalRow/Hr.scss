@@ -1,12 +1,12 @@
 hr.blue {
     width: 100%;
-    border: .25vh solid lightskyblue;
+    border: .1em solid #daf6ffc9;
     margin-bottom: 0;
 }
 
 hr.greySolid {
     width: 100%;
-    border: .1vh solid lightgrey;
+    border: .1em solid #e2dede;
 }
 
 hr.grey {
@@ -15,7 +15,7 @@ hr.grey {
     max-width: 100%;
     background-position: 50%;
     box-sizing: border-box;
-    height: .75vh;
+    height: .4em;
     $color: lightgrey;
     color: $color;
     background-image: linear-gradient(

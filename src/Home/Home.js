@@ -27,7 +27,6 @@ export class Home extends Component {
   }
 
   render() {
-    console.log('Categories State: ', this.state.categories);
     return (
       <div className="Home">
         <Carousel />
