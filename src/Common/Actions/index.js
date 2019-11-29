@@ -27,7 +27,7 @@ export const fetchData = (url) => {
         try {
             console.log('coming here.....');
             const response = await axios.get(`http://localhost:5000/${url}`, config);
-            console.log("response is: "+ response);
+            console.log("response is: "+ JSON.stringify(response));
             switch(url) {
                 case 'categories': dispatch(setCategories(response.data)); break;
                 case 'banners': dispatch(setBanners(response.data)); break;

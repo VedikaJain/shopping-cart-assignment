@@ -11,6 +11,7 @@ export class Home extends Component {
   componentDidMount() {
     console.log("inside component did mount")
     this.props.fetchData('categories');
+    console.log('this.props.categories '+ this.props.categories)
   }
 
   render() {
