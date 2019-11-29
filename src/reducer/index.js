@@ -2,9 +2,9 @@ import {SET_CATEGORIES, SET_BANNERS, SET_PRODUCTS} from '../Common/Actions/types
 import {combineReducers} from 'redux';
 
 const initialState = {
-    categories: {},
-    banners: {},
-    products: {}
+    categories: [],
+    banners: [],
+    products: []
 }
 
 

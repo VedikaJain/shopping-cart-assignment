@@ -7,21 +7,32 @@ import Hr from '../Common/Widgets/HorizontalRow/Hr';
 import { fetchData } from '../Common/Actions/index';
 
 export class Home extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      categories: []
+    }
+  }
+  
+  static getDerivedStateFromProps(props, state) {
+    if (props.categories !== state.categories) {
+      return {
+        categories: props.categories
+      };
+    }
+  }
 
   componentDidMount() {
-    console.log("inside component did mount")
     this.props.fetchData('categories');
-    console.log('this.props.categories '+ this.props.categories)
   }
 
   render() {
-    console.log('Categories Data: ', this.props.categories);
-    const categories = ['one', 'two', 'three'];
+    console.log('Categories State: ', this.state.categories);
     return (
       <div className="Home">
         <Carousel />
         <Hr type="grey" />
-        {categories.map((category, i) =>
+        {this.state.categories.map((category, i) =>
           <div key={i}>
             <Category cat={category} imgAlign={(i % 2) ? 'right' : 'left'} />
             <Hr type="grey" />
@@ -34,7 +45,7 @@ export class Home extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    categories: state.categories
+    categories: state.setData.categories
   }
 }
 
