@@ -13,6 +13,7 @@ export function setProducts(prod) {
 }
 
 export const fetchData = (url) => {
+    console.log('coming here first.....');
     const config = {
         headers: {
             'Accept': 'application/json',
@@ -24,12 +25,14 @@ export const fetchData = (url) => {
     }
     return async (dispatch) => {
         try {
+            console.log('coming here.....');
             const response = await axios.get(`http://localhost:5000/${url}`, config);
             console.log("response is: "+ response);
             switch(url) {
-                case 'categories': dispatch(setCategories(response.data));
-                case 'banners': dispatch(setBanners(response.data));
-                case 'products': dispatch(setProducts(response.data));
+                case 'categories': dispatch(setCategories(response.data)); break;
+                case 'banners': dispatch(setBanners(response.data)); break;
+                case 'products': dispatch(setProducts(response.data)); break;
+                default: break;
             }
         }
         catch (error) {

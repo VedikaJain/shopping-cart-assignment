@@ -3,10 +3,10 @@ import './Plp.scss';
 import LeftPane from '../Common/Widgets/LeftPane/LeftPane';
 import Products from '../Common/Widgets/Products/Products';
 
-function Plp() {
+function Plp(props) {
   return (
     <div className="Plp">
-      <LeftPane></LeftPane>
+      <LeftPane items={['one', 'two', 'three']}></LeftPane>
       <Products></Products>
     </div>
   );

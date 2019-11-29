@@ -7,6 +7,7 @@ function Hr(props) {
     case 'blue': hrType = 'blue'; break;
     case 'grey': hrType = 'grey'; break;
     case 'greySolid': hrType = 'greySolid'; break;
+    default: hrType = 'blue';
   }
   return (
     <hr className={hrType}/>

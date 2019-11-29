@@ -3,7 +3,7 @@ import './Login.scss';
 import Category from '../Common/Widgets/Category/Category';
 import Carousel from '../Common/Widgets/Carousel/Carousel';
 
-export const Login = () => {
+function Login() {
   const categories = ['one', 'two', 'three'];
   return (
     <div className="Home">
@@ -18,3 +18,5 @@ export const Login = () => {
     </div>
   );
 };
+
+export default Login;

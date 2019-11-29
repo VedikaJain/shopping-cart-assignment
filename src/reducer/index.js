@@ -11,16 +11,16 @@ const initialState = {
 function setData(state = initialState, action) {
     switch(action.type) {
         case SET_CATEGORIES: return Object.assign({}, state, {
-            info: action.payload
+            categories: action.payload
         });
         case SET_BANNERS: return Object.assign({}, state, {
-            info: action.payload
+            banners: action.payload
         });
         case SET_PRODUCTS: return Object.assign({}, state, {
-            info: action.payload
+            products: action.payload
         });
+        default: return state;
     }
-    return state;
 }
 
 const combRed = combineReducers({setData});

@@ -9,6 +9,7 @@ import { fetchData } from '../Common/Actions/index';
 export class Home extends Component {
 
   componentDidMount() {
+    console.log("inside component did mount")
     this.props.fetchData('categories');
   }
 
@@ -20,10 +21,10 @@ export class Home extends Component {
         <Carousel />
         <Hr type="grey" />
         {categories.map((category, i) =>
-          <>
-            <Category cat={category} key={i} imgAlign={(i % 2) ? 'right' : 'left'} />
+          <div key={i}>
+            <Category cat={category} imgAlign={(i % 2) ? 'right' : 'left'} />
             <Hr type="grey" />
-          </>
+          </div>
         )}
       </div>
     );

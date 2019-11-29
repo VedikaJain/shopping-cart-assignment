@@ -3,7 +3,7 @@ import './Register.scss';
 import Category from '../Common/Widgets/Category/Category';
 import Carousel from '../Common/Widgets/Carousel/Carousel';
 
-export const Register = () => {
+function Register() {
   const categories = ['one', 'two', 'three'];
   return (
     <div className="Home">
@@ -18,3 +18,5 @@ export const Register = () => {
     </div>
   );
 };
+
+export default Register;
