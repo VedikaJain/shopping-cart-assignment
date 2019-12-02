@@ -8,7 +8,7 @@ function LeftPane(props) {
       {props.items.map((item, i) =>
         <div key={i}
           onClick={() => {
-            props.selectCategory(item.id)
+            props.selectItem(item.id)
           }}>
           <p>{item.name}</p>
           <Hr type='greySolid' />

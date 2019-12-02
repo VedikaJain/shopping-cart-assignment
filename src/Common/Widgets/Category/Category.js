@@ -1,6 +1,7 @@
 import React from 'react';
 import './Category.scss';
 import PinkButton from '../Buttons/PinkButton/PinkButton';
+import { withRouter } from 'react-router-dom'
 
 function Category(props) {
   let cat = props.cat;
@@ -10,10 +11,12 @@ function Category(props) {
       <div>
         <h3>{cat.name}</h3>
         <p>{cat.description}</p>
-        <PinkButton text={'Explore ' + cat.key}/>
+        <PinkButton text={'Explore ' + cat.key} handleClick={()=>{
+          props.history.push(`/plp/${cat.id}`);
+        }}/>
       </div>
     </div>
   );
 }
 
-export default Category;
+export default withRouter(Category);

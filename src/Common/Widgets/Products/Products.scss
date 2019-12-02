@@ -2,4 +2,9 @@
   width: 80%;
   display: grid;
   grid-template-columns: auto auto auto auto;
+
+  .noProductsFound {
+    grid-column: 1 / span 4;
+    align-self: center;
+  }
 }

@@ -20,7 +20,7 @@ function App() {
         <Hr type="blue" />
         <Switch>
           <Route exact path="/" component={Home}></Route>
-          <Route exact path="/plp" component={Plp}></Route>
+          <Route exact path="/plp/:selectedCategory?" component={Plp}></Route>
           <Route exact path="/login" component={Login}></Route>
           <Route exact path="/register" component={Register}></Route>
           <Route component={Home}/>

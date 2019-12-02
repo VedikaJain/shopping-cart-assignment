@@ -26,6 +26,11 @@ export class Plp extends Component {
 
   componentDidMount() {
     this.props.fetchData('products');
+
+    const { selectedCategory } = this.props.match.params;
+    if(selectedCategory && selectedCategory !== '') {
+      this.selectCategory(selectedCategory);
+    }
   }
 
   selectCategory = (catId) => {
@@ -40,7 +45,7 @@ export class Plp extends Component {
     console.log('plp products ' + JSON.stringify(this.state.products));
     return (
       <div className="Plp">
-        <LeftPane items={this.props.categories} selectCategory={this.selectCategory}></LeftPane>
+        <LeftPane items={this.props.categories} selectItem={this.selectCategory}></LeftPane>
         <Products products={
           (this.state.catId !== '')
             ? (this.state.products.filter(
