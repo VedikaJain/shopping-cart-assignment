@@ -9,6 +9,7 @@ import {
 import Home from './Home/Home';
 import Plp from './Plp/Plp';
 import Login from './Login/Login';
+import Footer from './Footer/Footer';
 import Register from './Register/Register';
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           <Route exact path="/register" component={Register}></Route>
           <Route component={Home}/>
         </Switch>
+        <Footer/>
       </div>
     </BrowserRouter>
   );

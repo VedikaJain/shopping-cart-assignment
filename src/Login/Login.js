@@ -1,20 +1,18 @@
 import React from 'react';
 import './Login.scss';
-import Category from '../Common/Widgets/Category/Category';
-import Carousel from '../Common/Widgets/Carousel/Carousel';
+import TwoColumn from '../Common/Templates/TwoColumn/TwoColumn';
 
 function Login() {
-  const categories = ['one', 'two', 'three'];
   return (
-    <div className="Home">
-      <Carousel/>
-      <hr/>
-      { categories.map((category, i)=>{
-        return <>
-          <Category cat={category} key={i} imgAlign={(i%2)?'right':'left'}/>
-          <hr/>
-        </>}
-      )}
+    <div className="Login">
+      <TwoColumn
+        title="Login"
+        description="Get access to your Orders, Wishlist and Recommendations"
+        formType="loginForm"
+        formSubmit={()=>{
+          
+        }}
+      />
     </div>
   );
 };

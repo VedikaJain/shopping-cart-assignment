@@ -1,6 +1,6 @@
 import React from 'react';
 import './LeftPane.scss';
-import Hr from '../HorizontalRow/Hr';
+import Hr from '../../Widgets/HorizontalRow/Hr';
 
 function LeftPane(props) {
   return (

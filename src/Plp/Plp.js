@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Plp.scss';
-import LeftPane from '../Common/Widgets/LeftPane/LeftPane';
+import LeftPane from '../Common/Templates/LeftPane/LeftPane';
 import Products from '../Common/Widgets/Products/Products';
 import { connect } from 'react-redux';
 import { fetchData } from '../Common/Actions/index';

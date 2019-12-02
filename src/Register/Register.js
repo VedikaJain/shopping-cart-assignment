@@ -1,20 +1,18 @@
 import React from 'react';
 import './Register.scss';
-import Category from '../Common/Widgets/Category/Category';
-import Carousel from '../Common/Widgets/Carousel/Carousel';
+import TwoColumn from '../Common/Templates/TwoColumn/TwoColumn';
 
 function Register() {
-  const categories = ['one', 'two', 'three'];
   return (
-    <div className="Home">
-      <Carousel/>
-      <hr/>
-      { categories.map((category, i)=>{
-        return <>
-          <Category cat={category} key={i} imgAlign={(i%2)?'right':'left'}/>
-          <hr/>
-        </>}
-      )}
+    <div className="Register">
+      <TwoColumn
+        title="Signup"
+        description="We do not share your personal details with anyone."
+        formType="registerForm"
+        formSubmit={()=>{
+          
+        }}
+      />
     </div>
   );
 };

@@ -11,7 +11,7 @@ function Product(props) {
       <p>{props.product.description}</p>
       <div>
         <span>MRP Rs.{props.product.price}</span>
-        <PinkButton className="pinkBtn" style={{color: 'black'}} text='Buy Now'></PinkButton>
+        <PinkButton className="pinkBtn" text='Buy Now'/>
       </div>
     </div>
   );
