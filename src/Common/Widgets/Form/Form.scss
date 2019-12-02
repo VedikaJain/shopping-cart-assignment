@@ -1,29 +1,5 @@
-.Product {
+.Form {
   display: flex;
   flex-direction: column;
-  overflow: hidden;
-  padding: 1em 0 0 1em;
-
-  h3 {
-    height: 2em;
-    text-align: left;
-  }
-  
-  img.prodImg {
-    height: 20em;
-  }
-
-  p {
-    height: 8em;
-    margin-top: 0;
-    text-align: left;
-  }
-
-  div {
-    text-align: left;
-  }
-
-  .pinkBtn button {
-    float: right;
-  }
+  width: 100%;
 }

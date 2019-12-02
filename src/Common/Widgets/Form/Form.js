@@ -1,25 +1,26 @@
 import React from 'react';
 import './Form.scss';
+import TextField from '@material-ui/core/TextField';
 import PinkButton from '../Buttons/PinkButton/PinkButton';
 
 function Form(props) {
   return (
-    <div className="Form">
+    <form autoComplete="off" className="Form">
       {
         props.type === 'registerForm'
           && <>
-              <input type='text' placeholder='First Name' />
-              <input type='text' placeholder='Last Name' />
+              <TextField label="First Name" />
+              <TextField label="Last Name" />
             </>
       }
-      <input type='email' placeholder='Email' />
-      <input type='password' placeholder='Password' />
+      <TextField type='email' label="Email" />
+      <TextField type='password' label="Password" />
       {
         props.type === 'registerForm'
-          && <input type='password' placeholder='Confirm Password' />
+          && <TextField type='password' label="Confirm Password" />
       }
       <PinkButton text={props.buttonText} handleClick={props.formSubmit} />
-    </div>
+    </form>
   );
 }
 

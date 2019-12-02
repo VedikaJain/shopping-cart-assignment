@@ -1,9 +1,14 @@
 .TwoColumn {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
 
-  div {
-    width: 50%;
+  > div {
+    width: 100%;
+    padding-top: 1em;
+  }
+
+  .Right div {
+    margin-bottom: 0.5em;
   }
 }
