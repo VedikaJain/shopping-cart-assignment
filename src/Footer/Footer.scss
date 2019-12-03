@@ -1,5 +1,8 @@
-.Footer {
-    text-align: left;
+footer {
     background-color: #daf6ffc9;
     width: 100%;
+    
+    @media only screen and (min-width:1025px) { /* big landscape tablets, laptops, and desktops */
+        text-align: left;
+    }
 }

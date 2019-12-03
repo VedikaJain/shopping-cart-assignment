@@ -16,12 +16,12 @@
     flex-direction: column;
   }
 
-  .tabs a{
+  nav a{
     color: #737171;
     font-weight: 600;
   }
 
-  div a:not(:last-of-type) {
+  div a:not(:last-of-type),nav a:not(:last-of-type) {
     margin-right: 2em;
   }
 }

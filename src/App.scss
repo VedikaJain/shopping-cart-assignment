@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  padding: 1em 5em 0 5em;
+  padding: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,6 +9,10 @@
   a {
     text-decoration: none;
     color: black;
+  }
+
+  @media only screen and (min-width:1025px) { /* big landscape tablets, laptops, and desktops */
+    padding: 1em 5em 0 5em;
   }
 }
 
