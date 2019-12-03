@@ -18,7 +18,7 @@ function Nav(props) {
           <Link to="/login">Sign in</Link>
           <Link to="/register">Register</Link>
         </div>
-        <CartButton src={process.env.PUBLIC_URL + '/images/cart.svg'} alt="Cart" cartItems={props.cartItems} />
+        <CartButton cartItems={props.cartItems} />
       </div>
     </div>
   );

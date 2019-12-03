@@ -4,7 +4,7 @@ import './CartButton.scss';
 function CartButton(props) {
   return (
     <button className="cartButton">
-      <img src={props.src} alt={props.alt} className="cart"></img>
+      <img src={process.env.PUBLIC_URL + '/images/cart.svg'} alt="Cart" className="cart"></img>
       {props.cartItems} items
     </button>
   );
