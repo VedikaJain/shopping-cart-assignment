@@ -1,10 +1,13 @@
-import {SET_CATEGORIES, SET_BANNERS, SET_PRODUCTS} from '../Common/Actions/types';
+import { SET_CATEGORIES, SET_BANNERS, SET_PRODUCTS,
+    SET_REGISTER_STATUS, SET_LOGIN_STATUS } from '../Common/Actions/types';
 import {combineReducers} from 'redux';
 
 const initialState = {
     categories: [],
     banners: [],
-    products: []
+    products: [],
+    registerStatus:'',
+    loginStatus: ''
 }
 
 
@@ -18,6 +21,12 @@ function setData(state = initialState, action) {
         });
         case SET_PRODUCTS: return Object.assign({}, state, {
             products: action.payload
+        });
+        case SET_REGISTER_STATUS: return Object.assign({}, state, {
+            registerStatus: action.payload
+        });
+        case SET_LOGIN_STATUS: return Object.assign({}, state, {
+            loginStatus: action.payload
         });
         default: return state;
     }

@@ -34,7 +34,6 @@ export class Plp extends Component {
   }
 
   selectCategory = (catId) => {
-    console.log('Category ID: ', catId);
     this.setState({
       catId: catId
     });
