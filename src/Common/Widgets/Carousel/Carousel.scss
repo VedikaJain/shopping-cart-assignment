@@ -4,8 +4,15 @@
   }
 
   .CarouselArrow {
-    color: white;
-    background-color: rgba(0, 0, 0, 0.28);
-    margin-top: -25%;
+    visibility: hidden;
+  }
+
+  @media only screen and (min-width:481px)  { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+    .CarouselArrow, .CarouselArrow:hover {
+        visibility: visible;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.28);
+        margin-top: -25%;
+    }
   }
 }

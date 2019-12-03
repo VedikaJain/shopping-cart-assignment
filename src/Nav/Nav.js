@@ -8,7 +8,7 @@ import {
 function Nav(props) {
   return (
     <div className="Nav">
-      <img src={process.env.PUBLIC_URL + '/images/logo.png'} alt="Sabka Bazaar" className="logo"></img>
+      <img alt="Sabka Bazaar" className="logo"></img>
       <nav>
         <Link to="/">Home</Link>
         <Link to="/plp">Products</Link>

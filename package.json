@@ -1,8 +1,8 @@
 {
-  "name": "code-exercise",
+  "name": "sabka-bazaar",
   "version": "1.0.0",
   "private": true,
-  "description": "This is a shopping cart coding exercise",
+  "description": "This is a shopping cart application.",
   "main": "index.js",
   "scripts": {
     "testserver": "echo \"Error: no test specified\" && exit 1",
