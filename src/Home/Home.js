@@ -10,7 +10,8 @@ export class Home extends Component {
   constructor(props){
     super(props);
     this.state = {
-      categories: []
+      categories: [],
+      banners: []
     }
   }
   
@@ -20,16 +21,22 @@ export class Home extends Component {
         categories: props.categories
       };
     }
+    if (props.banners !== state.banners) {
+      return {
+        banners: props.banners
+      };
+    }
   }
 
   componentDidMount() {
     this.props.fetchData('categories');
+    this.props.fetchData('banners');
   }
 
   render() {
     return (
       <div className="Home">
-        <Carousel />
+        <Carousel items={this.state.banners} />
         <Hr type="grey" />
         {this.state.categories.map((category, i) =>
           <div key={i}>
@@ -44,7 +51,8 @@ export class Home extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    categories: state.setData.categories
+    categories: state.setData.categories,
+    banners: state.setData.banners
   }
 }
 

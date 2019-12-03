@@ -1,3 +1,11 @@
 .Carousel {
-  
+  .carouselImg {
+    width: 100%;
+  }
+
+  .CarouselArrow {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.28);
+    margin-top: -25%;
+  }
 }
