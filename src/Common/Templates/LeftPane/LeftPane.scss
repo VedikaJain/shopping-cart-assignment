@@ -1,5 +1,4 @@
 .LeftPane {
-  width: 20%;
   background-color: #daf6ffc9;
 
   p {
@@ -7,5 +6,9 @@
     font-weight: 600;
     text-align: left;
     padding: 0 1em;
+  }
+  
+  .noCategoriesFound {
+    margin: 1em;
   }
 }

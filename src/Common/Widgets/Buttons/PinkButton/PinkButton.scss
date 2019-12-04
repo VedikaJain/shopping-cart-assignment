@@ -4,4 +4,15 @@
     border: none;
     padding: 0.75em;
     margin-bottom: 1.5em;
+
+    .pinkBtnText {
+        text-align: left;
+    }
+
+    .pinkBtnIcon {
+        height: 2em;
+        vertical-align: middle;
+        width: auto;
+        font-size: 1em;
+    }
 }

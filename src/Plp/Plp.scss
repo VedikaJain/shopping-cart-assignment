@@ -1,5 +1,35 @@
 .Plp {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 100%;
+
+  .LeftPane {
+    display: none;
+    width: 20%;
+  }
+
+  .DropDown {
+    display: block;
+    width: 100%;
+  }
+
+  .Products {
+    width: 100%;
+  }
+
+  @media only screen and (min-width:481px)  { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+    flex-direction: row;
+    
+    .LeftPane {
+      display: block;
+    }
+  
+    .DropDown {
+      display: none;
+    }
+
+    .Products {
+      width: 80%;
+    }
+  }
 }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Plp.scss';
+import DropDown from '../Common/Widgets/DropDown/DropDown';
 import LeftPane from '../Common/Templates/LeftPane/LeftPane';
 import Products from '../Common/Widgets/Products/Products';
 import { connect } from 'react-redux';
@@ -40,13 +41,12 @@ export class Plp extends Component {
   }
 
   render() {
-    console.log('plp categories ' + JSON.stringify(this.props.categories));
-    console.log('plp products ' + JSON.stringify(this.state.products));
     return (
       <div className="Plp">
+        <DropDown items={this.props.categories} selectItem={this.selectCategory}></DropDown>
         <LeftPane items={this.props.categories} selectItem={this.selectCategory}></LeftPane>
         <Products products={
-          (this.state.catId !== '')
+          (this.state.catId !== '' && this.state.catId !== undefined)
             ? (this.state.products.filter(
                 (product) => product.category === this.state.catId
               ))
