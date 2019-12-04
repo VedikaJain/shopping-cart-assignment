@@ -1,8 +1,15 @@
 .Product {
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  padding: 1em 0 0 1em;
+
+  .isTablet, .isLaptop {
+    display: none;
+  }
+
+  .isMobile {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 1em 1em 0 1em;
+  }
 
   h3 {
     height: 2em;
@@ -10,20 +17,56 @@
   }
   
   img.prodImg {
-    height: 20em;
+    width: 50%;
+    padding-right: 1em;
   }
 
   p {
-    height: 8em;
-    margin-top: 0;
-    text-align: left;
+    text-align: justify;
   }
 
-  div {
-    text-align: left;
+  .row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
   }
 
   .pinkBtn button {
     float: right;
+  }
+
+  @media only screen and (min-width:481px)  { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+    .isMobile, .isLaptop {
+      display: none;
+    }
+
+    .isTablet {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      padding: 1em 1em 0 1em;
+    }
+  }
+
+  @media only screen and (min-width:1025px) { /* big landscape tablets, laptops, and desktops */
+    .isMobile, .isTablet {
+      display: none;
+    }
+
+    .isLaptop {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      padding: 1em 0 0 1em;
+    }
+
+    img.prodImg {
+      width: 100%;
+    }
+
+    .row {
+      justify-content: space-between;
+      align-items: baseline;
+    }
   }
 }

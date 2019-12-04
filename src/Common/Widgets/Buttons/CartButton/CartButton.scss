@@ -8,5 +8,6 @@ button.cartButton {
     .cart {
         height: 2em;
         vertical-align: middle;
+        filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(-60deg) brightness(104%) contrast(125%);
     }
 }
