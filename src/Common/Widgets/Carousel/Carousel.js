@@ -1,6 +1,5 @@
 import React from 'react';
 import './Carousel.scss';
-import { useTheme } from '@material-ui/core/styles';
 import MobileStepper from '@material-ui/core/MobileStepper';
 import IconButton from '@material-ui/core/IconButton';
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
@@ -11,7 +10,6 @@ import { autoPlay } from 'react-swipeable-views-utils';
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 function Carousel(props) {
-  const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
   const maxSteps = props.items.length;
 
@@ -30,7 +28,7 @@ function Carousel(props) {
   return (
     <div className="Carousel">
       <AutoPlaySwipeableViews
-        axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
+        axis='x'
         index={activeStep}
         onChangeIndex={handleStepChange}
         enableMouseEvents
@@ -50,12 +48,12 @@ function Carousel(props) {
         activeStep={activeStep}
         nextButton={
           <IconButton className='CarouselArrow' onClick={handleNext}>
-            {theme.direction === 'rtl' ? <KeyboardArrowLeft /> : <KeyboardArrowRight />}
+            <KeyboardArrowRight />
           </IconButton>
         }
         backButton={
           <IconButton className='CarouselArrow' onClick={handleBack}>
-            {theme.direction === 'rtl' ? <KeyboardArrowRight /> : <KeyboardArrowLeft />}
+            <KeyboardArrowLeft />
           </IconButton>
         }
       />

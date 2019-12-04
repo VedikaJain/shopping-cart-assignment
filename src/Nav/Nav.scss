@@ -9,26 +9,51 @@
   .vertAlign {
     display: flex;
     flex-direction: column;
-    width: 13%;
     margin-left: auto;
   }
 
   nav {
     width: auto;
-    padding: 0 5%;
+    padding: 0 4%;
 
     a {
       color: #737171;
       font-weight: 600;
     }
+
+    a:active, .activeRoute {
+      border-bottom: 0.2em solid #737171;
+      cursor: pointer;
+    }
+  }
+
+  .menuIcon {
+    color: deeppink;
   }
 
   div a:not(:last-of-type),nav a:not(:last-of-type) {
-    margin-right: 2em;
+    margin-right: 1em;
   }
 
   .logo {
     content:url('/images/logo.png');
-    width: 18%;
+  }
+
+  .isMobile {
+    display: block;
+  }
+
+  .isNotMobile {
+    display: none;
+  }
+
+  @media only screen and (min-width:481px)  { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+    .isMobile {
+      display: none;
+    }
+  
+    .isNotMobile {
+      display: block;
+    }
   }
 }
