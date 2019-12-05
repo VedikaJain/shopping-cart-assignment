@@ -30,8 +30,11 @@ class Login extends Component {
     return null;
   }
 
-  loginUser = () => {
-    this.props.postData('login', {name: 'userName'});
+  loginUser = (user) => {
+    this.props.postData('login', {
+      email: user.email,
+      password: user.password
+    });
   }
 
   render() {

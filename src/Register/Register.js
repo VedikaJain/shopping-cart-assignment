@@ -30,8 +30,13 @@ class Register extends Component {
     return null;
   }
 
-  registerUser = () => {
-    this.props.postData('register', {name: 'userName'});
+  registerUser = (user) => {
+    this.props.postData('register', {
+      firstName: user.firstName,
+      lastName: user.lastName,
+      email: user.email,
+      password: user.password
+    });
   }
 
   render() {

@@ -4,10 +4,14 @@
     "responseMessage": "Product added to cart successfully"
   },
   "login": {
-    "name": "userName"
+    "email": "abcd",
+    "password": "abcd"
   },
   "register": {
-    "name": "userName"
+    "firstName": "abc",
+    "lastName": "abc",
+    "email": "abcd",
+    "password": "abcd"
   },
   "banners": [
     {
