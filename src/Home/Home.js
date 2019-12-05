@@ -26,6 +26,7 @@ export class Home extends Component {
         banners: props.banners
       };
     }
+    return null;
   }
 
   componentDidMount() {

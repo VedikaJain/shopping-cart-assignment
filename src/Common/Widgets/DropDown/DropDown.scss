@@ -7,3 +7,12 @@
 .noCategoriesFound {
   padding: 1em;
 }
+
+.menuP {
+  margin: 0;
+
+  &.selectedText {
+    font-weight: 600;
+    color: deeppink;
+  }
+}

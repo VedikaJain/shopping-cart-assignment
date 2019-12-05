@@ -1,6 +1,6 @@
 .TwoColumn {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
 
   > div {
@@ -10,5 +10,9 @@
 
   .Right div {
     margin-bottom: 0.5em;
+  }
+
+  @media only screen and (min-width:1025px) { /* big landscape tablets, laptops, and desktops */
+    flex-direction: row;
   }
 }

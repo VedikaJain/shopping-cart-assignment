@@ -5,10 +5,20 @@
     color: #8e8b8b;
     font-weight: 600;
     text-align: left;
-    padding: 0 1em;
+    padding: 1em;
+    margin: 0;
+  }
+
+  p.selectedText {
+    color: deeppink;
+    border-right: 0.2em solid deeppink;
   }
   
   .noCategoriesFound {
     margin: 1em;
+  }
+
+  .selectedItem {
+    background-color: #90e1fbc9;
   }
 }

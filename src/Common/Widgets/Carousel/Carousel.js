@@ -11,14 +11,13 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 function Carousel(props) {
   const [activeStep, setActiveStep] = React.useState(0);
-  const maxSteps = props.items.length;
-
+  const maxSteps = props.items.length | 0;
   const handleNext = () => {
     setActiveStep(prevActiveStep => (prevActiveStep === maxSteps - 1) ? 0 : (prevActiveStep + 1));
   };
 
   const handleBack = () => {
-    setActiveStep(prevActiveStep => (prevActiveStep === 0) ? (maxSteps - 1): (prevActiveStep - 1));
+    setActiveStep(prevActiveStep => (prevActiveStep === 0) ? (maxSteps - 1) : (prevActiveStep - 1));
   };
 
   const handleStepChange = step => {
@@ -26,6 +25,7 @@ function Carousel(props) {
   };
 
   return (
+    (maxSteps > 0) &&
     <div className="Carousel">
       <AutoPlaySwipeableViews
         axis='x'

@@ -23,6 +23,7 @@ export class Plp extends Component {
         products: props.products
       };
     }
+    return null;
   }
 
   componentDidMount() {
