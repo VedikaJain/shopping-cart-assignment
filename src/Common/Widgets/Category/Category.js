@@ -7,7 +7,7 @@ function Category(props) {
   let cat = props.cat;
   return (
     <div className={'Category ' + (props.imgAlign === 'left'? 'leftDir': 'rightDir')}>
-      <img src={process.env.PUBLIC_URL + cat.imageUrl} alt={cat.name} className="catImg"/>
+      <img src={process.env.PUBLIC_URL + cat.imageUrl} alt={cat.description} className="catImg"/>
       <div>
         <h3>{cat.name}</h3>
         <p>{cat.description}</p>
