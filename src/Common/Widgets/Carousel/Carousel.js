@@ -47,12 +47,12 @@ function Carousel(props) {
         position="static"
         activeStep={activeStep}
         nextButton={
-          <IconButton className='CarouselArrow' onClick={handleNext}>
+          <IconButton aria-label="Go to next image" className='CarouselArrow' onClick={handleNext}>
             <KeyboardArrowRight />
           </IconButton>
         }
         backButton={
-          <IconButton className='CarouselArrow' onClick={handleBack}>
+          <IconButton aria-label="Go to previous image" className='CarouselArrow' onClick={handleBack}>
             <KeyboardArrowLeft />
           </IconButton>
         }

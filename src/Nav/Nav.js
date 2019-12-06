@@ -28,10 +28,10 @@ function Nav(props) {
         <NavLink activeClassName="activeRoute" to="/plp">Products</NavLink>
       </nav>
       <nav className='isMobile'>
-        <MenuIcon aria-controls="simple-menu" aria-haspopup="true"
+        <MenuIcon aria-controls="navigation-menu" aria-haspopup="true"
           className='menuIcon' onClick={handleClick}/>
         <Menu
-          id="simple-menu"
+          id="navigation-menu"
           anchorEl={anchorEl}
           keepMounted
           open={Boolean(anchorEl)}
