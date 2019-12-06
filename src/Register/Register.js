@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Register.scss';
+import formInputs from './Register.json';
 import TwoColumn from '../Common/Templates/TwoColumn/TwoColumn';
 import { connect } from 'react-redux';
 import { postData, resetPostStatus } from '../Common/Actions/index';
@@ -31,12 +32,8 @@ class Register extends Component {
   }
 
   registerUser = (user) => {
-    this.props.postData('register', {
-      firstName: user.firstName,
-      lastName: user.lastName,
-      email: user.email,
-      password: user.password
-    });
+    delete user['confirmPassword'];
+    this.props.postData('register', user);
   }
 
   render() {
@@ -45,7 +42,7 @@ class Register extends Component {
         <TwoColumn
           title="Signup"
           description="We do not share your personal details with anyone."
-          formType="registerForm"
+          formInputs={formInputs}
           formSubmit={this.registerUser}
         />
       </div>

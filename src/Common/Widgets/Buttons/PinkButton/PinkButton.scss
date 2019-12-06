@@ -15,4 +15,9 @@
         width: auto;
         font-size: 1em;
     }
+
+    &:disabled {
+        color: #e2dede;
+        background-color: lightpink;
+    }
 }

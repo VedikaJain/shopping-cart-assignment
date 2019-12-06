@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Login.scss';
+import formInputs from './Login.json';
 import TwoColumn from '../Common/Templates/TwoColumn/TwoColumn';
 import { connect } from 'react-redux';
 import { postData, resetPostStatus } from '../Common/Actions';
@@ -31,10 +32,7 @@ class Login extends Component {
   }
 
   loginUser = (user) => {
-    this.props.postData('login', {
-      email: user.email,
-      password: user.password
-    });
+    this.props.postData('login', user);
   }
 
   render() {
@@ -43,7 +41,7 @@ class Login extends Component {
         <TwoColumn
           title="Login"
           description="Get access to your Orders, Wishlist and Recommendations"
-          formType="loginForm"
+          formInputs={formInputs}
           formSubmit={this.loginUser}
         />
       </div>
