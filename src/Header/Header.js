@@ -1,5 +1,5 @@
 import React from 'react';
-import './Nav.scss';
+import './Header.scss';
 import CartButton from '../Common/Widgets/Buttons/CartButton/CartButton';
 import {
   Link, NavLink, withRouter
@@ -8,7 +8,7 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuIcon from '@material-ui/icons/Menu';
 
-function Nav(props) {
+function Header(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = event => {
@@ -21,7 +21,7 @@ function Nav(props) {
   };
 
   return (
-    <div className="Nav">
+    <header className="Header">
       <img alt="Sabka Bazaar" className="logo"></img>
       <nav className='isNotMobile'>
         <NavLink activeClassName="activeRoute" to="/home">Home</NavLink>
@@ -50,8 +50,8 @@ function Nav(props) {
         </div>
         <CartButton cartItems={props.cartItems} />
       </div>
-    </div>
+    </header>
   );
 }
 
-export default withRouter(Nav);
+export default withRouter(Header);

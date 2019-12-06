@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.scss';
-import Nav from './Nav/Nav';
+import Header from './Header/Header';
 import Hr from './Common/Widgets/HorizontalRow/Hr';
 import {
   BrowserRouter,
@@ -17,7 +17,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Nav cartItems={items}></Nav>
+        <Header cartItems={items}></Header>
         <Hr type="blue" />
         <Switch>
           <Route exact path="/" component={Home}></Route>
