@@ -23,11 +23,17 @@ export class Plp extends Component {
         products: props.products
       };
     }
+    if (props.categories !== state.categories) {
+      return {
+        categories: props.categories
+      };
+    }
     return null;
   }
 
   componentDidMount() {
     this.props.fetchData('products');
+    this.props.fetchData('categories');
 
     const { selectedCategory } = this.props.match.params;
     if(selectedCategory && selectedCategory !== '') {
@@ -44,8 +50,8 @@ export class Plp extends Component {
   render() {
     return (
       <div className="Plp">
-        <DropDown items={this.props.categories} selectItem={this.selectCategory}></DropDown>
-        <LeftPane items={this.props.categories} selectItem={this.selectCategory}></LeftPane>
+        <DropDown items={this.state.categories} selectItem={this.selectCategory}></DropDown>
+        <LeftPane items={this.state.categories} selectItem={this.selectCategory}></LeftPane>
         <Products products={
           (this.state.catId !== '' && this.state.catId !== undefined)
             ? (this.state.products.filter(
