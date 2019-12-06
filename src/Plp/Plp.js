@@ -49,7 +49,7 @@ export class Plp extends Component {
 
   render() {
     return (
-      <div className="Plp">
+      <main className="Plp" aria-label='Categories and Products'>
         <DropDown items={this.state.categories} selectItem={this.selectCategory}></DropDown>
         <LeftPane items={this.state.categories} selectItem={this.selectCategory}></LeftPane>
         <Products products={
@@ -59,7 +59,7 @@ export class Plp extends Component {
               ))
             : this.state.products
         } />
-      </div>
+      </main>
     );
   }
 }

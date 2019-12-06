@@ -38,14 +38,14 @@ class Register extends Component {
 
   render() {
     return (
-      <div className="Register">
+      <main className="Register" aria-labelledby='formTitle'>
         <TwoColumn
           title="Signup"
           description="We do not share your personal details with anyone."
           formInputs={formInputs}
           formSubmit={this.registerUser}
         />
-      </div>
+      </main>
     );
   }
 };

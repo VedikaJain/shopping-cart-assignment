@@ -10,7 +10,7 @@ function LeftPane({items, selectItem}) {
   }, [selectedItem, selectItem]);
 
   return (
-    <div className="LeftPane">
+    <nav className="LeftPane" aria-label='Categories'>
       {(items.length > 0)
         ? items.map((item, i) =>
           <div key={i}
@@ -30,7 +30,7 @@ function LeftPane({items, selectItem}) {
           Sorry, there are no available categories at the moment!
             </span>
       }
-    </div>
+    </nav>
   );
 }
 

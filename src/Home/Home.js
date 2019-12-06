@@ -36,7 +36,7 @@ export class Home extends Component {
 
   render() {
     return (
-      <div className="Home">
+      <main className="Home" aria-label='Home'>
         <Carousel items={this.state.banners} />
         <Hr type="grey" />
         {this.state.categories.map((category, i) =>
@@ -45,7 +45,7 @@ export class Home extends Component {
             <Hr type="grey" />
           </div>
         )}
-      </div>
+      </main>
     );
   }
 }

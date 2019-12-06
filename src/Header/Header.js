@@ -23,11 +23,11 @@ function Header(props) {
   return (
     <header className="Header">
       <img alt="Sabka Bazaar" className="logo"></img>
-      <nav className='isNotMobile'>
+      <nav className='isNotMobile' aria-label='App'>
         <NavLink activeClassName="activeRoute" to="/home">Home</NavLink>
         <NavLink activeClassName="activeRoute" to="/plp">Products</NavLink>
       </nav>
-      <nav className='isMobile'>
+      <nav className='isMobile' aria-label='App'>
         <MenuIcon aria-controls="navigation-menu" aria-haspopup="true"
           className='menuIcon' onClick={handleClick}/>
         <Menu
@@ -44,10 +44,10 @@ function Header(props) {
         </Menu>
       </nav>
       <div className="vertAlign">
-        <div className='isNotMobile'>
+        <nav className='isNotMobile' aria-label='App'>
           <Link to="/login">Sign in</Link>
           <Link to="/register">Register</Link>
-        </div>
+        </nav>
         <CartButton cartItems={props.cartItems} />
       </div>
     </header>

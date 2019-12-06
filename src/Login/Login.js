@@ -37,14 +37,14 @@ class Login extends Component {
 
   render() {
     return (
-      <div className="Login">
+      <main className="Login" aria-labelledby='formTitle'>
         <TwoColumn
           title="Login"
           description="Get access to your Orders, Wishlist and Recommendations"
           formInputs={formInputs}
           formSubmit={this.loginUser}
         />
-      </div>
+      </main>
     );
   }
 };
