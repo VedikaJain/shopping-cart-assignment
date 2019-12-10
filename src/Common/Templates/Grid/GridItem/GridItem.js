@@ -1,10 +1,10 @@
 import React from 'react';
-import './Product.scss';
-import PinkButton from '../Buttons/PinkButton/PinkButton';
+import './GridItem.scss';
+import PinkButton from '../../../Widgets/Buttons/PinkButton/PinkButton';
 
-function Product(props) {
+function GridItem(props) {
   return (
-    <div className="Product">
+    <div className='GridItem'>
 
       <figure className='isMobile'
         aria-labelledby='prodName prodCost' aria-describedby='prodDescription'>
@@ -46,4 +46,4 @@ function Product(props) {
   );
 }
 
-export default Product;
+export default GridItem;

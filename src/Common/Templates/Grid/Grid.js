@@ -1,6 +1,6 @@
 import React from 'react';
 import './Grid.scss';
-import Product from '../../Widgets/Product/Product';
+import GridItem from './GridItem/GridItem';
 
 function Grid(props) {
   return (
@@ -8,7 +8,7 @@ function Grid(props) {
       aria-labelledby='selectedCategory'>
       {(props.products.length > 0)
         ? props.products.map((product, i)=>
-            <Product key={i} product={product}/>
+            <GridItem key={i} product={product}/>
           )
         : <p className='noProductsFound'>
             Sorry, there are no available products in this category at the moment!
