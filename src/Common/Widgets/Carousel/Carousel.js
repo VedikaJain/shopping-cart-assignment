@@ -26,15 +26,14 @@ function Carousel(props) {
 
   return (
     (maxSteps > 0) &&
-    <div className="Carousel">
-      <AutoPlaySwipeableViews
-        axis='x'
-        index={activeStep}
-        onChangeIndex={handleStepChange}
-        enableMouseEvents
-      >
+    <div className='Carousel' role='region'
+      aria-roledescription='carousel' aria-label='Ongoing offers'>
+      <AutoPlaySwipeableViews axis='x' index={activeStep}
+        onChangeIndex={handleStepChange} enableMouseEvents
+        aria-live='off' id='carouselSlides'>
         {props.items.map((step, index) => (
-          <div key={step.id}>
+          <div key={step.id} role='group' aria-roledescription='slide'
+            aria-label={(index + 1)  + ' of ' + props.items.length + ' offers'}>
             {Math.abs(activeStep - index) <= 2 ? (
               <img className='carouselImg' src={step.bannerImageUrl} alt={step.bannerImageAlt} />
             ) : null}
@@ -42,17 +41,19 @@ function Carousel(props) {
         ))}
       </AutoPlaySwipeableViews>
       <MobileStepper
-        variant="dots"
+        variant='dots'
         steps={maxSteps}
-        position="static"
+        position='static'
         activeStep={activeStep}
         nextButton={
-          <IconButton aria-label="Go to next image" className='CarouselArrow' onClick={handleNext}>
+          <IconButton aria-label='Go to next image' aria-controls='carouselSlides'
+            className='CarouselArrow' onClick={handleNext}>
             <KeyboardArrowRight />
           </IconButton>
         }
         backButton={
-          <IconButton aria-label="Go to previous image" className='CarouselArrow' onClick={handleBack}>
+          <IconButton aria-label='Go to previous image' aria-controls='carouselSlides'
+            className='CarouselArrow' onClick={handleBack}>
             <KeyboardArrowLeft />
           </IconButton>
         }
