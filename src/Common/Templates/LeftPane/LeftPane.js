@@ -16,7 +16,7 @@ function LeftPane({ items, selectItem }) {
           <div key={i}
             id={(selectedItem === item.id) ? 'selectedCategory' : ''}
             role='tab' tabIndex='0' aria-label={item.name}
-            aria-controls='Products'
+            aria-controls='Grid'
             aria-selected={(selectedItem === item.id) ? true : false}
             className={(selectedItem === item.id) ? 'selectedItem' : ''}
             onClick={

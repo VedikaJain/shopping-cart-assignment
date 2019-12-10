@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Plp.scss';
 import DropDown from '../Common/Widgets/DropDown/DropDown';
 import LeftPane from '../Common/Templates/LeftPane/LeftPane';
-import Products from '../Common/Widgets/Products/Products';
+import Grid from '../Common/Templates/Grid/Grid';
 import { connect } from 'react-redux';
 import { fetchData } from '../Common/Actions/index';
 
@@ -51,8 +51,9 @@ export class Plp extends Component {
     return (
       <main className="Plp" aria-label='Categories and Products'>
         <DropDown items={this.state.categories} selectItem={this.selectCategory}></DropDown>
-        <LeftPane items={this.state.categories} selectItem={this.selectCategory}></LeftPane>
-        <Products products={
+        <LeftPane items={this.state.categories}
+          selectItem={this.selectCategory}></LeftPane>
+        <Grid products={
           (this.state.catId !== '' && this.state.catId !== undefined)
             ? (this.state.products.filter(
                 (product) => product.category === this.state.catId

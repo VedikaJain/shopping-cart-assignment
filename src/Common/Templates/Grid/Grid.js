@@ -1,10 +1,10 @@
 import React from 'react';
-import './Products.scss';
-import Product from '../Product/Product';
+import './Grid.scss';
+import Product from '../../Widgets/Product/Product';
 
-function Products(props) {
+function Grid(props) {
   return (
-    <div role='tabpanel' className="Products" id='Products'
+    <div role='tabpanel' className="Grid" id='Grid'
       aria-labelledby='selectedCategory'>
       {(props.products.length > 0)
         ? props.products.map((product, i)=>
@@ -17,4 +17,4 @@ function Products(props) {
   );
 }
 
-export default Products;
+export default Grid;
