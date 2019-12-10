@@ -1,12 +1,12 @@
 import React from 'react';
-import './Category.scss';
-import PinkButton from '../Buttons/PinkButton/PinkButton';
+import './Showcase.scss';
+import PinkButton from '../../Widgets/Buttons/PinkButton/PinkButton';
 import { withRouter } from 'react-router-dom'
 
-function Category(props) {
+function Showcase(props) {
   let cat = props.cat;
   return (
-    <figure className={'Category ' + (props.imgAlign === 'left'? 'leftDir': 'rightDir')}
+    <figure className={'Showcase ' + (props.imgAlign === 'left'? 'leftDir': 'rightDir')}
       aria-labelledby='categoryName' aria-describedby='categoryDescription'>
       <img src={process.env.PUBLIC_URL + cat.imageUrl} alt={cat.description} className="catImg"/>
       <div>
@@ -20,4 +20,4 @@ function Category(props) {
   );
 }
 
-export default withRouter(Category);
+export default withRouter(Showcase);
