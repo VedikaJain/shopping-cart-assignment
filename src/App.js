@@ -16,7 +16,7 @@ function App() {
   let items = 0;
   return (
     <BrowserRouter>
-      <div className="App">
+      <div className="App" aria-label='Sabka Bazaar'>
         <Header cartItems={items}></Header>
         <Hr type="blue" />
         <Switch>
