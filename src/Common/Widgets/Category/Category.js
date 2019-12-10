@@ -6,16 +6,17 @@ import { withRouter } from 'react-router-dom'
 function Category(props) {
   let cat = props.cat;
   return (
-    <div className={'Category ' + (props.imgAlign === 'left'? 'leftDir': 'rightDir')}>
+    <figure className={'Category ' + (props.imgAlign === 'left'? 'leftDir': 'rightDir')}
+      aria-labelledby='categoryName' aria-describedby='categoryDescription'>
       <img src={process.env.PUBLIC_URL + cat.imageUrl} alt={cat.description} className="catImg"/>
       <div>
-        <h3>{cat.name}</h3>
-        <p>{cat.description}</p>
+        <h3 id='categoryName'>{cat.name}</h3>
+        <figcaption id='categoryDescription'>{cat.description}</figcaption>
         <PinkButton text={'Explore ' + cat.key} handleClick={()=>{
           props.history.push(`/plp/${cat.id}`);
         }}/>
       </div>
-    </div>
+    </figure>
   );
 }
 

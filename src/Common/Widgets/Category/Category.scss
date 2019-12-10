@@ -2,9 +2,14 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  margin: 0;
 
   .catImg {
     width: 40%;
+  }
+
+  figcaption {
+    margin: 1em 0;
   }
 }
 
