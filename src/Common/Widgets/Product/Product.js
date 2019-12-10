@@ -6,38 +6,41 @@ function Product(props) {
   return (
     <div className="Product">
 
-      <div className='isMobile'>
-        <h3>{props.product.name}</h3>
+      <figure className='isMobile'
+        aria-labelledby='prodName prodCost' aria-describedby='prodDescription'>
+        <h3 id='prodName'>{props.product.name}</h3>
         <div className='row'>
           <img src={process.env.PUBLIC_URL + props.product.imageURL}
           alt={props.product.name} className="prodImg" />
           <div>
-            <p>{props.product.description}</p>
-            <PinkButton className="pinkBtn" text={'Buy Now @ Rs.' + props.product.price}/>
+            <figcaption id='prodDescription'>{props.product.description}</figcaption>
+            <PinkButton text={'Buy Now @ Rs.' + props.product.price}/>
           </div>
         </div>
-      </div>
+      </figure>
 
-      <div className='isTablet'>
-        <h3>{props.product.name}</h3>
+      <figure className='isTablet'
+        aria-labelledby='prodName prodCost' aria-describedby='prodDescription'>
+        <h3 id='prodName'>{props.product.name}</h3>
         <div className='row'>
           <img src={process.env.PUBLIC_URL + props.product.imageURL}
           alt={props.product.name} className="prodImg" />
-          <p>{props.product.description}</p>
+          <figcaption id='prodDescription'>{props.product.description}</figcaption>
         </div>
-        <PinkButton className="pinkBtn" text={'Buy Now @ Rs.' + props.product.price}/>
-      </div>
+        <PinkButton text={'Buy Now @ Rs.' + props.product.price}/>
+      </figure>
 
-      <div className='isLaptop'>
-        <h3>{props.product.name}</h3>
+      <figure className='isLaptop'
+        aria-labelledby='prodName prodCost' aria-describedby='prodDescription'>
+        <h3 id='prodName'>{props.product.name}</h3>
         <img src={process.env.PUBLIC_URL + props.product.imageURL}
-          alt={props.product.name} className="prodImg" />
-        <p>{props.product.description}</p>
+          alt={props.product.name} className="prodImg"/>
+        <figcaption id='prodDescription'>{props.product.description}</figcaption>
         <div className='row'>
-          <span>MRP Rs.{props.product.price}</span>
-          <PinkButton className="pinkBtn" text='Buy Now' />
+          <span id='prodCost'>MRP Rs.{props.product.price}</span>
+          <PinkButton text='Buy Now' />
         </div>
-      </div>
+      </figure>
 
     </div>
   );

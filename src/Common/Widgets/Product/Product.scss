@@ -21,8 +21,13 @@
     padding-right: 1em;
   }
 
-  p {
+  figure {
+    margin: 0;
+  }
+
+  figcaption {
     text-align: justify;
+    margin: 1em 0;
   }
 
   .row {
@@ -31,8 +36,8 @@
     align-items: center;
   }
 
-  .pinkBtn button {
-    float: right;
+  .PinkButton {
+    width: 100%;
   }
 
   @media only screen and (min-width:481px)  { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
@@ -67,6 +72,10 @@
     .row {
       justify-content: space-between;
       align-items: baseline;
+    }
+
+    .PinkButton {
+      width: auto;
     }
   }
 }
