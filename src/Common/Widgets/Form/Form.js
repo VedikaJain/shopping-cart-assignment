@@ -47,7 +47,8 @@ class Form extends Component {
         ? (
           <form autoComplete="off" className="Form"
             onSubmit={(e) => e.preventDefault()}
-            aria-labelledby='formTitle'>
+            aria-labelledby='formTitle'
+            aria-describedby='formDescription'>
             {this.props.formInputs.map((formInput, i) =>
               <TextField
                 key={i}
