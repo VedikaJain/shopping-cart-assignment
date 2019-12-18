@@ -1,9 +1,7 @@
 import React from 'react';
 import './Carousel.scss';
 import MobileStepper from '@material-ui/core/MobileStepper';
-import IconButton from '@material-ui/core/IconButton';
-import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
-import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
+import Button from '@material-ui/core/Button';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
 
@@ -46,16 +44,16 @@ function Carousel(props) {
         position='static'
         activeStep={activeStep}
         nextButton={
-          <IconButton aria-label='Go to next image' aria-controls='carouselSlides'
+          <Button aria-label='Go to next image' aria-controls='carouselSlides'
             className='CarouselArrow' onClick={handleNext}>
-            <KeyboardArrowRight />
-          </IconButton>
+            NEXT
+          </Button>
         }
         backButton={
-          <IconButton aria-label='Go to previous image' aria-controls='carouselSlides'
+          <Button aria-label='Go to previous image' aria-controls='carouselSlides'
             className='CarouselArrow' onClick={handleBack}>
-            <KeyboardArrowLeft />
-          </IconButton>
+            PREV
+          </Button>
         }
       />
     </div>

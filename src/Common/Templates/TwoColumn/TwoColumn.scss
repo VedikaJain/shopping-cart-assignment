@@ -1,3 +1,5 @@
+@import '../../../global-styles.scss';
+
 .TwoColumn {
   display: flex;
   flex-direction: column;
@@ -12,7 +14,7 @@
     margin-bottom: 0.5em;
   }
 
-  @media only screen and (min-width:1025px) { /* big landscape tablets, laptops, and desktops */
+  @media only screen and (min-width: $screen-laptop) {
     flex-direction: row;
   }
 }

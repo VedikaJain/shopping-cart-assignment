@@ -1,8 +1,13 @@
+@import '../global-styles.scss';
+
 footer {
     background-color: #daf6ffc9;
     width: 100%;
+    padding: 1em;
+    font-size: small;
+    font-weight: 600;
     
-    @media only screen and (min-width:1025px) { /* big landscape tablets, laptops, and desktops */
+    @media only screen and (min-width: $screen-laptop) {
         text-align: left;
     }
 }

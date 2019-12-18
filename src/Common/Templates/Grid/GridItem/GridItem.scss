@@ -1,81 +1,83 @@
+@import '../../../../global-styles.scss';
+
 .GridItem {
 
-  .isTablet, .isLaptop {
-    display: none;
-  }
-
-  .isMobile {
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    padding: 1em 1em 0 1em;
-  }
-
-  h3 {
-    height: 2em;
+  .heading {
+    grid-area: heading;
     text-align: left;
   }
+
+  .prodImg {
+    grid-area: prodImg;
+    width: 100%
+  }
   
-  img.prodImg {
-    width: 50%;
-    padding-right: 1em;
+  .prodDescription {
+    grid-area: prodDescription;
+    text-align: left;
+    background-color: #daf6ffc9;
+    padding: 0.5em;
+  }
+  
+  .prodPurchase {
+    grid-area: prodPurchase;
   }
 
-  figure {
-    margin: 0;
+  .prodPrice {
+    grid-area: prodPrice;
+    display: none;
+    align-self: center;
   }
 
-  figcaption {
-    text-align: justify;
-    margin: 1em 0;
+  .dotted {
+    grid-area: dotted;
   }
 
-  .row {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto;
+  align-items: stretch;
+  gap: 0.5em;
+  grid-template-areas: 
+    "heading heading"
+    "prodImg prodDescription"
+    "prodImg prodPurchase"
+    "dotted dotted";
 
   .PinkButton {
     width: 100%;
+    margin-bottom: 0;
+    
+    &::after {
+      content: 'Buy now @ Rs. ' attr(addontext);
+    } 
   }
 
   @media only screen and (min-width:481px)  { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
-    .isMobile, .isLaptop {
-      display: none;
-    }
-
-    .isTablet {
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-      padding: 1em 1em 0 1em;
-    }
+    grid-template-rows: auto 1fr auto auto;
+    grid-template-areas: 
+      "heading heading"
+      "prodImg prodDescription"
+      "prodPurchase prodPurchase"
+      "dotted dotted";
   }
 
-  @media only screen and (min-width:1025px) { /* big landscape tablets, laptops, and desktops */
-    .isMobile, .isTablet {
-      display: none;
+  @media only screen and (min-width: $screen-laptop) {
+    grid-template-columns: auto auto;
+    grid-template-rows: auto 1fr auto auto auto;
+    grid-template-areas: 
+    "heading heading"
+    "prodImg prodImg"
+    "prodDescription prodDescription"
+    "prodPrice prodPurchase"
+    "dotted dotted";
+
+    .prodPrice {
+      display: block;
     }
 
-    .isLaptop {
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-      padding: 1em 0 0 1em;
-    }
-
-    img.prodImg {
-      width: 100%;
-    }
-
-    .row {
-      justify-content: space-between;
-      align-items: baseline;
-    }
-
-    .PinkButton {
-      width: auto;
+    .PinkButton:after {
+      content: 'Buy now';
     }
   }
 }

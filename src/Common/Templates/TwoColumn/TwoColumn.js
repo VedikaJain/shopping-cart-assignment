@@ -6,7 +6,7 @@ function TwoColumn(props) {
   return (
     <div className="TwoColumn">
       <div className="Left">
-        <h3 id='formTitle'>{props.title}</h3>
+        <h2 id='formTitle'>{props.title}</h2>
         <p id='formDescription'>{props.description}</p>
       </div>
       <div className="Right">
