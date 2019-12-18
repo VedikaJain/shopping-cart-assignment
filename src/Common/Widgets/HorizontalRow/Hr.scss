@@ -24,4 +24,10 @@ hr.grey {
     rgba($color, 0),
     rgba($color, 1) 50%,
     rgba($color, 0) 100%);
-  }
+}
+
+hr.dotted {
+    width: 100%;
+    border: 0;
+    border-bottom: .1em dotted #daf6ffc9;
+}

@@ -1,16 +1,9 @@
 import React from 'react';
 import './Hr.scss';
 
-function Hr(props) {
-  let hrType = 'blue';
-  switch(props.type) {
-    case 'blue': hrType = 'blue'; break;
-    case 'grey': hrType = 'grey'; break;
-    case 'greySolid': hrType = 'greySolid'; break;
-    default: hrType = 'blue';
-  }
+function Hr({type}) {
   return (
-    <hr className={hrType}/>
+    <hr className={type}/>
   );
 }
 
