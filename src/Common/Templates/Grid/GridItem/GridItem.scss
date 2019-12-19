@@ -53,7 +53,7 @@
     } 
   }
 
-  @media only screen and (min-width:481px)  { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+  @media only screen and (min-width: $screen-tablet)  {
     grid-template-rows: auto 1fr auto auto;
     grid-template-areas: 
       "heading heading"
