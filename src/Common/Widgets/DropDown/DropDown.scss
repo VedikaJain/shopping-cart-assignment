@@ -1,3 +1,5 @@
+@import '../../../global-styles.scss';
+
 .DropDown {
   .PinkButton {
     width: 100%;
@@ -13,6 +15,6 @@
 
   &.selectedText {
     font-weight: 600;
-    color: deeppink;
+    color: $color-pink-2;
   }
 }

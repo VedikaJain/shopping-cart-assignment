@@ -1,8 +1,10 @@
+@import '../../../global-styles.scss';
+
 .LeftPane {
-  background-color: #daf6ffc9;
+  background-color: $color-grey-1;
 
   p {
-    color: #8e8b8b;
+    color: $color-grey-6;
     font-weight: 600;
     text-align: left;
     padding: 1em;
@@ -10,8 +12,8 @@
   }
 
   p.selectedText {
-    color: deeppink;
-    border-right: 0.2em solid deeppink;
+    color: $color-pink-2;
+    border-right: 0.2em solid $color-pink-2;
   }
   
   .noCategoriesFound {
@@ -19,7 +21,7 @@
   }
 
   .selectedItem {
-    background-color: #90e1fbc9;
+    background-color: $color-grey-4;
     outline-width: 0;
   }
 }

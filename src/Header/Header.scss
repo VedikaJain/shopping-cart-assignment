@@ -27,18 +27,18 @@
     padding: 0 4%;
 
     a {
-      color: #737171;
+      color: $color-black-2;
       font-weight: 600;
     }
 
     a:active, .activeRoute {
-      border-bottom: 0.2em solid #737171;
+      border-bottom: 0.2em solid $color-black-2;
       cursor: pointer;
     }
   }
 
   .menuIcon {
-    color: deeppink;
+    color: $color-pink-2;
   }
 
   div a:not(:last-of-type),nav a:not(:last-of-type) {

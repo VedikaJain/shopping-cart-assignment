@@ -14,8 +14,8 @@
   @media only screen and (min-width: $screen-tablet)  {
     .CarouselArrow, .CarouselArrow:hover {
         visibility: visible;
-        color: white;
-        background-color: rgba(0, 0, 0, 0.28);
+        color: $color-white-1;
+        background-color: $color-black-transparent;
         margin-top: -25%;
     }
   }
