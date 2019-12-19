@@ -60,17 +60,29 @@
       "prodImg prodDescription"
       "prodPurchase prodPurchase"
       "dotted dotted";
+    
+    .heading {
+      height: 2.5em;
+    }
   }
 
   @media only screen and (min-width: $screen-laptop) {
     grid-template-columns: auto auto;
-    grid-template-rows: auto 1fr auto auto auto;
+    grid-template-rows: auto auto 1fr auto auto;
     grid-template-areas: 
     "heading heading"
     "prodImg prodImg"
     "prodDescription prodDescription"
     "prodPrice prodPurchase"
     "dotted dotted";
+
+    .heading {
+      height: 3em;
+    }
+
+    .prodImg {
+      height: 15em;
+    }
 
     .prodPrice {
       display: block;
