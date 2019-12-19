@@ -22,4 +22,8 @@
         color: $color-black-3;
         background-color: $color-pink-1;
     }
+    
+    &:hover {
+        cursor: pointer;
+    }
 }
