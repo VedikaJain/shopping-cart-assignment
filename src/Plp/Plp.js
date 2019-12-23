@@ -4,7 +4,7 @@ import DropDown from '../Common/Widgets/DropDown/DropDown';
 import LeftPane from '../Common/Templates/LeftPane/LeftPane';
 import Grid from '../Common/Templates/Grid/Grid';
 import { connect } from 'react-redux';
-import { fetchData } from '../Common/Actions/index';
+import { fetchData, saveData } from '../Common/Actions/index';
 
 export class Plp extends Component {
 
@@ -13,7 +13,7 @@ export class Plp extends Component {
     this.state = {
       categories: [],
       products: [],
-      catId: '',
+      selectedCategory: {},
     }
   }
 
@@ -28,35 +28,40 @@ export class Plp extends Component {
         categories: props.categories
       };
     }
+    if (props.selectedCategory !== state.selectedCategory) {
+      return {
+        selectedCategory: props.selectedCategory
+      };
+    }
     return null;
   }
 
   componentDidMount() {
     this.props.fetchData('products');
     this.props.fetchData('categories');
-
-    const { selectedCategory } = this.props.match.params;
-    if(selectedCategory && selectedCategory !== '') {
-      this.selectCategory(selectedCategory);
-    }
   }
 
-  selectCategory = (catId) => {
-    this.setState({
-      catId: catId
-    });
+  componentWillUnmount() {
+    this.selectCategory({});
+  }
+
+  selectCategory = (newCategory) => {
+    this.props.saveData('selectedCategory', newCategory);
   }
 
   render() {
     return (
       <main className="Plp" aria-label='Categories and Products'>
-        <DropDown items={this.state.categories} selectItem={this.selectCategory}></DropDown>
+        <DropDown items={this.state.categories}
+          selectItem={this.selectCategory}
+          alreadySelected={this.props.selectedCategory}/>
         <LeftPane items={this.state.categories}
-          selectItem={this.selectCategory}></LeftPane>
+          selectItem={this.selectCategory}
+          alreadySelected={this.props.selectedCategory}/>
         <Grid products={
-          (this.state.catId !== '' && this.state.catId !== undefined)
+          (this.props.selectedCategory && this.props.selectedCategory.id)
             ? (this.state.products.filter(
-                (product) => product.category === this.state.catId
+                (product) => product.category === this.props.selectedCategory.id
               ))
             : this.state.products
         } />
@@ -68,8 +73,9 @@ export class Plp extends Component {
 const mapStateToProps = (state) => {
   return {
     categories: state.setData.categories,
-    products: state.setData.products
+    products: state.setData.products,
+    selectedCategory: state.setData.selectedCategory
   }
 }
 
-export default connect(mapStateToProps, { fetchData })(Plp);
+export default connect(mapStateToProps, { fetchData, saveData })(Plp);

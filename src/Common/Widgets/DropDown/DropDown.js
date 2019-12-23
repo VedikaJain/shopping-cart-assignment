@@ -1,67 +1,86 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './DropDown.scss';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import PinkButton from '../Buttons/PinkButton/PinkButton';
 
-function DropDown({ items, selectItem }) {
-  const [selectedItem, setSelectedItem] = React.useState({});
-  const [anchorEl, setAnchorEl] = React.useState(null);
+class DropDown extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectedItem: {},
+      anchorEl: null
+    }
+  }
+  
+  componentDidMount() {
+    if (this.props.alreadySelected && this.props.alreadySelected !== ''
+      && this.props.alreadySelected !== undefined) {
+      this.setSelectedItem(this.props.alreadySelected);
+    }
+  }
 
-  const handleClick = event => {
-    setAnchorEl(event.currentTarget);
+  setSelectedItem = (item) => {
+    this.setState({
+      selectedItem: item
+    }, () => this.props.selectItem({ id: this.state.selectedItem.id }));
+  }
+
+  setAnchorEl = (item) => {
+    this.setState({
+      anchorEl: item
+    })
+  }
+
+  handleClick = event => {
+    this.setAnchorEl(event.currentTarget);
+  };
+  
+  handleMenuItemClick = (item) => {
+    (this.state.selectedItem && this.state.selectedItem.id === item.id)
+      ? this.setSelectedItem({}) : this.setSelectedItem(item);
+    this.handleClose(null);
   };
 
-  React.useEffect(() => {
-    selectItem(selectedItem.id);
-  }, [selectedItem, selectItem]);
-
-  const handleMenuItemClick = (item) => {
-    (selectedItem && selectedItem.id === item.id) ? setSelectedItem({}) : setSelectedItem(item);
-    handleClose(null);
+  handleClose = () => {
+    this.setAnchorEl(null);
   };
 
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+  render() {
 
-  return (
-    <div className="DropDown">
-      <PinkButton aria-controls="simple-menu" aria-haspopup="true"
-        className='PinkBtn'
-        text={
-          (selectedItem && selectedItem !== {} && selectedItem.name && selectedItem.name.length > 0)
-            ? selectedItem.name
-            : 'Select Category'
-        }
-        handleClick={handleClick}
-        icon='downArrow' />
-      <Menu
-        id="simple-menu"
-        anchorEl={anchorEl}
-        keepMounted
-        open={Boolean(anchorEl)}
-        onClose={handleClose}
-      >
-        {(items.length > 0)
-          ? items.map((item, i) =>
-            <MenuItem key={i}
-              selected={selectedItem && selectedItem.id === item.id}
-              onClick={() => handleMenuItemClick(item)}>
-              <p className={
-                (selectedItem && selectedItem.id === item.id)
-                  ? 'menuP selectedText' : 'menuP'}>
-                {item.name}
-              </p>
-            </MenuItem>
-          )
-          : <span className='noCategoriesFound'>
-            Sorry, there are no available categories at the moment!
+    return (
+      <div className="DropDown">
+        <PinkButton aria-controls="categoriesList" aria-haspopup="true"
+          text={
+            (this.state.selectedItem && this.state.selectedItem !== {}
+              && this.state.selectedItem.name && this.state.selectedItem.name.length > 0)
+              ? this.state.selectedItem.name
+              : 'Select Category'
+          }
+          handleClick={this.handleClick} icon='downArrow' id='categoryMenuBtn' />
+        <Menu anchorEl={this.state.anchorEl} keepMounted open={Boolean(this.state.anchorEl)}
+          onClose={this.handleClose} id='categoriesList' aria-labelledby='categoryMenuBtn'>
+          {(this.props.items.length > 0)
+            ? this.props.items.map((item, i) =>
+              <MenuItem key={i}
+                selected={this.state.selectedItem && this.state.selectedItem.id === item.id}
+                onClick={() => this.handleMenuItemClick(item)}>
+                <p id={(this.state.selectedItem && this.state.selectedItem.id === item.id)
+                  ? 'selectedCategory' : ''}
+                  className={(this.state.selectedItem && this.state.selectedItem.id === item.id)
+                    ? 'menuP selectedText' : 'menuP'}>
+                  {item.name}
+                </p>
+              </MenuItem>
+            )
+            : <span className='noCategoriesFound'>
+              Sorry, there are no available categories at the moment!
             </span>
-        }
-      </Menu>
-    </div>
-  );
+          }
+        </Menu>
+      </div>
+    );
+  }
 }
 
 export default DropDown;

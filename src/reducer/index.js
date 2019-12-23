@@ -1,18 +1,20 @@
-import { SET_CATEGORIES, SET_BANNERS, SET_PRODUCTS,
-    SET_REGISTER_STATUS, SET_LOGIN_STATUS } from '../Common/Actions/types';
-import {combineReducers} from 'redux';
+import {
+    SET_CATEGORIES, SET_BANNERS, SET_PRODUCTS,
+    SET_REGISTER_STATUS, SET_LOGIN_STATUS, SET_SELECTED_CATEGORY
+} from '../Common/Actions/types';
+import { combineReducers } from 'redux';
 
 const initialState = {
     categories: [],
     banners: [],
     products: [],
-    registerStatus:'',
-    loginStatus: ''
+    registerStatus: '',
+    loginStatus: '',
+    selectedCategory: {}
 }
 
-
 function setData(state = initialState, action) {
-    switch(action.type) {
+    switch (action.type) {
         case SET_CATEGORIES: return Object.assign({}, state, {
             categories: action.payload
         });
@@ -28,10 +30,13 @@ function setData(state = initialState, action) {
         case SET_LOGIN_STATUS: return Object.assign({}, state, {
             loginStatus: action.payload
         });
+        case SET_SELECTED_CATEGORY: return Object.assign({}, state, {
+            selectedCategory: action.payload
+        });
         default: return state;
     }
 }
 
-const combRed = combineReducers({setData});
+const combRed = combineReducers({ setData });
 
 export default combRed;

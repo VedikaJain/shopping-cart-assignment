@@ -1,41 +1,56 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './LeftPane.scss';
 import Hr from '../../Widgets/HorizontalRow/Hr';
 
-function LeftPane({ items, selectItem }) {
-  const [selectedItem, setSelectedItem] = React.useState('');
+class LeftPane extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectedItem: {}
+    }
+  }
 
-  React.useEffect(() => {
-    selectItem(selectedItem);
-  }, [selectedItem, selectItem]);
+  componentDidMount() {
+    if (this.props.alreadySelected && this.props.alreadySelected !== '' && this.props.alreadySelected !== undefined) {
+      this.setSelectedItem(this.props.alreadySelected);
+    }
+  }
 
-  return (
-    <div className="LeftPane" role="tablist" aria-label='Categories'>
-      {(items.length > 0)
-        ? items.map((item, i) =>
-          <div key={i}
-            id={(selectedItem === item.id) ? 'selectedCategory' : ''}
-            role='tab' tabIndex='0' aria-label={item.name}
-            aria-controls='Grid'
-            aria-selected={(selectedItem === item.id) ? true : false}
-            className={(selectedItem === item.id) ? 'selectedItem' : ''}
-            onClick={
-              () => (selectedItem === item.id)
-                ? setSelectedItem('')
-                : setSelectedItem(item.id)
-            }>
-            <p className={(selectedItem === item.id) ? 'selectedText' : ''}>
-              {item.name}
-            </p>
-            <Hr type='greySolid' />
-          </div>
-        )
-        : <span className='noCategoriesFound'>
-          Sorry, there are no available categories at the moment!
+  setSelectedItem(item) {
+    this.setState({
+      selectedItem: item
+    }, () => this.props.selectItem(this.state.selectedItem));
+  }
+
+  render() {
+    return (
+      <div className="LeftPane" role="tablist" aria-label='Categories'>
+        {(this.props.items.length > 0)
+          ? this.props.items.map((item, i) =>
+            <div key={i}
+              id={(this.state.selectedItem.id === item.id) ? 'selectedCategory' : ''}
+              role='tab' tabIndex='0' aria-label={item.name}
+              aria-controls='Grid'
+              aria-selected={(this.state.selectedItem.id === item.id) ? true : false}
+              className={(this.state.selectedItem.id === item.id) ? 'selectedItem' : ''}
+              onClick={
+                () => (this.state.selectedItem.id === item.id)
+                  ? this.setSelectedItem({})
+                  : this.setSelectedItem(item)
+              }>
+              <p className={(this.state.selectedItem.id === item.id) ? 'selectedText' : ''}>
+                {item.name}
+              </p>
+              <Hr type='greySolid' />
+            </div>
+          )
+          : <span className='noCategoriesFound'>
+            Sorry, there are no available categories at the moment!
             </span>
-      }
-    </div>
-  );
+        }
+      </div>
+    );
+  }
 }
 
 export default LeftPane;
