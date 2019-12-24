@@ -1,6 +1,6 @@
 @import '../global-styles.scss';
 
-.Header {
+.header {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -82,5 +82,22 @@
     nav {
       padding: 0 7%;
     }
+  }
+}
+
+.drawer-paper {
+  position: absolute;
+  background-color: $color-grey-1!important;
+  width: 100%;
+  right: 0;
+}
+
+.div-position-absolute {
+  position: absolute!important;
+}
+
+@media only screen and (min-width: $screen-tablet)  {
+  .drawer-paper {
+    width: 50%;
   }
 }

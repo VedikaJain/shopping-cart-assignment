@@ -1,0 +1,45 @@
+@import '../../global-styles.scss';
+
+.cartItem {
+  display: flex;
+  flex-direction: row;
+  background-color: $color-white-1;
+  margin-top: 1em;
+  padding: 0.5em;
+
+  .cartItem-image {
+    height: 4em;
+    margin-right: 0.2em;
+  }
+
+  .cartItem-content {
+    width: -webkit-fill-available;
+    text-align: left;
+
+    .cartItem-content-heading {
+      font-weight: 700;
+      padding: 0.5em 0;
+    }
+
+    .cartItem-content-quantity, .cartItem-content-quantity > * {
+      margin-right: 1em;
+    }
+
+    .PinkButton {
+      border-radius: 0.4em;
+      padding: 0.3em 0.8em;
+    }
+  }
+
+  .cartItem-totalprice {
+    font-size: larger;
+    align-self: flex-end;
+  }
+
+  @media only screen and (min-width: $screen-laptop) {
+    .cartItem-content .PinkButton {  
+      border-radius: 1em;
+      padding: 0.3em 0.5em;
+    }
+  }
+}

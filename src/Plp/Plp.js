@@ -71,7 +71,7 @@ export class Plp extends Component {
       id: productToAdd.id,
       name: productToAdd.name,
       price: productToAdd.price,
-      imgURL: productToAdd.imgURL
+      imageURL: productToAdd.imageURL
     };
     if (index === -1) {
       if (productToAdd.stock > 0) {

@@ -44,15 +44,17 @@ class App extends Component {
             (totalItems, cartItem) => cartItem.quantity + totalItems, 0)
           } />
           <Hr type="blue" />
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/home" component={Home} />
-            <Route exact path="/plp" component={Plp} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/register" component={Register} />
-            <Route exact path="/cart" component={Cart} />
-            <Route component={Home} />
-          </Switch>
+          <div id='drawer-container' className='drawer-container'>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/home" component={Home} />
+              <Route exact path="/plp" component={Plp} />
+              <Route exact path="/login" component={Login} />
+              <Route exact path="/register" component={Register} />
+              <Route exact path="/cart" component={Cart} />
+              <Route component={Home} />
+            </Switch>
+          </div>
           <Footer />
         </div>
       </BrowserRouter>
