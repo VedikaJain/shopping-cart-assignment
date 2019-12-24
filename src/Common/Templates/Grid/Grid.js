@@ -8,7 +8,7 @@ function Grid(props) {
       aria-labelledby='selectedCategory'>
       {(props.products.length > 0)
         ? props.products.map((product, i)=>
-            <GridItem key={i} product={product}/>
+            <GridItem key={i} product={product} selectGridItem={props.addToCart}/>
           )
         : <p className='noProductsFound'>
             Sorry, there are no available products in this category at the moment!
