@@ -4,13 +4,13 @@ import GridItem from './GridItem/GridItem';
 
 function Grid(props) {
   return (
-    <div role='tabpanel' className="Grid" id='Grid'
+    <div role='tabpanel' className='grid' id='Grid'
       aria-labelledby='selectedCategory'>
       {(props.products.length > 0)
         ? props.products.map((product, i)=>
             <GridItem key={i} product={product} selectGridItem={props.addToCart}/>
           )
-        : <p className='noProductsFound'>
+        : <p className='grid-empty'>
             Sorry, there are no available products in this category at the moment!
           </p>}
     </div>

@@ -43,7 +43,7 @@ class App extends Component {
           <Header cartItems={this.state.cart.reduce(
             (totalItems, cartItem) => cartItem.quantity + totalItems, 0)
           } />
-          <Hr type="blue" />
+          <Hr type="hr-blue" />
           <div id='drawer-container' className='drawer-container'>
             <Switch>
               <Route exact path="/" component={Home} />

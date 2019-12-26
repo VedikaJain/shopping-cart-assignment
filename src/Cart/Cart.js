@@ -104,9 +104,9 @@ class Cart extends Component {
             </figure>
           </>
           : <div className='cart-body-empty'>
-            <div className='cart-body-empty-noitems'>No items in your cart!</div>
-            <div className='cart-body-font-small' >Your favourite items are just a click away</div>
-          </div>
+              <div className='cart-body-empty-noitems'>No items in your cart!</div>
+              <div className='cart-body-font-small' >Your favourite items are just a click away</div>
+            </div>
         }
         </div>
         <div className={'cart-footer' + ((this.state.cart.length > 0) ? ' cart-footer-border' : '')}>

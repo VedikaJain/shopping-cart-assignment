@@ -41,7 +41,7 @@ class LeftPane extends Component {
               <p className={(this.state.selectedItem.id === item.id) ? 'selectedText' : ''}>
                 {item.name}
               </p>
-              <Hr type='greySolid' />
+              <Hr type='hr-grey-solid' />
             </div>
           )
           : <span className='noCategoriesFound'>

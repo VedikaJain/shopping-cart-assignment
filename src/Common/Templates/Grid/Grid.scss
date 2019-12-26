@@ -1,26 +1,26 @@
 @import '../../../global-styles.scss';
 
-.Grid{
+.grid{
   display: grid;
   grid-template-columns: auto;
   gap: 0.5em;
   margin: 0 0.5em;
 
-  .noProductsFound {
+  .grid-empty {
     grid-column: 1;
     align-self: center;
   }
 
   @media only screen and (min-width: $screen-tablet)  {
     grid-template-columns: auto auto;
-    .noProductsFound {
+    .grid-empty {
       grid-column: 1 / span 2;
     }
   }
 
   @media only screen and (min-width: $screen-laptop) {
     grid-template-columns: repeat(4, auto);
-    .noProductsFound {
+    .grid-empty {
       grid-column: 1 / span 4;
     }
   }

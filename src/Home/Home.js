@@ -38,11 +38,11 @@ export class Home extends Component {
     return (
       <main className="Home" aria-label='Home'>
         <Carousel items={this.state.banners} />
-        <Hr type="grey" />
+        <Hr type="hr-grey" />
         {this.state.categories.map((category, i) =>
           <div key={i}>
             <Showcase cat={category} imgAlign={(i % 2) ? 'right' : 'left'} />
-            <Hr type="grey" />
+            <Hr type="hr-grey" />
           </div>
         )}
       </main>

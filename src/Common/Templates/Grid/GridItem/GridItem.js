@@ -5,21 +5,21 @@ import Hr from '../../../Widgets/HorizontalRow/Hr';
 
 function GridItem(props) {
   return (
-    <div className='GridItem' aria-labelledby='prodName prodCost' aria-describedby='prodDescription'>
-      <h3 id='prodName' className='heading'>{props.product.name}</h3>
+    <div className='griditem' aria-labelledby='prodName prodCost' aria-describedby='prodDescription'>
+      <h3 id='prodName' className='griditem-heading'>{props.product.name}</h3>
       <img src={process.env.PUBLIC_URL + props.product.imageURL}
-        alt={props.product.name} className="prodImg" />
-      <figcaption id='prodDescription' className='prodDescription'>
+        alt={props.product.name} className="griditem-image" />
+      <figcaption id='prodDescription' className='griditem-description'>
         {props.product.description}
       </figcaption>
-      <span className='prodPrice' role='presentation'>
+      <span className='griditem-footer-text' role='presentation'>
         MRP Rs.{props.product.price}
       </span>
-      <div className='prodPurchase' aria-label={'Buy now at Rs. ' + props.product.price}>
+      <div className='griditem-footer-button' aria-label={'Buy now at Rs. ' + props.product.price}>
         <PinkButton addontext={props.product.price}
           handleClick={() => props.selectGridItem(props.product)} />
       </div>
-      <Hr type='dotted' />
+      <Hr type='hr-dotted' />
     </div >
   );
 }
