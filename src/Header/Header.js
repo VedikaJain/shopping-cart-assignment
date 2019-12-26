@@ -24,7 +24,6 @@ function Header(props) {
   };
 
   const toggleDrawer = (open) => event => {
-    debugger;
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return;
     }
@@ -32,7 +31,6 @@ function Header(props) {
   };
 
   const openCart = (event) => {
-    debugger;
     if (window.matchMedia('(min-width: 1025px)').matches) { // $screen-laptop
       toggleDrawer(!isDrawerOpen)(event);
     } else {
