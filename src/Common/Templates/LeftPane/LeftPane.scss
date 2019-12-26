@@ -1,6 +1,6 @@
 @import '../../../global-styles.scss';
 
-.LeftPane {
+.leftpane {
   background-color: $color-grey-1;
 
   p {
@@ -9,18 +9,18 @@
     text-align: left;
     padding: 1em;
     margin: 0;
-  }
-
-  p.selectedText {
-    color: $color-pink-2;
-    border-right: 0.2em solid $color-pink-2;
+  
+    &.leftpane-item-selected-text {
+      color: $color-pink-2;
+      border-right: 0.2em solid $color-pink-2;
+    }
   }
   
-  .noCategoriesFound {
+  .leftpane-empty {
     margin: 1em;
   }
 
-  .selectedItem {
+  .leftpane-item-selected {
     background-color: $color-grey-2;
     outline-width: 0;
   }

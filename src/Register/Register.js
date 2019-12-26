@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Register.scss';
 import formInputs from './Register.json';
-import TwoColumn from '../Common/Templates/TwoColumn/TwoColumn';
+import PageView from '../Common/Templates/PageView/PageView';
 import { connect } from 'react-redux';
 import { postData, resetPostStatus } from '../Common/Actions/index';
 
@@ -38,9 +38,9 @@ class Register extends Component {
 
   render() {
     return (
-      <main className="register"
+      <main className='register'
         aria-labelledby='formTitle' aria-describedby='formDescription'>
-        <TwoColumn title="Signup"
+        <PageView title="Signup"
           description="We do not share your personal details with anyone."
           formInputs={formInputs} formSubmit={this.registerUser}
         />

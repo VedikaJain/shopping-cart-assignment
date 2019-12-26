@@ -14,14 +14,19 @@ function Showcase(props) {
     }
 
     return (
-      <figure className={'Showcase ' + (props.imgAlign === 'left' ? 'leftDir' : 'rightDir')}
+      <figure className='showcase'
         aria-labelledby='categoryName' aria-describedby='categoryDescription'>
-        <img src={process.env.PUBLIC_URL + cat.imageUrl} alt={cat.description} className="catImg" />
-        <div>
-          <h3 id='categoryName'>{cat.name}</h3>
-          <figcaption id='categoryDescription'>{cat.description}</figcaption>
+        {props.imgAlign === 'left' &&
+          <img src={process.env.PUBLIC_URL + cat.imageUrl} alt={cat.description} className='showcase-image' />}
+        <div className='showcase-content'>
+          <div id='categoryName' className='showcase-content-heading'>{cat.name}</div>
+          <figcaption id='categoryDescription' className='showcase-content-description'>
+            {cat.description}
+          </figcaption>
           <PinkButton text={'Explore ' + cat.key} handleClick={selectCategory} />
         </div>
+        {props.imgAlign === 'right' &&
+          <img src={process.env.PUBLIC_URL + cat.imageUrl} alt={cat.description} className='showcase-image' />}
       </figure>
     )
 }

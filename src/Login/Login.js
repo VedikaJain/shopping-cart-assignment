@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Login.scss';
 import formInputs from './Login.json';
-import TwoColumn from '../Common/Templates/TwoColumn/TwoColumn';
+import PageView from '../Common/Templates/PageView/PageView';
 import { connect } from 'react-redux';
 import { postData, resetPostStatus } from '../Common/Actions';
 
@@ -37,9 +37,9 @@ class Login extends Component {
 
   render() {
     return (
-      <main className="login"
+      <main className='login'
         aria-labelledby='formTitle' aria-describedby='formDescription'>
-        <TwoColumn title="Login"
+        <PageView title="Login"
           description="Get access to your Orders, Wishlist and Recommendations"
           formInputs={formInputs} formSubmit={this.loginUser}
         />

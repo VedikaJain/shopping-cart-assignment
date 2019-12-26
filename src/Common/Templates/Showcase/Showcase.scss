@@ -1,22 +1,28 @@
-.Showcase {
+.showcase {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   margin: 0;
+  flex-direction: row;
 
-  .catImg {
+  .showcase-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .showcase-content-heading {
+      font-weight: 700;
+      font-size: large;
+    }
+    
+    .showcase-content-description {
+      margin: 1.5em 0 2.5em 0;
+      font-size: smaller;
+      font-weight: 600;
+    }
+  }
+
+  .showcase-image {
     width: 40%;
   }
-
-  figcaption {
-    margin: 1em 0;
-  }
-}
-
-.leftDir {
-  flex-direction: row;
-}
-
-.rightDir {
-  flex-direction: row-reverse;
 }

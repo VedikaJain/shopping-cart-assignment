@@ -5,7 +5,7 @@
   flex-direction: column;
   width: 100%;
 
-  .LeftPane {
+  .leftpane {
     display: none;
     width: 20%;
   }
@@ -22,7 +22,7 @@
   @media only screen and (min-width: $screen-tablet)  {
     flex-direction: row;
     
-    .LeftPane {
+    .leftpane {
       display: block;
     }
   

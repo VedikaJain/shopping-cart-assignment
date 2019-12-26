@@ -1,6 +1,6 @@
 @import '../../../global-styles.scss';
 
-.TwoColumn {
+.pageview {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,7 +10,7 @@
     padding-top: 1em;
   }
 
-  .Right div {
+  .pageview-rightpage div {
     margin-bottom: 0.5em;
   }
 

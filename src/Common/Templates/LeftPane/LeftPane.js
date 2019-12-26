@@ -24,7 +24,7 @@ class LeftPane extends Component {
 
   render() {
     return (
-      <div className="LeftPane" role="tablist" aria-label='Categories'>
+      <div className="leftpane" role="tablist" aria-label='Categories'>
         {(this.props.items.length > 0)
           ? this.props.items.map((item, i) =>
             <div key={i}
@@ -32,19 +32,19 @@ class LeftPane extends Component {
               role='tab' tabIndex='0' aria-label={item.name}
               aria-controls='Grid'
               aria-selected={(this.state.selectedItem.id === item.id) ? true : false}
-              className={(this.state.selectedItem.id === item.id) ? 'selectedItem' : ''}
+              className={(this.state.selectedItem.id === item.id) ? 'leftpane-item-selected' : ''}
               onClick={
                 () => (this.state.selectedItem.id === item.id)
                   ? this.setSelectedItem({})
                   : this.setSelectedItem(item)
               }>
-              <p className={(this.state.selectedItem.id === item.id) ? 'selectedText' : ''}>
+              <p className={(this.state.selectedItem.id === item.id) ? 'leftpane-item-selected-text' : ''}>
                 {item.name}
               </p>
               <Hr type='hr-grey-solid' />
             </div>
           )
-          : <span className='noCategoriesFound'>
+          : <span className='leftpane-empty'>
             Sorry, there are no available categories at the moment!
             </span>
         }

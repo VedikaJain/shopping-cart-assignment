@@ -1,19 +1,19 @@
 import React from 'react';
-import './TwoColumn.scss';
+import './PageView.scss';
 import Form from '../../Widgets/Form/Form';
 
-function TwoColumn(props) {
+function PageView(props) {
   return (
-    <div className="TwoColumn">
-      <div className="Left">
+    <div className='pageview'>
+      <div>
         <h2 id='formTitle'>{props.title}</h2>
         <p id='formDescription'>{props.description}</p>
       </div>
-      <div className="Right">
+      <div className='pageview-rightpage'>
         <Form formInputs={props.formInputs} buttonText={props.title} formSubmit={props.formSubmit}/>
       </div>
     </div>
   );
 }
 
-export default TwoColumn;
+export default PageView;
