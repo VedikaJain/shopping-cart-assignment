@@ -4,12 +4,15 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 function PinkButton(props) {
   return (
-    <button className='PinkButton' onClick={props.handleClick} disabled={props.disabled}
+    <button disabled={props.disabled}
+      className={'PinkButton ' + (props.rightContent ? 'pinkbutton-content-side' : 'pinkbutton-content-center')}
+      onClick={props.handleClick}
       addontext={props.addontext}>
-      <span className={props.icon ? 'pinkBtnText' : ''}>{props.text}</span>
-      { props.icon && 
-        <ExpandMoreIcon
-          alt={props.text} className='pinkBtnIcon'/>
+      <span className='pinkbutton-text'>{props.text}</span>
+      { props.rightContent && 
+        ((props.rightContent === 'downArrowIcon')
+          ? <ExpandMoreIcon alt={props.text} className='pinkbutton-icon'/>
+          : <span className='pinkbutton-text'>{props.rightContent}</span>)
       }
     </button>
   );

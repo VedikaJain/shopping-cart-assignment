@@ -115,9 +115,12 @@ class Cart extends Component {
           }
           <PinkButton handleClick={this.cartSubmit}
             text={(this.state.cart.length > 0)
-              ? 'Proceed to Checkout Rs.' + this.state.cart.reduce(
+              ? 'Proceed to Checkout'
+              : 'Start Shopping'}
+            rightContent={(this.state.cart.length > 0)
+              ? 'Rs.' + this.state.cart.reduce(
                 (totamount, cartItem) => (cartItem.price * cartItem.quantity) + totamount, 0) + ' >'
-              : 'Start Shopping'} />
+              : ''}/>
         </div>
       </main>
     );

@@ -57,7 +57,7 @@ class DropDown extends Component {
               ? this.state.selectedItem.name
               : 'Select Category'
           }
-          handleClick={this.handleClick} icon='downArrow' id='categoryMenuBtn' />
+          handleClick={this.handleClick} rightContent='downArrowIcon' id='categoryMenuBtn' />
         <Menu anchorEl={this.state.anchorEl} keepMounted open={Boolean(this.state.anchorEl)}
           onClose={this.handleClose} id='categoriesList' aria-labelledby='categoryMenuBtn'>
           {(this.props.items.length > 0)

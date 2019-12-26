@@ -6,12 +6,21 @@
     border: none;
     padding: 0.75em;
     margin-bottom: 1.5em;
+    display: flex;
 
-    .pinkBtnText {
-        text-align: left;
+    &.pinkbutton-content-side {
+        justify-content: space-between;
     }
 
-    .pinkBtnIcon {
+    &.pinkbutton-content-center {
+        justify-content: center;
+    }
+
+    .pinkbutton-text {
+        align-self: center;
+    }
+
+    .pinkbutton-icon {
         height: 2em;
         vertical-align: middle;
         width: auto;
