@@ -70,6 +70,14 @@ class Cart extends Component {
     }
   }
 
+  cartSubmit = (event) => {
+    if (window.matchMedia('(min-width: 1025px)').matches) { // $screen-laptop
+      this.props.cartSubmit(event);
+    } else {
+      this.props.history.push('/plp');
+    }
+  }
+
   render() {
     const totalItems = this.state.cart.reduce((totalquantity, item) => item.quantity + totalquantity, 0);
     return (
@@ -105,7 +113,7 @@ class Cart extends Component {
               Promo code can be applied on payment page
             </div>
           }
-          <PinkButton handleClick={this.handleSubmit}
+          <PinkButton handleClick={this.cartSubmit}
             text={(this.state.cart.length > 0)
               ? 'Proceed to Checkout Rs.' + this.state.cart.reduce(
                 (totamount, cartItem) => (cartItem.price * cartItem.quantity) + totamount, 0) + ' >'

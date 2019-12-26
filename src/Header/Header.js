@@ -74,7 +74,7 @@ function Header(props) {
             container: document.getElementById('drawer-container')
           }}
           variant="temporary">
-            <Cart />
+            <Cart cartSubmit={toggleDrawer(false)}/>
         </Drawer>
       </div>
     </header>
