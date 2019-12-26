@@ -1,44 +1,44 @@
 @import '../../global-styles.scss';
 
-.cartItem {
+.cartitem {
   display: flex;
   flex-direction: row;
   background-color: $color-white-1;
   margin-top: 1em;
-  padding: 0.5em;
+  padding: 0.5em 1em;
 
-  .cartItem-image {
+  .cartitem-image {
     height: 4em;
     margin-right: 0.2em;
   }
 
-  .cartItem-content {
+  .cartitem-content {
     width: -webkit-fill-available;
     text-align: left;
 
-    .cartItem-content-heading {
+    .cartitem-content-heading {
       font-weight: 700;
       padding: 0.5em 0;
     }
 
-    .cartItem-content-quantity, .cartItem-content-quantity > * {
+    .cartitem-content-quantity, .cartitem-content-quantity > * {
       margin-right: 1em;
     }
 
-    .PinkButton {
+    .pinkbutton {
       border-radius: 0.4em;
       padding: 0.3em 0.8em;
       display: inline-block;
     }
   }
 
-  .cartItem-totalprice {
+  .cartitem-totalprice {
     font-size: larger;
     align-self: flex-end;
   }
 
   @media only screen and (min-width: $screen-laptop) {
-    .cartItem-content .PinkButton {  
+    .cartitem-content .pinkbutton {  
       border-radius: 1em;
       padding: 0.3em 0.5em;
     }

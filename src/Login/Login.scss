@@ -1,5 +1,12 @@
-.Login {
-  width: 70%;
+@import '../global-styles.scss';
+
+.login {
+  width: auto;
   text-align: left;
-  margin-left: -10%;
+  margin: 0 10%;
+
+  @media only screen and (min-width: $screen-laptop) {
+    width: 70%;
+    margin-left: 10%;
+  }
 }

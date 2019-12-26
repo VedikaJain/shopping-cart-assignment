@@ -38,7 +38,7 @@ class Register extends Component {
 
   render() {
     return (
-      <main className="Register"
+      <main className="register"
         aria-labelledby='formTitle' aria-describedby='formDescription'>
         <TwoColumn title="Signup"
           description="We do not share your personal details with anyone."

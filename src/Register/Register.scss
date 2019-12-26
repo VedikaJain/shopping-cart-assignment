@@ -1,9 +1,12 @@
-.Register {
-  width: 70%;
-  text-align: left;  
-  margin-left: -10%;
+@import '../global-styles.scss';
 
-  .textField {
-    width: 100%;
+.register {
+  width: auto;
+  text-align: left;
+  margin: 0 10%;
+
+  @media only screen and (min-width: $screen-laptop) {
+    width: 70%;
+    margin-left: 10%;
   }
 }

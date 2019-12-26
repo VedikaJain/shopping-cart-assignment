@@ -37,7 +37,7 @@ class Login extends Component {
 
   render() {
     return (
-      <main className="Login"
+      <main className="login"
         aria-labelledby='formTitle' aria-describedby='formDescription'>
         <TwoColumn title="Login"
           description="Get access to your Orders, Wishlist and Recommendations"
