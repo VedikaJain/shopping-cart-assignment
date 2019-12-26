@@ -49,7 +49,7 @@ class DropDown extends Component {
   render() {
 
     return (
-      <div className="DropDown">
+      <div className='dropdown'>
         <PinkButton aria-controls="categoriesList" aria-haspopup="true"
           text={
             (this.state.selectedItem && this.state.selectedItem !== {}
@@ -59,21 +59,23 @@ class DropDown extends Component {
           }
           handleClick={this.handleClick} rightContent='downArrowIcon' id='categoryMenuBtn' />
         <Menu anchorEl={this.state.anchorEl} keepMounted open={Boolean(this.state.anchorEl)}
-          onClose={this.handleClose} id='categoriesList' aria-labelledby='categoryMenuBtn'>
+          onClose={this.handleClose} className='dropdown-menu'
+          id='categoriesList' aria-labelledby='categoryMenuBtn'>
           {(this.props.items.length > 0)
             ? this.props.items.map((item, i) =>
-              <MenuItem key={i}
+              <MenuItem key={i} className='dropdown-menu-item'
                 selected={this.state.selectedItem && this.state.selectedItem.id === item.id}
                 onClick={() => this.handleMenuItemClick(item)}>
                 <p id={(this.state.selectedItem && this.state.selectedItem.id === item.id)
                   ? 'selectedCategory' : ''}
-                  className={(this.state.selectedItem && this.state.selectedItem.id === item.id)
-                    ? 'menuP selectedText' : 'menuP'}>
+                  className={'dropdown-menuitem-text '
+                    + ((this.state.selectedItem && this.state.selectedItem.id === item.id)
+                      ? 'dropdown-menuitem-text-selected' : '')}>
                   {item.name}
                 </p>
               </MenuItem>
             )
-            : <span className='noCategoriesFound'>
+            : <span className='dropdown-menu-empty'>
               Sorry, there are no available categories at the moment!
             </span>
           }

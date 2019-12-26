@@ -1,18 +1,19 @@
 @import '../../../global-styles.scss';
 
-.Carousel {
+.carousel {
   margin-top: 1em;
-  .carouselImg {
+
+  .carousel-slide-image {
     width: 100%;
   }
 
-  .CarouselArrow {
+  .carousel-button {
     visibility: hidden;
     border-radius: 0;
   }
 
   @media only screen and (min-width: $screen-tablet)  {
-    .CarouselArrow, .CarouselArrow:hover {
+    .carousel-button, .carousel-button:hover {
         visibility: visible;
         color: $color-white-1;
         background-color: $color-black-transparent;

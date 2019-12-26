@@ -1,20 +1,24 @@
 @import '../../../global-styles.scss';
 
-.DropDown {
+.dropdown {
   .pinkbutton {
     width: 100%;
   }
 }
 
-.noCategoriesFound {
-  padding: 1em;
-}
+.dropdown-menu {
+  .dropdown-menu-item {
+    .dropdown-menuitem-text {
+      margin: 0;
 
-.menuP {
-  margin: 0;
+      &.dropdown-menuitem-text-selected {
+        font-weight: 600;
+        color: $color-pink-2;
+      }
+    }
+  }
 
-  &.selectedText {
-    font-weight: 600;
-    color: $color-pink-2;
+  .dropdown-menu-empty {
+    padding: 1em;
   }
 }

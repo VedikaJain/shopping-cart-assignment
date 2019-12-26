@@ -45,7 +45,7 @@ class Form extends Component {
     return (
       (this.props.formInputs && this.props.formInputs.length > 0)
         ? (
-          <form autoComplete="off" className="Form" onSubmit={(e) => e.preventDefault()}
+          <form autoComplete="off" className='form' onSubmit={(e) => e.preventDefault()}
             aria-labelledby='formTitle' aria-describedby='formDescription'>
             {this.props.formInputs.map((formInput, i) =>
               <TextField key={i} type={formInput.type} name={formInput.name}

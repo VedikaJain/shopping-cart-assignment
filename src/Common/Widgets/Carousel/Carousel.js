@@ -24,7 +24,7 @@ function Carousel(props) {
 
   return (
     (maxSteps > 0) &&
-    <div className='Carousel' role='region'
+    <div className='carousel' role='region'
       aria-roledescription='carousel' aria-label='Ongoing offers'>
       <AutoPlaySwipeableViews axis='x' index={activeStep}
         onChangeIndex={handleStepChange} enableMouseEvents
@@ -33,7 +33,7 @@ function Carousel(props) {
           <div key={step.id} role='group' aria-roledescription='slide'
             aria-label={(index + 1)  + ' of ' + props.items.length + ' offers'}>
             {Math.abs(activeStep - index) <= 2 ? (
-              <img className='carouselImg' src={step.bannerImageUrl} alt={step.bannerImageAlt} />
+              <img className='carousel-slide-image' src={step.bannerImageUrl} alt={step.bannerImageAlt} />
             ) : null}
           </div>
         ))}
@@ -45,13 +45,13 @@ function Carousel(props) {
         activeStep={activeStep}
         nextButton={
           <Button aria-label='Go to next image' aria-controls='carouselSlides'
-            className='CarouselArrow' onClick={handleNext}>
+            className='carousel-button' onClick={handleNext}>
             NEXT
           </Button>
         }
         backButton={
           <Button aria-label='Go to previous image' aria-controls='carouselSlides'
-            className='CarouselArrow' onClick={handleBack}>
+            className='carousel-button' onClick={handleBack}>
             PREV
           </Button>
         }
