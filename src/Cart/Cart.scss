@@ -3,6 +3,7 @@
 .cart {
   font-weight: 600;
   background-color: $color-grey-1!important;
+  height: 47em;
   
   .cart-header {
     background-color: $color-white-1;
@@ -53,7 +54,10 @@
   .cart-footer {
     background-color: $color-white-1;
     padding: 0.5em 1em;
-
+    width: -webkit-fill-available;
+    bottom: 0;
+    position: absolute;
+    
     &.cart-footer-border {
       border-top: 2px solid $color-grey-2;
     }
