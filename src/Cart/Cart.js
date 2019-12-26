@@ -88,6 +88,7 @@ class Cart extends Component {
             ({totalItems} {(totalItems <= 1) ? 'item' : 'items'})
           </span>}
         </div>
+        <div className='cart-content'>
         {(this.state.cart.length > 0)
           ? <>
             {this.state.cart.map((cartItem) =>
@@ -107,6 +108,7 @@ class Cart extends Component {
             <div className='cart-body-font-small' >Your favourite items are just a click away</div>
           </div>
         }
+        </div>
         <div className={'cart-footer' + ((this.state.cart.length > 0) ? ' cart-footer-border' : '')}>
           {(this.state.cart.length > 0)
             && <div className='cart-footer-promocode cart-body-font-small'>

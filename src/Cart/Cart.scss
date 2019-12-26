@@ -18,6 +18,11 @@
     }
   }
 
+  .cart-content {
+    max-height: 38em;
+    overflow-y: auto;
+  }
+
   .cart-lowestprice {
     text-align: left;
     background-color: $color-white-1;
@@ -57,7 +62,7 @@
     width: -webkit-fill-available;
     bottom: 0;
     position: absolute;
-    
+
     &.cart-footer-border {
       border-top: 2px solid $color-grey-2;
     }
