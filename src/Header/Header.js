@@ -3,7 +3,7 @@ import './Header.scss';
 import CartButton from '../Common/Widgets/Buttons/CartButton/CartButton';
 import Cart from '../Cart/Cart';
 import {
-  Link, NavLink, withRouter
+  NavLink, withRouter
 } from "react-router-dom";
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -39,15 +39,11 @@ function Header(props) {
   }
 
   return (
-    <header className="header">
-      <img alt="Sabka Bazaar" className="logo"></img>
-      <nav className='isNotMobile' aria-label='App'>
-        <NavLink activeClassName="activeRoute" to="/home">Home</NavLink>
-        <NavLink activeClassName="activeRoute" to="/plp">Products</NavLink>
-      </nav>
-      <nav className='isMobile' aria-label='App'>
+    <header className='header'>
+      <img alt='Sabka Bazaar' className='header-logo'></img>
+      <nav className='header-menu' aria-label='App'>
         <MenuIcon aria-controls="navigation-menu" aria-haspopup="true"
-          className='menuIcon' onClick={handleMenuClick} />
+          className='header-menu-icon' onClick={handleMenuClick} />
         <Menu
           id="navigation-menu"
           anchorEl={anchorEl}
@@ -61,17 +57,21 @@ function Header(props) {
           <MenuItem onClick={() => handleClose('/register')}>Register</MenuItem>
         </Menu>
       </nav>
-      <div className="vertAlign">
-        <nav className='isNotMobile' aria-label='App'>
-          <Link to="/login">Sign in</Link>
-          <Link to="/register">Register</Link>
+      <nav className='header-links' aria-label='App'>
+        <NavLink activeClassName='header-link-active' to="/home">Home</NavLink>
+        <NavLink activeClassName='header-link-active' to="/plp">Products</NavLink>
+      </nav>
+      <div className='header-rightpane'>
+        <nav className='header-links' aria-label='App'>
+          <NavLink activeClassName='header-link-active' to="/login">Sign in</NavLink>
+          <NavLink activeClassName='header-link-active' to="/register">Register</NavLink>
         </nav>
         <CartButton cartItems={props.cartItems} handleClick={openCart} />
         <Drawer anchor="right" open={isDrawerOpen} onClose={toggleDrawer(false)} className='drawer'
           PaperProps={{ className: 'drawer-paper' }}
           ModalProps={{
-            className: 'div-position-absolute',
-            container: document.getElementById('drawer-container')
+            className: 'drawer-modal',
+            container: document.getElementById('app-container')
           }}
           variant="temporary">
             <Cart cartSubmit={toggleDrawer(false)}/>

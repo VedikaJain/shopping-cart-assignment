@@ -6,22 +6,6 @@
   align-items: center;
   width: 100%;
 
-  .vertAlign {
-    display: flex;
-    flex-direction: column;
-    margin-left: auto;
-    align-items: flex-end;
-    nav {
-      padding: 0;
-      font-size: small;
-      margin-bottom: 0.5em;
-    }
-  }
-
-  .cartbutton {
-    min-width: auto;
-  }
-
   nav {
     width: auto;
     padding: 0 4%;
@@ -29,47 +13,68 @@
     a {
       color: $color-black-2;
       font-weight: 600;
+
+      &:not(:last-of-type) {
+        margin-right: 1em;
+      }
+
+      &.header-link-active {
+        border-bottom: 0.2em solid $color-black-2;
+        cursor: pointer;
+      }
+    }
+  }
+  
+  .header-rightpane {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    align-items: flex-end;
+
+    .header-links {
+      padding: 0;
+      font-size: small;
+      margin-bottom: 0.5em;
     }
 
-    a:active, .activeRoute {
-      border-bottom: 0.2em solid $color-black-2;
-      cursor: pointer;
+    .cartbutton {
+      min-width: auto;
     }
   }
 
-  .menuIcon {
-    color: $color-pink-2;
-  }
-
-  div a:not(:last-of-type),nav a:not(:last-of-type) {
-    margin-right: 1em;
-  }
-
-  .logo {
+  .header-logo {
     content:url('/images/logo.png');
     height: auto;
     width: 20%;
     padding: 0.5em;
   }
 
-  .isMobile {
+  .header-menu {
     display: block;
+    
+    .header-menu-icon {
+      color: $color-pink-2;
+    }
   }
 
-  .isNotMobile {
+  .header-links {
     display: none;
   }
 
   @media only screen and (min-width: $screen-tablet)  {
-    .isMobile {
+    nav {
+      padding: 0 7%;
+    }
+    
+    .header-menu {
       display: none;
     }
   
-    .isNotMobile {
+    .header-links {
       display: block;
     }
 
-    .logo {
+    .header-logo {
       width: auto;
       height: 4em;
       padding: 0;
@@ -78,25 +83,23 @@
     .cartbutton {
       min-width: 10em;
     }
-
-    nav {
-      padding: 0 7%;
-    }
   }
 }
 
-.drawer-paper {
-  position: absolute;
-  width: 100%;
-  right: 0;
-}
-
-.div-position-absolute {
-  position: absolute!important;
-}
-
-@media only screen and (min-width: $screen-tablet)  {
+.drawer {
   .drawer-paper {
-    width: 50%;
+    position: absolute;
+    width: 100%;
+    right: 0;
+  }
+
+  .drawer-modal {
+    position: absolute!important;
+  }
+
+  @media only screen and (min-width: $screen-tablet)  {
+    .drawer-paper {
+      width: 50%;
+    }
   }
 }

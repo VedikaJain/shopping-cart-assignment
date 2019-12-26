@@ -96,7 +96,7 @@ export class Plp extends Component {
 
   render() {
     return (
-      <main className="Plp" aria-label='Categories and Products'>
+      <main className='product-listing-page' aria-label='Categories and Products'>
         <DropDown items={this.state.categories}
           selectItem={this.selectCategory}
           alreadySelected={this.props.selectedCategory} />

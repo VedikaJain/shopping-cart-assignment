@@ -1,6 +1,6 @@
 @import 'global-styles.scss';
 
-.App {
+.app {
   text-align: center;
   padding: 0;
   display: flex;
@@ -13,7 +13,7 @@
     color: $color-black-1;
   }
 
-  .drawer-container {
+  .app-container {
     position: relative;
     width: 100%;
   }

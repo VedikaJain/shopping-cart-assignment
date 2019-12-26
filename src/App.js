@@ -39,12 +39,12 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <div className="App" aria-label='Sabka Bazaar'>
+        <div className='app' aria-label='Sabka Bazaar'>
           <Header cartItems={this.state.cart.reduce(
             (totalItems, cartItem) => cartItem.quantity + totalItems, 0)
           } />
           <Hr type="hr-blue" />
-          <div id='drawer-container' className='drawer-container'>
+          <div id='app-container' className='app-container'>
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/home" component={Home} />
