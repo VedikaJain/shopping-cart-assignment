@@ -110,6 +110,31 @@ export const putData = (url, data) => {
     };
 };
 
+export const deleteData = (url, id) => {
+    const config = {
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            "Access-Control-Allow-Origin": 'http://localhost:3000/',
+            "cross-origin": true,
+            "Access-Control-Allow-Methods": 'options, delete',
+        }
+    }
+    return async (dispatch) => {
+        try {
+            const response = await axios.delete(`http://localhost:5000/${url}/${id}`, config);
+            switch (url) {
+                case 'addToCart': dispatch(setCartStatus(response.status)); break;
+                default: break;
+            };
+        }
+        catch (error) {
+            console.log("Error: " + error);
+            throw (error);
+        }
+    };
+}
+
 export const resetPostStatus = (url) => {
     return async (dispatch) => {
         switch (url) {

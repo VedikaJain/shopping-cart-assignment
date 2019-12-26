@@ -10,9 +10,9 @@ function CartItem(props) {
       <div className='cartItem-content'>
         <div className='cartItem-content-heading'>{props.cartItem.name}</div>
         <div className='cartItem-content-quantity'>
-          <PinkButton text='&minus;' handleClick={props.reduceQuantity}/>
+          <PinkButton text='&minus;' handleClick={() => props.reduceQuantity(props.cartItem)}/>
           <span>{props.cartItem.quantity}</span>
-          <PinkButton text='+' handleClick={props.addQuantity}/>
+          <PinkButton text='+' handleClick={() => props.addQuantity(props.cartItem)}/>
           <span>{'x'}</span><span>{'Rs.' + props.cartItem.price}</span>
         </div>
       </div>

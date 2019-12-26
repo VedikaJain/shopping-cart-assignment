@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Cart.scss';
 import { connect } from 'react-redux';
-import { postData, fetchData } from '../Common/Actions';
+import { putData, fetchData, deleteData } from '../Common/Actions';
 import PinkButton from '../Common/Widgets/Buttons/PinkButton/PinkButton';
 import CartItem from './CartItem/CartItem';
 
@@ -9,7 +9,8 @@ class Cart extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cart: []
+      cart: [],
+      cartStatus: ''
     }
   }
 
@@ -19,11 +20,54 @@ class Cart extends Component {
         cart: props.cart
       };
     }
+    if (props.cartStatus !== state.cartStatus) {
+      if (props.cartStatus !== 201 && props.cartStatus !== 200) {
+        console.log('Error updating cart: ' + props.cartStatus);
+      }
+      return {
+        cartStatus: props.cartStatus
+      }
+    }
     return null;
   }
 
   componentDidMount() {
     this.props.fetchData('addToCart');
+  }
+
+  addQuantity = (productToAdd) => {
+    if (productToAdd.stockLeft > 0) {
+      const updatedCartItem = {
+        id: productToAdd.id,
+        name: productToAdd.name,
+        price: productToAdd.price,
+        imageURL: productToAdd.imageURL,
+        stockLeft: productToAdd.stockLeft - 1,
+        quantity: productToAdd.quantity + 1
+      };
+      this.props.putData('addToCart', updatedCartItem);
+      this.props.fetchData('addToCart');
+    } else {
+      console.log('Product is out of stock!');
+    }
+  }
+
+  reduceQuantity = (productToReduce) => {
+    if (productToReduce.quantity > 1) {
+      const updatedCartItem = {
+        id: productToReduce.id,
+        name: productToReduce.name,
+        price: productToReduce.price,
+        imageURL: productToReduce.imageURL,
+        stockLeft: productToReduce.stockLeft + 1,
+        quantity: productToReduce.quantity - 1
+      };
+      this.props.putData('addToCart', updatedCartItem);
+      this.props.fetchData('addToCart');
+    } else {
+      this.props.deleteData('addToCart', productToReduce.id);
+      this.props.fetchData('addToCart');
+    }
   }
 
   render() {
@@ -38,25 +82,25 @@ class Cart extends Component {
         </div>
         {(this.state.cart.length > 0)
           ? <>
-              { this.state.cart.map((cartItem) =>
-                  <CartItem cartItem={cartItem}
-                    addQuantity={this.addQuantity}
-                    reduceQuantity={this.reduceQuantity}
-                    key={cartItem.id} />
-              )}
-              <figure className='cart-lowestprice'>
-                <img src={process.env.PUBLIC_URL + '/images/lowest-price.png'}
-                  alt='Lowest price here' />
-                <figcaption className='cart-body-font-small'>You won't find it cheaper anywhere</figcaption>
-              </figure>
-            </>
+            {this.state.cart.map((cartItem) =>
+              <CartItem cartItem={cartItem}
+                addQuantity={this.addQuantity}
+                reduceQuantity={this.reduceQuantity}
+                key={cartItem.id} />
+            )}
+            <figure className='cart-lowestprice'>
+              <img src={process.env.PUBLIC_URL + '/images/lowest-price.png'}
+                alt='Lowest price here' />
+              <figcaption className='cart-body-font-small'>You won't find it cheaper anywhere</figcaption>
+            </figure>
+          </>
           : <div className='cart-body-empty'>
-              <div className='cart-body-empty-noitems'>No items in your cart!</div>
-              <div className='cart-body-font-small' >Your favourite items are just a click away</div>
-            </div>
+            <div className='cart-body-empty-noitems'>No items in your cart!</div>
+            <div className='cart-body-font-small' >Your favourite items are just a click away</div>
+          </div>
         }
         <div className={'cart-footer' + ((this.state.cart.length > 0) ? ' cart-footer-border' : '')}>
-          { (this.state.cart.length > 0) 
+          {(this.state.cart.length > 0)
             && <div className='cart-footer-promocode cart-body-font-small'>
               Promo code can be applied on payment page
             </div>
@@ -64,8 +108,8 @@ class Cart extends Component {
           <PinkButton handleClick={this.handleSubmit}
             text={(this.state.cart.length > 0)
               ? 'Proceed to Checkout Rs.' + this.state.cart.reduce(
-                (totamount, cartItem) => cartItem.price + totamount, 0) + ' >'
-              : 'Start Shopping'}/>
+                (totamount, cartItem) => (cartItem.price * cartItem.quantity) + totamount, 0) + ' >'
+              : 'Start Shopping'} />
         </div>
       </main>
     );
@@ -78,4 +122,4 @@ const mapStateToProps = (state) => {
   };
 }
 
-export default connect(mapStateToProps, { postData, fetchData })(Cart);
+export default connect(mapStateToProps, { putData, fetchData, deleteData })(Cart);
