@@ -15,12 +15,12 @@ function Showcase(props) {
 
     return (
       <figure className='showcase'
-        aria-labelledby='categoryName' aria-describedby='categoryDescription'>
+        aria-label={cat.name} aria-describedby={cat.description}>
         {props.imgAlign === 'left' &&
           <img src={process.env.PUBLIC_URL + cat.imageUrl} alt={cat.description} className='showcase-image' />}
         <div className='showcase-content'>
-          <div id='categoryName' className='showcase-content-heading'>{cat.name}</div>
-          <figcaption id='categoryDescription' className='showcase-content-description'>
+          <div className='showcase-content-heading'>{cat.name}</div>
+          <figcaption className='showcase-content-description'>
             {cat.description}
           </figcaption>
           <PinkButton text={'Explore ' + cat.key} handleClick={selectCategory} 

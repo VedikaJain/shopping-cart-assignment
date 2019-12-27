@@ -104,6 +104,8 @@ export class Plp extends Component {
           selectItem={this.selectCategory}
           alreadySelected={this.props.selectedCategory} />
         <Grid addToCart={this.addToCart}
+          category={(this.props.selectedCategory && this.props.selectedCategory.name)
+            ? this.props.selectedCategory.name : 'All categories'}
           products={
             (this.props.selectedCategory && this.props.selectedCategory.id)
               ? (this.state.products.filter(

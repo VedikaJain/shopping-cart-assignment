@@ -5,7 +5,7 @@ import GridItem from './GridItem/GridItem';
 function Grid(props) {
   return (
     <div role='tabpanel' className='grid' id='Grid'
-      aria-labelledby='selectedCategory' aria-label='Select Category'>
+      aria-label={'Products belonging to ' + props.category}>
       {(props.products.length > 0)
         ? props.products.map((product, i)=>
             <GridItem key={i} product={product} selectGridItem={props.addToCart}/>
