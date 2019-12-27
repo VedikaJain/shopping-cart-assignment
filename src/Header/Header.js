@@ -60,10 +60,10 @@ function Header(props) {
           onClose={handleClose}
           variant='selectedMenu'
         >
-          {navigationLinks.map((navlink) =>
+          {navigationLinks.map((navlink, index) =>
             <MenuItem onClick={() => handleMenuItemClick(navlink.url)}
               selected={selectedMenuitem === navlink.url}
-              aria-label={navlink.name}
+              aria-label={navlink.name} key={index}
               className={(selectedMenuitem === navlink.url) ? 'navmenu-item-selected' : ''}>
               {navlink.name}
             </MenuItem>
@@ -71,15 +71,17 @@ function Header(props) {
         </Menu>
       </nav>
       <nav className='header-links' aria-label='App'>
-        {navigationLinks.slice(0, 2).map((navlink) =>
-          <NavLink activeClassName='header-link-active' to={'/' + navlink.url} aria-label={navlink.name}
+        {navigationLinks.slice(0, 2).map((navlink, index) =>
+          <NavLink activeClassName='header-link-active' to={'/' + navlink.url}
+            aria-label={navlink.name} key={index}
             onClick={() => handleMenuItemClick(navlink.url)}>{navlink.name}</NavLink>
         )}
       </nav>
       <div className='header-rightpane'>
         <nav className='header-links' aria-label='App'>
-          {navigationLinks.slice(2).map((navlink) =>
-            <NavLink activeClassName='header-link-active' to={'/' + navlink.url} aria-label={navlink.name}
+          {navigationLinks.slice(2).map((navlink, index) =>
+            <NavLink activeClassName='header-link-active' to={'/' + navlink.url}
+              aria-label={navlink.name} key={index}
               onClick={() => handleMenuItemClick(navlink.url)}>{navlink.name}</NavLink>
           )}
         </nav>
