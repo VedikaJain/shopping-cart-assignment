@@ -125,7 +125,7 @@ class Cart extends Component {
               ? 'Rs.' + totalPrice + ' >'
               : ''}
             ariaLabel={(this.state.cart.length > 0)
-              ? 'Proceed to Checkout Rs. ' + totalPrice
+              ? 'Total cart value is Rs. ' + totalPrice + '. Proceed to Checkout.'
               : 'Start Shopping'}/>
         </div>
       </main>

@@ -12,13 +12,20 @@ function CartItem(props) {
         <div className='cartitem-content-quantity'>
           <PinkButton text='&minus;' handleClick={() => props.reduceQuantity(props.cartItem)}
             ariaLabel='Reduce quantity'/>
-          <span>{props.cartItem.quantity}</span>
+          <span aria-label={'Item quantity is ' + props.cartItem.quantity}>
+            {props.cartItem.quantity}
+          </span>
           <PinkButton text='+' handleClick={() => props.addQuantity(props.cartItem)}
             ariaLabel='Increase quantity'/>
-          <span>{'x'}</span><span>{'Rs.' + props.cartItem.price}</span>
+          <span>{'x'}</span>
+          <span aria-label={'Item price is ' + props.cartItem.price}>{'Rs.' + props.cartItem.price}
+          </span>
         </div>
       </div>
-      <div className='cartitem-totalprice'>Rs.{props.cartItem.price * props.cartItem.quantity}</div>
+      <div className='cartitem-totalprice'
+        aria-label={'Total item value is Rs.' + props.cartItem.price * props.cartItem.quantity}>
+        Rs.{props.cartItem.price * props.cartItem.quantity}
+      </div>
     </div >
   );
 }
