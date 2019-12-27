@@ -1,7 +1,7 @@
 import React from 'react';
 import './Carousel.scss';
-import MobileStepper from '@material-ui/core/MobileStepper';
-import Button from '@material-ui/core/Button';
+import Dots from '../Buttons/Dots/Dots';
+import GreyButton from '../Buttons/GreyButton/GreyButton';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
 
@@ -38,24 +38,13 @@ function Carousel(props) {
           </div>
         ))}
       </AutoPlaySwipeableViews>
-      <MobileStepper
-        variant='dots'
-        steps={maxSteps}
-        position='static'
-        activeStep={activeStep}
-        nextButton={
-          <Button aria-label='Go to next image' aria-controls='carouselSlides'
-            className='carousel-button' onClick={handleNext}>
-            NEXT
-          </Button>
-        }
-        backButton={
-          <Button aria-label='Go to previous image' aria-controls='carouselSlides'
-            className='carousel-button' onClick={handleBack}>
-            PREV
-          </Button>
-        }
-      />
+      <div className='carousel-buttons'>
+        <GreyButton ariaLabel='Go to previous slide' ariaControls='carouselSlides'
+            handleClick={handleBack} text='PREV'/>
+        <GreyButton ariaLabel='Go to next slide' ariaControls='carouselSlides'
+            handleClick={handleNext} text='NEXT'/>
+      </div>
+      <Dots activeDot={activeStep} totalDots={maxSteps} selectDot={handleStepChange} altText=' offers'/>
     </div>
   );
 }
