@@ -55,7 +55,8 @@ class Form extends Component {
                 error={!formInput.valid && formInput.errorMessage !== ''}
                 helperText={formInput.errorMessage} />
             )}
-            <PinkButton text={this.props.buttonText} handleClick={this.handleSubmit}
+            <PinkButton text={this.props.buttonText} ariaLabel={this.props.buttonText}
+              handleClick={this.handleSubmit}
               disabled={!(this.props.formInputs.reduce(
                 (isValid, formInput) => isValid && formInput.valid, true))}
             />

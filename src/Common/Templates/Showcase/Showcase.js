@@ -23,7 +23,8 @@ function Showcase(props) {
           <figcaption id='categoryDescription' className='showcase-content-description'>
             {cat.description}
           </figcaption>
-          <PinkButton text={'Explore ' + cat.key} handleClick={selectCategory} />
+          <PinkButton text={'Explore ' + cat.key} handleClick={selectCategory} 
+            ariaLabel={'Explore ' + cat.key}/>
         </div>
         {props.imgAlign === 'right' &&
           <img src={process.env.PUBLIC_URL + cat.imageUrl} alt={cat.description} className='showcase-image' />}

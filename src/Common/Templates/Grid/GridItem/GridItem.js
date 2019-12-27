@@ -15,8 +15,9 @@ function GridItem(props) {
       <span className='griditem-footer-text' role='presentation'>
         MRP Rs.{props.product.price}
       </span>
-      <div className='griditem-footer-button' aria-label={'Buy now at Rs. ' + props.product.price}>
+      <div className='griditem-footer-button'>
         <PinkButton addontext={props.product.price}
+          ariaLabel={'Buy now at Rs. ' + props.product.price}
           handleClick={() => props.selectGridItem(props.product)} />
       </div>
       <Hr type='hr-dotted' />

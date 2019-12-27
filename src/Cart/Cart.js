@@ -80,6 +80,8 @@ class Cart extends Component {
 
   render() {
     const totalItems = this.state.cart.reduce((totalquantity, item) => item.quantity + totalquantity, 0);
+    const totalPrice = this.state.cart.reduce(
+      (totamount, cartItem) => (cartItem.price * cartItem.quantity) + totamount, 0);
     return (
       <main className='cart' aria-label='My Cart' aria-describedby='totalitems'>
         <div className='cart-header'>
@@ -120,9 +122,11 @@ class Cart extends Component {
               ? 'Proceed to Checkout'
               : 'Start Shopping'}
             rightContent={(this.state.cart.length > 0)
-              ? 'Rs.' + this.state.cart.reduce(
-                (totamount, cartItem) => (cartItem.price * cartItem.quantity) + totamount, 0) + ' >'
-              : ''}/>
+              ? 'Rs.' + totalPrice + ' >'
+              : ''}
+            ariaLabel={(this.state.cart.length > 0)
+              ? 'Proceed to Checkout Rs. ' + totalPrice
+              : 'Start Shopping'}/>
         </div>
       </main>
     );
