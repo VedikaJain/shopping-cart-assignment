@@ -1,0 +1,11 @@
+@import '../../../../global-styles.scss';
+
+.menubutton {
+    color: $color-pink-2;
+    background: none;
+    border: 0;
+    
+    &:hover {
+        cursor: pointer;
+    }
+}

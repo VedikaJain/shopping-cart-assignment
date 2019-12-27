@@ -53,16 +53,16 @@ class DropDown extends Component {
         <PinkButton ariaControls="categoriesList" ariaHaspopup="true"
           ariaLabel={(this.state.selectedItem && this.state.selectedItem !== {}
             && this.state.selectedItem.name && this.state.selectedItem.name.length > 0)
-            ? this.state.selectedItem.name
+            ? 'Selected Category ' + this.state.selectedItem.name
             : 'Select Category'}
           text={(this.state.selectedItem && this.state.selectedItem !== {}
             && this.state.selectedItem.name && this.state.selectedItem.name.length > 0)
             ? this.state.selectedItem.name
             : 'Select Category'}
-          handleClick={this.handleClick} rightContent='downArrowIcon' id='categoryMenuBtn' />
+          handleClick={this.handleClick} rightContent='downArrowIcon' />
         <Menu anchorEl={this.state.anchorEl} keepMounted open={Boolean(this.state.anchorEl)}
           onClose={this.handleClose} className='dropdown-menu'
-          id='categoriesList' aria-labelledby='categoryMenuBtn'>
+          id='categoriesList' aria-label='Category'>
           {(this.props.items.length > 0)
             ? this.props.items.map((item, i) =>
               <MenuItem key={i} className='dropdown-menu-item'

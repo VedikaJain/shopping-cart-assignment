@@ -1,0 +1,18 @@
+[
+    {
+      "url": "home",
+      "name": "Home"
+    },
+    {
+      "url": "plp",
+      "name": "Products"
+    },
+    {
+      "url": "login",
+      "name": "Sign In"
+    },
+    {
+      "url": "register",
+      "name": "Register"
+    }
+  ]
