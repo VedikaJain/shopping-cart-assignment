@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './Home.scss';
 import Showcase from '../Common/Templates/Showcase/Showcase';
@@ -7,14 +7,14 @@ import Hr from '../Common/Widgets/HorizontalRow/Hr';
 import { fetchData } from '../Common/Actions/index';
 
 export class Home extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       categories: [],
       banners: []
     }
   }
-  
+
   static getDerivedStateFromProps(props, state) {
     if (props.categories !== state.categories) {
       return {
@@ -38,13 +38,14 @@ export class Home extends Component {
     return (
       <main className='home' aria-label='Home'>
         <Carousel items={this.state.banners} />
-        <Hr type="hr-grey" />
-        {this.state.categories.map((category, i) =>
-          <div key={i}>
-            <Showcase cat={category} imgAlign={(i % 2) ? 'right' : 'left'} />
-            <Hr type="hr-grey" />
-          </div>
-        )}
+        <div className='home-container'>
+          {this.state.categories.map((category, i) =>
+            <div key={i}>
+              <Hr type="hr-grey" />
+              <Showcase cat={category} imgAlign={(i % 2) ? 'right' : 'left'} />
+            </div>
+          )}
+        </div>
       </main>
     );
   }

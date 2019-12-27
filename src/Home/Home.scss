@@ -1,3 +1,21 @@
+@import '../global-styles.scss';
+
 .home {
   width: 100%;
+
+  .home-container {
+    div {
+      padding-top: 1em;
+    }
+    
+    div:first-of-type .hr-grey {
+      margin-top: -3em;
+    }
+  }
+
+  @media only screen and (min-width: $screen-tablet)  {
+    .home-container div:first-of-type .hr-grey {
+      margin-top: 0;
+    }
+  }
 }
