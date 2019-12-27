@@ -24,13 +24,12 @@ function Carousel(props) {
 
   return (
     (maxSteps > 0) &&
-    <div className='carousel' role='region'
-      aria-roledescription='carousel' aria-label='Ongoing offers'>
+    <div className='carousel' role='region' aria-label='Ongoing offers'>
       <AutoPlaySwipeableViews axis='x' index={activeStep}
         onChangeIndex={handleStepChange} enableMouseEvents
         aria-live='off' id='carouselSlides'>
         {props.items.map((step, index) => (
-          <div key={step.id} role='group' aria-roledescription='slide'
+          <div key={step.id} role='group'
             aria-label={(index + 1)  + ' of ' + props.items.length + ' offers'}>
             {Math.abs(activeStep - index) <= 2 ? (
               <img className='carousel-slide-image' src={step.bannerImageUrl} alt={step.bannerImageAlt} />

@@ -67,7 +67,7 @@ function Header(props) {
           <NavLink activeClassName='header-link-active' to="/register">Register</NavLink>
         </nav>
         <CartButton cartItems={props.cartItems} handleClick={openCart} />
-        <Drawer anchor="right" open={isDrawerOpen} onClose={toggleDrawer(false)} className='drawer'
+        <Drawer anchor="right" open={isDrawerOpen} onClose={toggleDrawer(false)}
           PaperProps={{ className: 'drawer-paper' }}
           ModalProps={{
             className: 'drawer-modal',

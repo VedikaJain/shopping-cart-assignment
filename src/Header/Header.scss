@@ -86,20 +86,18 @@
   }
 }
 
-.drawer {
+.drawer-paper {
+  position: absolute;
+  width: 100%;
+  right: 0;
+}
+
+.drawer-modal {
+  position: absolute!important;
+}
+
+@media only screen and (min-width: $screen-tablet)  {
   .drawer-paper {
-    position: absolute;
-    width: 100%;
-    right: 0;
-  }
-
-  .drawer-modal {
-    position: absolute!important;
-  }
-
-  @media only screen and (min-width: $screen-tablet)  {
-    .drawer-paper {
-      width: 50%;
-    }
+    width: 50%;
   }
 }
