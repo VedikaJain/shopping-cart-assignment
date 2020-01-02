@@ -2,7 +2,7 @@ import React from 'react';
 import './Header.scss';
 import navigationLinks from './NavLinks.json';
 import CartButton from '../Common/Widgets/Buttons/CartButton/CartButton';
-import MenuButton from '../Common/Widgets/Buttons/MenuButton/MenuButton';
+import IconButton from '../Common/Widgets/Buttons/IconButton/IconButton';
 import Cart from '../Cart/Cart';
 import {
   NavLink, withRouter
@@ -49,7 +49,8 @@ function Header(props) {
     <header className='header'>
       <img alt='Sabka Bazaar Logo' className='header-logo'></img>
       <nav className='header-menu' aria-label='App'>
-        <MenuButton ariaControls="navigation-menu" ariaHaspopup="true" ariaLabel='App Navigation Menu'
+        <IconButton type='menu'
+          ariaControls="navigation-menu" ariaHaspopup="true" ariaLabel='App Navigation Menu'
           handleClick={handleMenuClick} />
         <Menu
           id="navigation-menu"
@@ -93,7 +94,7 @@ function Header(props) {
             container: document.getElementById('app-container')
           }}
           variant="temporary">
-          <Cart cartSubmit={toggleDrawer(false)} />
+          <Cart cartSubmit={toggleDrawer(false)} cartClose={toggleDrawer(false)}/>
         </Drawer>
       </div>
     </header>

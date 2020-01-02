@@ -3,6 +3,7 @@ import './Cart.scss';
 import { connect } from 'react-redux';
 import { putData, fetchData, deleteData } from '../Common/Actions';
 import PinkButton from '../Common/Widgets/Buttons/PinkButton/PinkButton';
+import IconButton from '../Common/Widgets/Buttons/IconButton/IconButton';
 import CartItem from './CartItem/CartItem';
 
 class Cart extends Component {
@@ -85,31 +86,35 @@ class Cart extends Component {
     return (
       <main className='cart' aria-label='My Cart' aria-describedby='totalitems'>
         <div className='cart-header'>
-          <span className='cart-header-mycart'>My Cart </span>
-          {totalItems > 0 && <span className='cart-header-totalitems' id='totalitems'>
-            ({totalItems} {(totalItems <= 1) ? 'item' : 'items'})
-          </span>}
+          <div>
+            <span className='cart-header-mycart'>My Cart </span>
+              {totalItems > 0 && <span className='cart-header-totalitems' id='totalitems'>
+                ({totalItems} {(totalItems <= 1) ? 'item' : 'items'})
+            </span>}
+          </div>
+          <IconButton type='close' ariaLabel='Close Cart'
+            handleClick={this.props.cartClose} />
         </div>
         <div className='cart-content'>
-        {(this.state.cart.length > 0)
-          ? <>
-            {this.state.cart.map((cartItem) =>
-              <CartItem cartItem={cartItem}
-                addQuantity={this.addQuantity}
-                reduceQuantity={this.reduceQuantity}
-                key={cartItem.id} />
-            )}
-            <figure className='cart-lowestprice'>
-              <img src={process.env.PUBLIC_URL + '/images/lowest-price.png'}
-                alt='Lowest price here' />
-              <figcaption className='cart-body-font-small'>You won't find it cheaper anywhere</figcaption>
-            </figure>
-          </>
-          : <div className='cart-body-empty'>
+          {(this.state.cart.length > 0)
+            ? <>
+              {this.state.cart.map((cartItem) =>
+                <CartItem cartItem={cartItem}
+                  addQuantity={this.addQuantity}
+                  reduceQuantity={this.reduceQuantity}
+                  key={cartItem.id} />
+              )}
+              <figure className='cart-lowestprice'>
+                <img src={process.env.PUBLIC_URL + '/images/lowest-price.png'}
+                  alt='Lowest price here' />
+                <figcaption className='cart-body-font-small'>You won't find it cheaper anywhere</figcaption>
+              </figure>
+            </>
+            : <div className='cart-body-empty'>
               <div className='cart-body-empty-noitems'>No items in your cart!</div>
               <div className='cart-body-font-small' >Your favourite items are just a click away</div>
             </div>
-        }
+          }
         </div>
         <div className={'cart-footer' + ((this.state.cart.length > 0) ? ' cart-footer-border' : '')}>
           {(this.state.cart.length > 0)
@@ -126,7 +131,7 @@ class Cart extends Component {
               : ''}
             ariaLabel={(this.state.cart.length > 0)
               ? 'Total cart value is Rs. ' + totalPrice + '. Proceed to Checkout.'
-              : 'Start Shopping'}/>
+              : 'Start Shopping'} />
         </div>
       </main>
     );
