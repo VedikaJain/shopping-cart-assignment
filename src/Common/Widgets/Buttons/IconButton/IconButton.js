@@ -1,10 +1,10 @@
 import React from 'react';
-import './MenuButton.scss';
+import './IconButton.scss';
 import MenuIcon from '@material-ui/icons/Menu';
 
-function MenuButton(props) {
+function IconButton(props) {
   return (
-    <button className='menubutton'
+    <button className='iconbutton'
       aria-label={props.ariaLabel} aria-controls={props.ariaControls} aria-haspopup={props.ariaHaspopup}
       onClick={props.handleClick}>
       <MenuIcon alt={props.text}/>
@@ -12,4 +12,4 @@ function MenuButton(props) {
   );
 }
 
-export default MenuButton;
+export default IconButton;
