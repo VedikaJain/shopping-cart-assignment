@@ -92,6 +92,8 @@
   position: absolute;
   width: 100%;
   right: 0;
+  height: -webkit-fill-available;
+  max-height: 47em;
 }
 
 .drawer-modal {
