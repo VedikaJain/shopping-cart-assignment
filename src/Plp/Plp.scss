@@ -6,12 +6,10 @@
   width: 100%;
 
   .leftpane {
-    display: none;
     width: 20%;
   }
 
   .dropdown {
-    display: block;
     width: 100%;
   }
 
@@ -21,14 +19,6 @@
 
   @media only screen and (min-width: $screen-tablet)  {
     flex-direction: row;
-    
-    .leftpane {
-      display: block;
-    }
-  
-    .dropdown {
-      display: none;
-    }
 
     .grid {
       width: 80%;

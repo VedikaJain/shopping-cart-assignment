@@ -15,7 +15,8 @@ export class Plp extends Component {
       products: [],
       cart: [],
       selectedCategory: {},
-      cartStatus: ''
+      cartStatus: '',
+      screenTablet: (window.matchMedia('(min-width: 481px)').matches) ? true : false
     }
   }
 
@@ -55,14 +56,22 @@ export class Plp extends Component {
     this.props.fetchData('products');
     this.props.fetchData('addToCart');
     this.props.fetchData('categories');
+    window.addEventListener('resize', this.handleResize);
   }
 
   componentWillUnmount() {
     this.selectCategory({});
+    window.removeEventListener('resize', this.handleResize);
   }
 
   selectCategory = (newCategory) => {
     this.props.saveData('selectedCategory', newCategory);
+  }
+
+  handleResize = () => {
+    this.setState({
+      screenTablet: (window.matchMedia('(min-width: 481px)').matches) ? true : false
+    });
   }
 
   addToCart = (productToAdd) => {
@@ -97,12 +106,14 @@ export class Plp extends Component {
   render() {
     return (
       <main className='product-listing-page' aria-label='Categories and Products'>
-        <DropDown items={this.state.categories}
-          selectItem={this.selectCategory}
-          alreadySelected={this.props.selectedCategory} />
-        <LeftPane items={this.state.categories}
-          selectItem={this.selectCategory}
-          alreadySelected={this.props.selectedCategory} />
+        {(this.state.screenTablet)
+          ? <LeftPane items={this.state.categories}
+            selectItem={this.selectCategory}
+            alreadySelected={this.props.selectedCategory} />
+          : <DropDown items={this.state.categories}
+            selectItem={this.selectCategory}
+            alreadySelected={this.props.selectedCategory} />
+        }
         <Grid addToCart={this.addToCart}
           category={(this.props.selectedCategory && this.props.selectedCategory.name)
             ? this.props.selectedCategory.name : 'All categories'}
