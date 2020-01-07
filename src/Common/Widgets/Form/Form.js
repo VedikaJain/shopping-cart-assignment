@@ -53,7 +53,9 @@ class Form extends Component {
                 required={formInput.validations.indexOf('required') !== -1}
                 onChange={(event) => this.handleChange(event, formInput)}
                 error={!formInput.valid && formInput.errorMessage !== ''}
-                helperText={formInput.errorMessage} />
+                helperText={formInput.errorMessage}
+                aria-label={formInput.label}
+                aria-describedby={formInput.errorMessage} />
             )}
             <PinkButton text={this.props.buttonText} ariaLabel={this.props.buttonText}
               handleClick={this.handleSubmit}
