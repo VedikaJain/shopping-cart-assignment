@@ -37,6 +37,11 @@ class LeftPane extends Component {
                 () => (this.state.selectedItem.id === item.id)
                   ? this.setSelectedItem({})
                   : this.setSelectedItem(item)
+              }
+              onKeyPress={
+                (event) => (event.keyCode === 13 && this.state.selectedItem.id === item.id)
+                  ? this.setSelectedItem({})
+                  : this.setSelectedItem(item)
               }>
               <p className={(this.state.selectedItem.id === item.id) ? 'leftpane-item-selected-text' : ''}>
                 {item.name}
