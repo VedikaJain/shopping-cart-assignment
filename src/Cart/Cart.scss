@@ -55,6 +55,11 @@
     text-align: center;
     background-color: $color-white-1;
     padding: 0.5em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 
     .cart-body-empty-noitems {
       font-weight: 700;
