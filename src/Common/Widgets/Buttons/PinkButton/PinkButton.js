@@ -4,7 +4,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 function PinkButton(props) {
   return (
-    <button disabled={props.disabled} 
+    <button disabled={props.disabled} type={props.type}
       aria-label={props.ariaLabel} aria-controls={props.ariaControls} aria-haspopup={props.ariaHaspopup}
       className={'pinkbutton '
         + (props.rightContent ? 'pinkbutton-content-side' : 'pinkbutton-content-center')}

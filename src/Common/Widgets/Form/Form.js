@@ -57,7 +57,7 @@ class Form extends Component {
                 aria-label={formInput.label}
                 aria-describedby={formInput.errorMessage} />
             )}
-            <PinkButton text={this.props.buttonText} ariaLabel={this.props.buttonText}
+            <PinkButton type='submit' text={this.props.buttonText} ariaLabel={this.props.buttonText}
               handleClick={this.handleSubmit}
               disabled={!(this.props.formInputs.reduce(
                 (isValid, formInput) => isValid && formInput.valid, true))}
