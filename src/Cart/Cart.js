@@ -6,6 +6,7 @@ import PinkButton from '../Common/Widgets/Buttons/PinkButton/PinkButton';
 import IconButton from '../Common/Widgets/Buttons/IconButton/IconButton';
 import CartItem from './CartItem/CartItem';
 import { toast } from 'react-toastify';
+import * as Constants from '../global-constants';
 
 class Cart extends Component {
   constructor(props) {
@@ -23,8 +24,9 @@ class Cart extends Component {
       };
     }
     if (props.cartStatus !== state.cartStatus) {
-      if (props.cartStatus !== 201 && props.cartStatus !== 200) {
-        toast.error('Error updating cart: ' + props.cartStatus, { toastId: 'euc-' + props.cartStatus});
+      if (props.cartStatus !== Constants.RespCodeSuccess && props.cartStatus !== Constants.RespCodeCreated) {
+        toast.error(Constants.ErrorUpdatingCart + props.cartStatus,
+          { toastId: Constants.ErrorCodeUpdatingCart + props.cartStatus });
       }
       return {
         cartStatus: props.cartStatus
@@ -34,7 +36,7 @@ class Cart extends Component {
   }
 
   componentDidMount() {
-    this.props.fetchData('addToCart');
+    this.props.fetchData(Constants.UrlCartApi);
   }
 
   addQuantity = (productToAdd) => {
@@ -47,10 +49,11 @@ class Cart extends Component {
         stockLeft: productToAdd.stockLeft - 1,
         quantity: productToAdd.quantity + 1
       };
-      this.props.putData('addToCart', updatedCartItem);
-      this.props.fetchData('addToCart');
+      this.props.putData(Constants.UrlCartApi, updatedCartItem);
+      this.props.fetchData(Constants.UrlCartApi);
     } else {
-      toast.info( productToAdd.name + ' is out of stock!', { toastId: 'oos-' + productToAdd.id});
+      toast.info(productToAdd.name + Constants.InfoOutOfStock,
+        { toastId: Constants.InfoCodeOutOfStock + productToAdd.id });
     }
   }
 
@@ -64,22 +67,22 @@ class Cart extends Component {
         stockLeft: productToReduce.stockLeft + 1,
         quantity: productToReduce.quantity - 1
       };
-      this.props.putData('addToCart', updatedCartItem);
-      this.props.fetchData('addToCart');
+      this.props.putData(Constants.UrlCartApi, updatedCartItem);
+      this.props.fetchData(Constants.UrlCartApi);
     } else {
-      this.props.deleteData('addToCart', productToReduce.id);
-      this.props.fetchData('addToCart');
+      this.props.deleteData(Constants.UrlCartApi, productToReduce.id);
+      this.props.fetchData(Constants.UrlCartApi);
     }
   }
 
   cartSubmit = (event) => {
     if (this.state.cart.length > 0) {
-      toast.success('Thank you for shopping with us!', { toastId: 'tfs'});
+      toast.success(Constants.SuccessShopping, { toastId: Constants.SuccessCodeShopping });
     }
-    if (window.matchMedia('(min-width: 1025px)').matches) { // $screen-laptop
+    if (window.matchMedia('(' + Constants.MinWidth + Constants.ScreenLaptop + ')').matches) {
       this.props.cartSubmit(event);
     } else {
-      this.props.history.push('/plp');
+      this.props.history.push('/' + Constants.UrlPlp);
     }
   }
 
@@ -88,15 +91,15 @@ class Cart extends Component {
     const totalPrice = this.state.cart.reduce(
       (totamount, cartItem) => (cartItem.price * cartItem.quantity) + totamount, 0);
     return (
-      <main className='cart' aria-label='My Cart' aria-describedby='totalitems'>
+      <main className='cart' aria-label={Constants.MyCart} aria-describedby='totalitems'>
         <div className='cart-header'>
           <div>
-            <span className='cart-header-mycart'>My Cart </span>
-              {totalItems > 0 && <span className='cart-header-totalitems' id='totalitems'>
-                ({totalItems} {(totalItems <= 1) ? 'item' : 'items'})
+            <span className='cart-header-mycart'>{Constants.MyCart} </span>
+            {totalItems > 0 && <span className='cart-header-totalitems' id='totalitems'>
+              ({totalItems} {(totalItems <= 1) ? Constants.Item : (Constants.Item + 's')})
             </span>}
           </div>
-          <IconButton type='close' ariaLabel='Close Cart'
+          <IconButton type={Constants.IconClose} ariaLabel={Constants.CloseCart}
             handleClick={this.props.cartClose} />
         </div>
         <div className='cart-content'>
@@ -109,33 +112,33 @@ class Cart extends Component {
                   key={cartItem.id} />
               )}
               <figure className='cart-lowestprice'>
-                <img src={process.env.PUBLIC_URL + '/images/lowest-price.png'}
-                  alt='Lowest price here' />
-                <figcaption className='cart-body-font-small'>You won't find it cheaper anywhere</figcaption>
+                <img src={Constants.UrlPublic + Constants.ImgLowestPrice}
+                  alt={Constants.LowestPriceGuaranteed} />
+                <figcaption className='cart-body-font-small'>{Constants.LowestPrice}</figcaption>
               </figure>
             </>
             : <div className='cart-body-empty'>
-              <div className='cart-body-empty-noitems'>No items in your cart!</div>
-              <div className='cart-body-font-small' >Your favourite items are just a click away</div>
+              <div className='cart-body-empty-noitems'>{Constants.CartEmpty}</div>
+              <div className='cart-body-font-small' >{Constants.CartEmptyFavItems}</div>
             </div>
           }
         </div>
         <div className={'cart-footer' + ((this.state.cart.length > 0) ? ' cart-footer-border' : '')}>
           {(this.state.cart.length > 0)
             && <div className='cart-footer-promocode cart-body-font-small'>
-              Promo code can be applied on payment page
+              {Constants.PromoCode}
             </div>
           }
           <PinkButton handleClick={this.cartSubmit}
             text={(this.state.cart.length > 0)
-              ? 'Proceed to Checkout'
-              : 'Start Shopping'}
+              ? Constants.Checkout
+              : Constants.StartShopping}
             rightContent={(this.state.cart.length > 0)
-              ? 'Rs.' + totalPrice + ' >'
+              ? Constants.INR + totalPrice + ' ' + Constants.SignRightArrow
               : ''}
             ariaLabel={(this.state.cart.length > 0)
-              ? 'Total cart value is Rs. ' + totalPrice + '. Proceed to Checkout.'
-              : 'Start Shopping'} />
+              ? Constants.TotalCartValue + Constants.INR + totalPrice + '. ' + Constants.Checkout + '.'
+              : Constants.StartShopping} />
         </div>
       </main>
     );

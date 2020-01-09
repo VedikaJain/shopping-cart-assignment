@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import * as Constants from '../../global-constants';
 
 import {
     SET_CATEGORIES, SET_BANNERS, SET_PRODUCTS, SET_CART,
@@ -35,106 +36,87 @@ export function setSelectedCategory(selectedCategory) {
     return { type: SET_SELECTED_CATEGORY, payload: selectedCategory };
 }
 
-export const fetchData = (url) => {
-    const config = {
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            "Access-Control-Allow-Origin": 'http://localhost:3000/',
-            "cross-origin": true,
-            "Access-Control-Allow-Methods": 'options, get',
-        }
+const config = {
+    headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': Constants.ClientUrl,
+        'cross-origin': true,
     }
+}
+
+export const fetchData = (url) => {
+    config.headers['Access-Control-Allow-Methods'] = 'options, get';
     return async (dispatch) => {
         try {
-            const response = await axios.get(`http://localhost:5000/${url}`, config);
+            const response = await axios.get(Constants.ServerUrl + url, config);
             switch (url) {
-                case 'categories': dispatch(setCategories(response.data)); break;
-                case 'banners': dispatch(setBanners(response.data)); break;
-                case 'products': dispatch(setProducts(response.data)); break;
-                case 'addToCart': dispatch(setCart(response.data)); break;
+                case Constants.UrlCategoriesApi: dispatch(setCategories(response.data)); break;
+                case Constants.UrlBannersApi: dispatch(setBanners(response.data)); break;
+                case Constants.UrlProductsApi: dispatch(setProducts(response.data)); break;
+                case Constants.UrlCartApi: dispatch(setCart(response.data)); break;
                 default: break;
             }
         }
         catch (error) {
-            toast.error('Error while retrieving data: ' + error, { toastId: 'efd' });
+            toast.error(Constants.ErrorRetrievingData + error,
+                { toastId: Constants.ErrorCodeRetrievingData });
             throw (error);
         }
     };
 };
 
 export const postData = (url, data) => {
-    const config = {
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            "Access-Control-Allow-Origin": 'http://localhost:3000/',
-            "cross-origin": true,
-            "Access-Control-Allow-Methods": 'options, post',
-        }
-    }
+    config.headers['Access-Control-Allow-Methods'] = 'options, post';
     return async (dispatch) => {
         try {
-            const response = await axios.post(`http://localhost:5000/${url}`, data, config);
+            const response = await axios.post(Constants.ServerUrl + url, data, config);
             switch (url) {
-                case 'login': dispatch(setLoginStatus(response.status)); break;
-                case 'register': dispatch(setRegisterStatus(response.status)); break;
-                case 'addToCart': dispatch(setCartStatus(response.status)); break;
+                case Constants.UrlLoginApi: dispatch(setLoginStatus(response.status)); break;
+                case Constants.UrlRegisterApi: dispatch(setRegisterStatus(response.status)); break;
+                case Constants.UrlCartApi: dispatch(setCartStatus(response.status)); break;
                 default: break;
             };
         }
         catch (error) {
-            toast.error('Error while adding data: ' + error, { toastId: 'ead' });
+            toast.error(Constants.ErrorAddingData + error,
+                { toastId: Constants.ErrorCodeAddingData });
             throw (error);
         }
     };
 };
 
 export const putData = (url, data) => {
-    const config = {
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            "Access-Control-Allow-Origin": 'http://localhost:3000/',
-            "cross-origin": true,
-            "Access-Control-Allow-Methods": 'options, put',
-        }
-    }
+    config.headers['Access-Control-Allow-Methods'] = 'options, put';
     return async (dispatch) => {
         try {
-            const response = await axios.put(`http://localhost:5000/${url}/${data.id}`, data, config);
+            const response = await axios.put(Constants.ServerUrl + url + '/' + data.id, data, config);
             switch (url) {
-                case 'addToCart': dispatch(setCartStatus(response.status)); break;
+                case Constants.UrlCartApi: dispatch(setCartStatus(response.status)); break;
                 default: break;
             };
         }
         catch (error) {
-            toast.error('Error while updating data: ' + error, { toastId: 'eud' });
+            toast.error(Constants.ErrorUpdatingData + error,
+                { toastId: Constants.ErrorCodeUpdatingData });
             throw (error);
         }
     };
 };
 
 export const deleteData = (url, id) => {
-    const config = {
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            "Access-Control-Allow-Origin": 'http://localhost:3000/',
-            "cross-origin": true,
-            "Access-Control-Allow-Methods": 'options, delete',
-        }
-    }
+    config.headers['Access-Control-Allow-Methods'] = 'options, delete';
     return async (dispatch) => {
         try {
-            const response = await axios.delete(`http://localhost:5000/${url}/${id}`, config);
+            const response = await axios.delete(Constants.ServerUrl + url + '/' + id, config);
             switch (url) {
-                case 'addToCart': dispatch(setCartStatus(response.status)); break;
+                case Constants.UrlCartApi: dispatch(setCartStatus(response.status)); break;
                 default: break;
             };
         }
         catch (error) {
-            toast.error('Error while deleting data: ' + error, { toastId: 'edd' });
+            toast.error(Constants.ErrorDeletingData + error,
+                { toastId: Constants.ErrorCodeDeletingData });
             throw (error);
         }
     };
@@ -143,8 +125,8 @@ export const deleteData = (url, id) => {
 export const resetPostStatus = (url) => {
     return async (dispatch) => {
         switch (url) {
-            case 'login': dispatch(setLoginStatus('')); break;
-            case 'register': dispatch(setRegisterStatus('')); break;
+            case Constants.UrlLoginApi: dispatch(setLoginStatus('')); break;
+            case Constants.UrlRegisterApi: dispatch(setRegisterStatus('')); break;
             default: break;
         };
     }
@@ -153,7 +135,7 @@ export const resetPostStatus = (url) => {
 export const saveData = (item, value) => {
     return async (dispatch) => {
         switch (item) {
-            case 'selectedCategory': dispatch(setSelectedCategory(value)); break;
+            case Constants.UrlSelectedCategory: dispatch(setSelectedCategory(value)); break;
             default: break;
         }
     }
