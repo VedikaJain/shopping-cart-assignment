@@ -49,25 +49,9 @@
     padding: 0.5em;
   }
 
-  .header-menu {
-    display: block;
-  }
-
-  .header-links {
-    display: none;
-  }
-
   @media only screen and (min-width: $screen-tablet)  {
     nav {
       padding: 0 7%;
-    }
-    
-    .header-menu {
-      display: none;
-    }
-  
-    .header-links {
-      display: block;
     }
 
     .header-logo {

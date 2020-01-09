@@ -15,6 +15,18 @@ function Header(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [isDrawerOpen, setDrawer] = React.useState(false);
   const [selectedMenuitem, setSelectedMenuitem] = React.useState('home');
+  const [screenTablet, setScreenTablet] = React.useState(
+    (window.matchMedia('(min-width: 481px)').matches) ? true : false);
+
+  React.useEffect(() => {
+    const handleResize = () => setScreenTablet(
+      (window.matchMedia('(min-width: 481px)').matches) ? true : false);
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  });
 
   const handleMenuClick = event => {
     setAnchorEl(event.currentTarget);
@@ -48,7 +60,7 @@ function Header(props) {
   return (
     <header className='header'>
       <img alt='Sabka Bazaar Logo' className='header-logo'></img>
-      <nav className='header-menu' aria-label='App'>
+      {!screenTablet && <nav aria-label='App'>
         <IconButton type='menu'
           ariaControls="navigation-menu" ariaHaspopup="true" ariaLabel='App Navigation Menu'
           handleClick={handleMenuClick} />
@@ -70,22 +82,22 @@ function Header(props) {
             </MenuItem>
           )}
         </Menu>
-      </nav>
-      <nav className='header-links' aria-label='App'>
+      </nav>}
+      {screenTablet && <nav className='header-links' aria-label='App'>
         {navigationLinks.slice(0, 2).map((navlink, index) =>
           <NavLink activeClassName='header-link-active' to={'/' + navlink.url}
             aria-label={navlink.name} key={index}
             onClick={() => handleMenuItemClick(navlink.url)}>{navlink.name}</NavLink>
         )}
-      </nav>
+      </nav>}
       <div className='header-rightpane'>
-        <nav className='header-links' aria-label='App'>
+        {screenTablet && <nav className='header-links' aria-label='App'>
           {navigationLinks.slice(2).map((navlink, index) =>
             <NavLink activeClassName='header-link-active' to={'/' + navlink.url}
               aria-label={navlink.name} key={index}
               onClick={() => handleMenuItemClick(navlink.url)}>{navlink.name}</NavLink>
           )}
-        </nav>
+        </nav>}
         <CartButton cartItems={props.cartItems} handleClick={openCart} />
         <Drawer anchor="right" open={isDrawerOpen} onClose={toggleDrawer(false)}
           PaperProps={{ className: 'drawer-paper' }}
@@ -94,7 +106,7 @@ function Header(props) {
             container: document.getElementById('app-container')
           }}
           variant="temporary">
-          <Cart cartSubmit={toggleDrawer(false)} cartClose={toggleDrawer(false)}/>
+          <Cart cartSubmit={toggleDrawer(false)} cartClose={toggleDrawer(false)} />
         </Drawer>
       </div>
     </header>
