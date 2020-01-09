@@ -7,6 +7,10 @@ import {
 } from './types';
 
 export function setCategories(cat) {
+    if (cat && cat.length > 0) {
+        cat = cat.filter((category) => category.enabled)
+        cat.sort((category1, category2) => category1.order - category2.order);
+    }
     return { type: SET_CATEGORIES, payload: cat };
 }
 export function setBanners(ban) {
@@ -53,7 +57,7 @@ export const fetchData = (url) => {
             }
         }
         catch (error) {
-            toast.error('Error while retrieving data: ' + error, { toastId: 'efd'});
+            toast.error('Error while retrieving data: ' + error, { toastId: 'efd' });
             throw (error);
         }
     };
@@ -80,7 +84,7 @@ export const postData = (url, data) => {
             };
         }
         catch (error) {
-            toast.error('Error while adding data: ' + error, { toastId: 'ead'});
+            toast.error('Error while adding data: ' + error, { toastId: 'ead' });
             throw (error);
         }
     };
@@ -105,7 +109,7 @@ export const putData = (url, data) => {
             };
         }
         catch (error) {
-            toast.error('Error while updating data: ' + error, { toastId: 'eud'});
+            toast.error('Error while updating data: ' + error, { toastId: 'eud' });
             throw (error);
         }
     };
@@ -130,7 +134,7 @@ export const deleteData = (url, id) => {
             };
         }
         catch (error) {
-            toast.error('Error while deleting data: ' + error, { toastId: 'edd'});
+            toast.error('Error while deleting data: ' + error, { toastId: 'edd' });
             throw (error);
         }
     };
