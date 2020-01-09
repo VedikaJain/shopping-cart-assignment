@@ -68,9 +68,7 @@ class DropDown extends Component {
               <MenuItem key={i} className='dropdown-menu-item'
                 selected={this.state.selectedItem && this.state.selectedItem.id === item.id}
                 onClick={() => this.handleMenuItemClick(item)}>
-                <p id={(this.state.selectedItem && this.state.selectedItem.id === item.id)
-                  ? 'selectedCategory' : ''}
-                  className={'dropdown-menuitem-text '
+                <p className={'dropdown-menuitem-text '
                     + ((this.state.selectedItem && this.state.selectedItem.id === item.id)
                       ? 'dropdown-menuitem-text-selected' : '')}>
                   {item.name}

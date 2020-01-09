@@ -2,25 +2,8 @@
 
 .leftpane {
   background-color: $color-grey-1;
-
-  p {
-    color: $color-grey-6;
-    font-weight: 600;
-    text-align: left;
-    padding: 1em;
-    margin: 0;
-  
-    &.leftpane-item-selected-text {
-      color: $color-pink-2;
-      border-right: 0.2em solid $color-pink-2;
-    }
-  }
   
   .leftpane-empty {
     margin: 1em;
-  }
-
-  .leftpane-item-selected {
-    background-color: $color-grey-2;
   }
 }
