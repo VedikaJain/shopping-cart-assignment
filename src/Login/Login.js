@@ -4,6 +4,7 @@ import formInputs from './Login.json';
 import PageView from '../Common/Templates/PageView/PageView';
 import { connect } from 'react-redux';
 import { postData, resetPostStatus } from '../Common/Actions';
+import { toast } from 'react-toastify';
 
 class Login extends Component {
   constructor(props) {
@@ -20,9 +21,10 @@ class Login extends Component {
   static getDerivedStateFromProps = (props, state) => {
     if(props.loginStatus !== state.loginStatus){
       if(props.loginStatus === 201) {
+        toast.success('Successfully logged in!', { toastId: 'sl'});
         props.history.push('/home');
       } else {
-        console.log('Error during Login: '+ props.loginStatus);
+        toast.error('Error during Login: ' + props.loginStatus, { toastId: 'edl-' + props.loginStatus});
       }
       return {
         loginStatus: props.loginStatus

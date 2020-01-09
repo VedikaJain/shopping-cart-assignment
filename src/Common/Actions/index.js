@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 import {
     SET_CATEGORIES, SET_BANNERS, SET_PRODUCTS, SET_CART,
@@ -52,7 +53,7 @@ export const fetchData = (url) => {
             }
         }
         catch (error) {
-            console.log("Error: " + error);
+            toast.error('Error while retrieving data: ' + error, { toastId: 'efd'});
             throw (error);
         }
     };
@@ -79,7 +80,7 @@ export const postData = (url, data) => {
             };
         }
         catch (error) {
-            console.log("Error: " + error);
+            toast.error('Error while adding data: ' + error, { toastId: 'ead'});
             throw (error);
         }
     };
@@ -104,7 +105,7 @@ export const putData = (url, data) => {
             };
         }
         catch (error) {
-            console.log("Error: " + error);
+            toast.error('Error while updating data: ' + error, { toastId: 'eud'});
             throw (error);
         }
     };
@@ -129,7 +130,7 @@ export const deleteData = (url, id) => {
             };
         }
         catch (error) {
-            console.log("Error: " + error);
+            toast.error('Error while deleting data: ' + error, { toastId: 'edd'});
             throw (error);
         }
     };

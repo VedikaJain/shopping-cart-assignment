@@ -4,6 +4,7 @@ import formInputs from './Register.json';
 import PageView from '../Common/Templates/PageView/PageView';
 import { connect } from 'react-redux';
 import { postData, resetPostStatus } from '../Common/Actions/index';
+import { toast } from 'react-toastify';
 
 class Register extends Component {
   constructor(props) {
@@ -20,9 +21,10 @@ class Register extends Component {
   static getDerivedStateFromProps(props, state) {
     if (props.registerStatus !== state.registerStatus) {
       if(props.registerStatus === 201) {
+        toast.success('Registered user successfully!', { toastId: 'sr'});
         props.history.push(`/home`);        
       } else {
-        console.log('Error during Signup: ' + props.registerStatus);
+        toast.error('Error during Signup: ' + props.registerStatus, { toastId: 'edr-' + props.registerStatus});
       }
       return {
         registerStatus: props.registerStatus

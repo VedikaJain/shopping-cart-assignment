@@ -5,6 +5,7 @@ import LeftPane from '../Common/Templates/LeftPane/LeftPane';
 import Grid from '../Common/Templates/Grid/Grid';
 import { connect } from 'react-redux';
 import { fetchData, saveData, putData, postData } from '../Common/Actions/index';
+import { toast } from 'react-toastify';
 
 export class Plp extends Component {
 
@@ -38,7 +39,7 @@ export class Plp extends Component {
     }
     if (props.cartStatus !== state.cartStatus) {
       if (props.cartStatus !== 201 && props.cartStatus !== 200) {
-        console.log('Error updating cart: ' + props.cartStatus);
+        toast.error('Error updating cart: ' + props.cartStatus, { toastId: 'euc-' + props.cartStatus});
       }
       return {
         cartStatus: props.cartStatus
@@ -75,7 +76,7 @@ export class Plp extends Component {
   }
 
   addToCart = (productToAdd) => {
-    const index = this.state.cart.findIndex((cartItem) => productToAdd.id === cartItem.id);
+    const index = this.props.cart.findIndex((cartItem) => productToAdd.id === cartItem.id);
     const newCartItem = {
       id: productToAdd.id,
       name: productToAdd.name,
@@ -89,16 +90,16 @@ export class Plp extends Component {
         this.props.postData('addToCart', newCartItem);
         this.props.fetchData('addToCart');
       } else {
-        console.log('Product is out of stock!');
+        toast.info( productToAdd.name + ' is out of stock!', { toastId: 'oos-' + productToAdd.id});
       }
     } else {
-      if (this.state.cart[index].stockLeft > 0) {
-        newCartItem.stockLeft = this.state.cart[index].stockLeft - 1;
-        newCartItem.quantity = this.state.cart[index].quantity + 1;
+      if (this.props.cart[index].stockLeft > 0) {
+        newCartItem.stockLeft = this.props.cart[index].stockLeft - 1;
+        newCartItem.quantity = this.props.cart[index].quantity + 1;
         this.props.putData('addToCart', newCartItem);
         this.props.fetchData('addToCart');
       } else {
-        console.log('Product is out of stock!');
+        toast.info( productToAdd.name + ' is out of stock!', { toastId: 'oos-' + productToAdd.id});
       }
     }
   }

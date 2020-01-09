@@ -5,6 +5,7 @@ import { putData, fetchData, deleteData } from '../Common/Actions';
 import PinkButton from '../Common/Widgets/Buttons/PinkButton/PinkButton';
 import IconButton from '../Common/Widgets/Buttons/IconButton/IconButton';
 import CartItem from './CartItem/CartItem';
+import { toast } from 'react-toastify';
 
 class Cart extends Component {
   constructor(props) {
@@ -23,7 +24,7 @@ class Cart extends Component {
     }
     if (props.cartStatus !== state.cartStatus) {
       if (props.cartStatus !== 201 && props.cartStatus !== 200) {
-        console.log('Error updating cart: ' + props.cartStatus);
+        toast.error('Error updating cart: ' + props.cartStatus, { toastId: 'euc-' + props.cartStatus});
       }
       return {
         cartStatus: props.cartStatus
@@ -49,7 +50,7 @@ class Cart extends Component {
       this.props.putData('addToCart', updatedCartItem);
       this.props.fetchData('addToCart');
     } else {
-      console.log('Product is out of stock!');
+      toast.info( productToAdd.name + ' is out of stock!', { toastId: 'oos-' + productToAdd.id});
     }
   }
 
@@ -72,6 +73,9 @@ class Cart extends Component {
   }
 
   cartSubmit = (event) => {
+    if (this.state.cart.length > 0) {
+      toast.success('Thank you for shopping with us!', { toastId: 'tfs'});
+    }
     if (window.matchMedia('(min-width: 1025px)').matches) { // $screen-laptop
       this.props.cartSubmit(event);
     } else {
@@ -140,7 +144,8 @@ class Cart extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    cart: state.setData.cart
+    cart: state.setData.cart,
+    cartStatus: state.setData.cartStatus
   };
 }
 

@@ -14,6 +14,8 @@ import Register from './Register/Register';
 import Cart from './Cart/Cart';
 import { connect } from 'react-redux';
 import { fetchData } from './Common/Actions/index';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
 
 class App extends Component {
   constructor(props) {
@@ -44,6 +46,7 @@ class App extends Component {
             (totalItems, cartItem) => cartItem.quantity + totalItems, 0)
           } />
           <Hr type="hr-blue" />
+          <ToastContainer position={toast.POSITION.TOP_CENTER} autoClose={3000}/>
           <div id='app-container' className='app-container'>
             <Switch>
               <Route exact path="/" component={Home} />
