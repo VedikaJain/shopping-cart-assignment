@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Register.scss';
 import formInputs from './Register.json';
-import PageView from '../Common/Templates/PageView/PageView';
+import PageView from '../Common/Molecules/PageView/PageView';
 import { connect } from 'react-redux';
 import { postData, resetPostStatus } from '../Common/Actions/index';
 import { toast } from 'react-toastify';

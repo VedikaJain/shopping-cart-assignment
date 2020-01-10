@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './Plp.scss';
 import DropDown from '../Common/Atoms/DropDown/DropDown';
-import LeftPane from '../Common/Templates/LeftPane/LeftPane';
-import Grid from '../Common/Templates/Grid/Grid';
+import LeftPane from '../Common/Molecules/LeftPane/LeftPane';
+import Grid from '../Common/Molecules/Grid/Grid';
 import { connect } from 'react-redux';
 import { fetchData, saveData, putData, postData } from '../Common/Actions/index';
 import { toast } from 'react-toastify';

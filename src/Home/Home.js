@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './Home.scss';
-import Showcase from '../Common/Templates/Showcase/Showcase';
+import Showcase from '../Common/Molecules/Showcase/Showcase';
 import Carousel from '../Common/Atoms/Carousel/Carousel';
 import Hr from '../Common/Atoms/HorizontalRow/Hr';
 import { fetchData } from '../Common/Actions/index';
