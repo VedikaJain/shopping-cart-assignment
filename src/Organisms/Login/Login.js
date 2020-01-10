@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './Login.scss';
 import formInputs from './Login.json';
-import PageView from '../../Common/Molecules/PageView/PageView';
+import PageView from '../../Molecules/PageView/PageView';
 import { connect } from 'react-redux';
-import { postData, resetPostStatus } from '../../Common/Actions';
+import { postData, resetPostStatus } from '../../Actions';
 import { toast } from 'react-toastify';
 
 class Login extends Component {

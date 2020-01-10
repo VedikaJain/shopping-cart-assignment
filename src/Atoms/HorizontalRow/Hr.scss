@@ -1,0 +1,29 @@
+@import '../../global-styles.scss';
+
+hr {
+    &.hr-blue {
+        width: 100%;
+        border: .1em solid $color-grey-1;
+        margin: 0;
+    }
+    
+    &.hr-grey-solid {
+        width: 98%;
+        border: .08em solid $color-grey-2;
+        margin: 0;
+    }
+    
+    &.hr-grey {
+        border: 0;
+        height: 0.2em; 
+        background: radial-gradient(at 50% 0, $color-grey-4, transparent 55%); 
+        background-size: 100% 1em; 
+        background-repeat: no-repeat;
+    }
+    
+    &.hr-dotted {
+        width: 100%;
+        border: 0;
+        border-bottom: .1em dotted $color-grey-1;
+    }
+}

@@ -1,7 +1,7 @@
 import {
     SET_CATEGORIES, SET_BANNERS, SET_PRODUCTS, SET_CART,
     SET_REGISTER_STATUS, SET_LOGIN_STATUS, SET_CART_STATUS, SET_SELECTED_CATEGORY
-} from '../Common/Actions/types';
+} from '../Actions/types';
 import { combineReducers } from 'redux';
 
 const initialState = {

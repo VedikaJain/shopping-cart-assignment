@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './Cart.scss';
 import { connect } from 'react-redux';
-import { putData, fetchData, deleteData } from '../../Common/Actions';
-import PinkButton from '../../Common/Atoms/Buttons/PinkButton/PinkButton';
-import IconButton from '../../Common/Atoms/Buttons/IconButton/IconButton';
+import { putData, fetchData, deleteData } from '../../Actions';
+import PinkButton from '../../Atoms/Buttons/PinkButton/PinkButton';
+import IconButton from '../../Atoms/Buttons/IconButton/IconButton';
 import CartItem from './CartItem/CartItem';
 import { toast } from 'react-toastify';
 import * as Constants from '../../global-constants';

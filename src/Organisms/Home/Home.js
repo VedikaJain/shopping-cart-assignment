@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './Home.scss';
-import Showcase from '../../Common/Molecules/Showcase/Showcase';
-import Carousel from '../../Common/Atoms/Carousel/Carousel';
-import Hr from '../../Common/Atoms/HorizontalRow/Hr';
-import { fetchData } from '../../Common/Actions/index';
+import Showcase from '../../Molecules/Showcase/Showcase';
+import Carousel from '../../Atoms/Carousel/Carousel';
+import Hr from '../../Atoms/HorizontalRow/Hr';
+import { fetchData } from '../../Actions/index';
 
 export class Home extends Component {
   constructor(props) {

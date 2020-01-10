@@ -1,0 +1,39 @@
+@import '../../global-styles.scss';
+
+.carousel {
+  margin-top: 1em;
+  position: relative;
+
+  .carousel-slide-image {
+    width: 100%;
+  }
+
+  .carousel-buttons {
+    display: none;
+    margin-top: -14%;
+    padding-bottom: 8%;
+    position: sticky;
+  }
+
+  .dots {
+    position: sticky;
+    margin-top: 2em;
+  }
+
+  @media only screen and (min-width: $screen-tablet)  {
+    .carousel-buttons {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .dots {
+      margin-top: 0;
+    }
+  }
+  
+  @media only screen and (min-width: $screen-laptop)  {
+    .carousel-buttons {
+      padding-bottom: 10%;
+    }
+  }
+}

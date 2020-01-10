@@ -1,0 +1,29 @@
+@import '../../../global-styles.scss';
+
+.menuitembutton {
+    background: none;
+    border: 0;
+    width: 100%;
+    padding: 0;
+    
+    &:hover {
+        cursor: pointer;
+    }
+
+    p {
+        color: $color-grey-6;
+        font-weight: 600;
+        text-align: left;
+        padding: 1em;
+        margin: 0;
+
+        &.menuitembutton-selected-text {
+            color: $color-pink-2;
+            border-right: 0.2em solid $color-pink-2;
+        }
+    }
+
+    &.menuitembutton-selected {
+        background-color: $color-grey-2;
+    }
+}

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.scss';
 import Header from './Organisms/Header/Header';
-import Hr from './Common/Atoms/HorizontalRow/Hr';
+import Hr from './Atoms/HorizontalRow/Hr';
 import {
   BrowserRouter,
   Switch, Route
@@ -13,7 +13,7 @@ import Footer from './Organisms/Footer/Footer';
 import Register from './Organisms/Register/Register';
 import Cart from './Organisms/Cart/Cart';
 import { connect } from 'react-redux';
-import { fetchData } from './Common/Actions/index';
+import { fetchData } from './Actions/index';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 
