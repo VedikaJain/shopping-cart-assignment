@@ -40,7 +40,7 @@ const config = {
     headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': Constants.ClientUrl,
+        'Access-Control-Allow-Origin': Constants.UrlClient,
         'cross-origin': true,
     }
 }
@@ -49,7 +49,7 @@ export const fetchData = (url) => {
     config.headers['Access-Control-Allow-Methods'] = 'options, get';
     return async (dispatch) => {
         try {
-            const response = await axios.get(Constants.ServerUrl + url, config);
+            const response = await axios.get(Constants.UrlServer + url, config);
             switch (url) {
                 case Constants.UrlCategoriesApi: dispatch(setCategories(response.data)); break;
                 case Constants.UrlBannersApi: dispatch(setBanners(response.data)); break;
@@ -70,7 +70,7 @@ export const postData = (url, data) => {
     config.headers['Access-Control-Allow-Methods'] = 'options, post';
     return async (dispatch) => {
         try {
-            const response = await axios.post(Constants.ServerUrl + url, data, config);
+            const response = await axios.post(Constants.UrlServer + url, data, config);
             switch (url) {
                 case Constants.UrlLoginApi: dispatch(setLoginStatus(response.status)); break;
                 case Constants.UrlRegisterApi: dispatch(setRegisterStatus(response.status)); break;
@@ -90,7 +90,7 @@ export const putData = (url, data) => {
     config.headers['Access-Control-Allow-Methods'] = 'options, put';
     return async (dispatch) => {
         try {
-            const response = await axios.put(Constants.ServerUrl + url + '/' + data.id, data, config);
+            const response = await axios.put(Constants.UrlServer + url + '/' + data.id, data, config);
             switch (url) {
                 case Constants.UrlCartApi: dispatch(setCartStatus(response.status)); break;
                 default: break;
@@ -108,7 +108,7 @@ export const deleteData = (url, id) => {
     config.headers['Access-Control-Allow-Methods'] = 'options, delete';
     return async (dispatch) => {
         try {
-            const response = await axios.delete(Constants.ServerUrl + url + '/' + id, config);
+            const response = await axios.delete(Constants.UrlServer + url + '/' + id, config);
             switch (url) {
                 case Constants.UrlCartApi: dispatch(setCartStatus(response.status)); break;
                 default: break;

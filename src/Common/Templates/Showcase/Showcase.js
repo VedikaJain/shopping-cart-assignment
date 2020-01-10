@@ -4,30 +4,31 @@ import PinkButton from '../../Widgets/Buttons/PinkButton/PinkButton';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { saveData } from '../../Actions';
+import * as Constants from '../../../global-constants';
 
 function Showcase(props) {
     const cat = props.cat;
 
     const selectCategory = () => {
-      props.saveData('selectedCategory', props.cat);
-      props.history.push(`/plp`);
+      props.saveData(Constants.UrlSelectedCategory, props.cat);
+      props.history.push('/' + Constants.UrlPlp);
     }
 
     return (
       <figure className='showcase'
         aria-label={cat.name} aria-describedby={cat.description}>
         {props.imgAlign === 'left' &&
-          <img src={process.env.PUBLIC_URL + cat.imageUrl} alt={cat.description} className='showcase-image' />}
+          <img src={Constants.UrlPublic + cat.imageUrl} alt={cat.description} className='showcase-image' />}
         <div className='showcase-content'>
           <div className='showcase-content-heading'>{cat.name}</div>
           <figcaption className='showcase-content-description'>
             {cat.description}
           </figcaption>
-          <PinkButton text={'Explore ' + cat.key} handleClick={selectCategory} 
-            ariaLabel={'Explore ' + cat.key}/>
+          <PinkButton text={Constants.Explore + cat.key} handleClick={selectCategory} 
+            ariaLabel={Constants.Explore + cat.key}/>
         </div>
         {props.imgAlign === 'right' &&
-          <img src={process.env.PUBLIC_URL + cat.imageUrl} alt={cat.description} className='showcase-image' />}
+          <img src={Constants.UrlPublic + cat.imageUrl} alt={cat.description} className='showcase-image' />}
       </figure>
     )
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './LeftPane.scss';
 import MenuItemButton from '../../Widgets/Buttons/MenuItemButton/MenuItemButton';
+import * as Constants from '../../../global-constants';
 
 class LeftPane extends Component {
   constructor(props) {
@@ -36,7 +37,7 @@ class LeftPane extends Component {
               }/>
           )
           : <span className='leftpane-empty'>
-            Sorry, there are no available categories at the moment!
+              {Constants.NoAvailableCategory}
             </span>
         }
       </div>

@@ -1,6 +1,6 @@
 // URLS
-export const ClientUrl = 'http://localhost:3000/';
-export const ServerUrl = 'http://localhost:5000/';
+export const UrlClient = 'http://localhost:3000/';
+export const UrlServer = 'http://localhost:5000/';
 export const UrlPublic = process.env.PUBLIC_URL;
 export const UrlCartApi = 'addToCart';
 export const UrlCategoriesApi = 'categories';
@@ -52,6 +52,7 @@ export const SignPlus = '+';
 export const SignMinus = '\u2212';
 export const SignMultiply = 'x';
 export const SignRightArrow = '>';
+export const SignAt = '@';
 
 // Icon Button Types
 export const IconClose = 'close';
@@ -73,7 +74,11 @@ export const ItemQuantity = 'Item quantity is ';
 export const ItemPrice = 'Item price is ';
 export const TotalItemValue = 'Total item value is ';
 export const TotalCartValue = 'Total cart value is ';
+export const BuyNow = 'Buy Now';
+export const MRP = 'MRP';
 export const INR = 'Rs.';
-
-// Other
+export const ProductsOf = 'Products belonging to ';
+export const NoAvailableProduct = 'Sorry, there are no available products in this category at the moment!';
+export const NoAvailableCategory = 'Sorry, there are no available categories at the moment!';
+export const Explore = 'Explore ';
 export const MinWidth = 'min-width: ';
