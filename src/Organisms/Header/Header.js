@@ -10,6 +10,7 @@ import {
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import Drawer from '@material-ui/core/Drawer';
+import * as Constants from '../../global-constants';
 
 function Header(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -61,7 +62,7 @@ function Header(props) {
     <header className='header'>
       <img alt='Sabka Bazaar Logo' className='header-logo'></img>
       {!screenTablet && <nav aria-label='App'>
-        <IconButton type='menu'
+        <IconButton type={Constants.IconMenu}
           ariaControls="navigation-menu" ariaHaspopup="true" ariaLabel='App Navigation Menu'
           handleClick={handleMenuClick} />
         <Menu

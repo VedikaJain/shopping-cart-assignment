@@ -3,6 +3,7 @@ import './DropDown.scss';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import PinkButton from '../Buttons/PinkButton/PinkButton';
+import * as Constants from '../../global-constants';
 
 class DropDown extends Component {
   constructor(props) {
@@ -53,16 +54,16 @@ class DropDown extends Component {
         <PinkButton ariaControls="categoriesList" ariaHaspopup="true"
           ariaLabel={(this.state.selectedItem && this.state.selectedItem !== {}
             && this.state.selectedItem.name && this.state.selectedItem.name.length > 0)
-            ? 'Selected Category ' + this.state.selectedItem.name
-            : 'Select Category'}
+            ? Constants.SelectedCategory + this.state.selectedItem.name
+            : Constants.SelectCategory}
           text={(this.state.selectedItem && this.state.selectedItem !== {}
             && this.state.selectedItem.name && this.state.selectedItem.name.length > 0)
             ? this.state.selectedItem.name
-            : 'Select Category'}
-          handleClick={this.handleClick} rightContent='downArrowIcon' />
+            : Constants.SelectCategory}
+          handleClick={this.handleClick} rightContent={Constants.IconDownArrow} />
         <Menu anchorEl={this.state.anchorEl} keepMounted open={Boolean(this.state.anchorEl)}
           onClose={this.handleClose} className='dropdown-menu'
-          id='categoriesList' aria-label='Category'>
+          id='categoriesList' aria-label={Constants.Category}>
           {(this.props.items.length > 0)
             ? this.props.items.map((item, i) =>
               <MenuItem key={i} className='dropdown-menu-item'
@@ -76,7 +77,7 @@ class DropDown extends Component {
               </MenuItem>
             )
             : <span className='dropdown-menu-empty'>
-              Sorry, there are no available categories at the moment!
+              {Constants.NoAvailableCategory}
             </span>
           }
         </Menu>

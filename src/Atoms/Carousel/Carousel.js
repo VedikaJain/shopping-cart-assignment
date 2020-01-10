@@ -4,6 +4,7 @@ import Dots from '../Buttons/Dots/Dots';
 import GreyButton from '../Buttons/GreyButton/GreyButton';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
+import * as Constants from '../../global-constants';
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
@@ -24,13 +25,13 @@ function Carousel(props) {
 
   return (
     (maxSteps > 0) &&
-    <div className='carousel' role='region' aria-label='Ongoing offers'>
+    <div className='carousel' role='region' aria-label={Constants.Ongoing + Constants.Offers}>
       <AutoPlaySwipeableViews axis='x' index={activeStep}
         onChangeIndex={handleStepChange} enableMouseEvents
         aria-live='off' id='carouselSlides'>
         {props.items.map((step, index) => (
           <div key={step.id} role='group'
-            aria-label={(index + 1)  + ' of ' + props.items.length + ' offers'}>
+            aria-label={(index + 1)  + Constants.Of + props.items.length + Constants.Offers}>
             {Math.abs(activeStep - index) <= 2 ? (
               <img className='carousel-slide-image' src={step.bannerImageUrl} alt={step.bannerImageAlt} />
             ) : null}
@@ -38,12 +39,12 @@ function Carousel(props) {
         ))}
       </AutoPlaySwipeableViews>
       <div className='carousel-buttons'>
-        <GreyButton ariaLabel='Go to previous slide' ariaControls='carouselSlides'
-            handleClick={handleBack} text='PREV'/>
-        <GreyButton ariaLabel='Go to next slide' ariaControls='carouselSlides'
-            handleClick={handleNext} text='NEXT'/>
+        <GreyButton ariaLabel={Constants.GoTo + Constants.PreviousSlide} ariaControls='carouselSlides'
+            handleClick={handleBack} text={Constants.Previous}/>
+        <GreyButton ariaLabel={Constants.GoTo + Constants.NextSlide} ariaControls='carouselSlides'
+            handleClick={handleNext} text={Constants.Next}/>
       </div>
-      <Dots activeDot={activeStep} totalDots={maxSteps} selectDot={handleStepChange} altText=' offers'/>
+      <Dots activeDot={activeStep} totalDots={maxSteps} selectDot={handleStepChange} altText={Constants.Offers}/>
     </div>
   );
 }

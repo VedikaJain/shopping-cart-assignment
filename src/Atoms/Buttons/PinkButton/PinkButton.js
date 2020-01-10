@@ -1,6 +1,7 @@
 import React from 'react';
 import './PinkButton.scss';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import * as Constants from '../../../global-constants';
 
 function PinkButton(props) {
   return (
@@ -12,7 +13,7 @@ function PinkButton(props) {
       addontext={props.addontext}>
       <span className='pinkbutton-text'>{props.text}</span>
       { props.rightContent && 
-        ((props.rightContent === 'downArrowIcon')
+        ((props.rightContent === Constants.IconDownArrow)
           ? <ExpandMoreIcon alt={props.text} className='pinkbutton-icon'/>
           : <span className='pinkbutton-text'>{props.rightContent}</span>)
       }

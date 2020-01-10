@@ -3,6 +3,7 @@ import './Form.scss';
 import TextField from '@material-ui/core/TextField';
 import PinkButton from '../Buttons/PinkButton/PinkButton';
 import { validate } from './Validate';
+import * as Constants from '../../global-constants';
 
 class Form extends Component {
 
@@ -27,7 +28,7 @@ class Form extends Component {
     if (formInput.validations && formInput.validations.length > 0) {
       formInput.errorMessage = formInput.validations.reduce(
         (cumulativeMessage, checkIf) => {
-          const errorMessage = (formInput.name === 'confirmPassword')
+          const errorMessage = (formInput.name === Constants.ConfirmPassword)
             ? validate(checkIf, value, this.state.password)
             : validate(checkIf, value);
           return cumulativeMessage
@@ -50,7 +51,7 @@ class Form extends Component {
             {this.props.formInputs.map((formInput, i) =>
               <TextField key={i} type={formInput.type} name={formInput.name}
                 label={formInput.label} id={formInput.name}
-                required={formInput.validations.indexOf('required') !== -1}
+                required={formInput.validations.indexOf(Constants.Required) !== -1}
                 onChange={(event) => this.handleChange(event, formInput)}
                 error={!formInput.valid && formInput.errorMessage !== ''}
                 helperText={formInput.errorMessage}

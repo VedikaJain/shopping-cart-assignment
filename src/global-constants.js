@@ -13,6 +13,7 @@ export const UrlPlp = 'plp';
 
 // Image Paths
 export const ImgLowestPrice = '/images/lowest-price.png';
+export const ImgCartIcon = '/images/cart.svg';
 
 // Response Codes
 export const RespCodeSuccess = 200;
@@ -30,6 +31,11 @@ export const ErrorRetrievingData = 'Error while retrieving data: ';
 export const ErrorAddingData = 'Error while adding data: ';
 export const ErrorUpdatingData = 'Error while updating data: ';
 export const ErrorDeletingData = 'Error while deleting data: ';
+export const ErrorRequired = 'Required';
+export const ErrorEmail = 'Invalid email address';
+export const ErrorPassword = 'Password should be minimum 6 characters long, alphanumeric and without spaces.';
+export const ErrorConfirmPassword = 'Password and Confirm Password must match';
+export const ErrorInvalid = 'Invalid';
 
 // Info Messages
 export const InfoOutOfStock = ' is out of stock!';
@@ -55,9 +61,13 @@ export const SignRightArrow = '>';
 export const SignAt = '@';
 
 // Icon Button Types
-export const IconClose = 'close';
+export const IconClose = 'closeIcon';
+export const IconMenu = 'menuIcon';
+export const IconDownArrow = 'downArrowIcon';
 
 // Texts, labels and aria-labels
+export const GoTo = 'Go to ';
+export const Cart = 'Cart';
 export const MyCart = 'My Cart';
 export const CloseCart = 'Close Cart';
 export const Item = 'item';
@@ -82,3 +92,17 @@ export const NoAvailableProduct = 'Sorry, there are no available products in thi
 export const NoAvailableCategory = 'Sorry, there are no available categories at the moment!';
 export const Explore = 'Explore ';
 export const MinWidth = 'min-width: ';
+export const Of = ' of ';
+export const Ongoing = 'Ongoing';
+export const Offers = ' offers';
+export const PreviousSlide = ' previous slide';
+export const NextSlide = ' next slide';
+export const Previous = 'PREV';
+export const Next = 'NEXT';
+export const SelectedCategory = 'Selected Category is ';
+export const SelectCategory = 'Select Category';
+export const Category = 'Category';
+export const Email = 'email';
+export const Password = 'password';
+export const ConfirmPassword = 'confirmPassword';
+export const Required = 'required';
