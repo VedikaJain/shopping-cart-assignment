@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Plp.scss';
-import DropDown from '../../Atoms/DropDown/DropDown';
+import DropDown from '../../Molecules/DropDown/DropDown';
 import LeftPane from '../../Molecules/LeftPane/LeftPane';
 import Grid from '../../Molecules/Grid/Grid';
 import { connect } from 'react-redux';

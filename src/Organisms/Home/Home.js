@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './Home.scss';
 import Showcase from '../../Molecules/Showcase/Showcase';
-import Carousel from '../../Atoms/Carousel/Carousel';
+import Carousel from '../../Molecules/Carousel/Carousel';
 import Hr from '../../Atoms/HorizontalRow/Hr';
 import { fetchData } from '../../Actions/index';
 

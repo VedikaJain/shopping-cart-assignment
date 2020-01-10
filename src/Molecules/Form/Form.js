@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Form.scss';
 import TextField from '@material-ui/core/TextField';
-import PinkButton from '../Buttons/PinkButton/PinkButton';
+import PinkButton from '../../Atoms/Buttons/PinkButton/PinkButton';
 import { validate } from './Validate';
 import * as Constants from '../../global-constants';
 

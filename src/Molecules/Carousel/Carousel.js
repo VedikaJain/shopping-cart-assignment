@@ -1,7 +1,7 @@
 import React from 'react';
 import './Carousel.scss';
-import Dots from '../Buttons/Dots/Dots';
-import GreyButton from '../Buttons/GreyButton/GreyButton';
+import Dots from '../../Atoms/Buttons/Dots/Dots';
+import GreyButton from '../../Atoms/Buttons/GreyButton/GreyButton';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
 import * as Constants from '../../global-constants';

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './DropDown.scss';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
-import PinkButton from '../Buttons/PinkButton/PinkButton';
+import PinkButton from '../../Atoms/Buttons/PinkButton/PinkButton';
 import * as Constants from '../../global-constants';
 
 class DropDown extends Component {
