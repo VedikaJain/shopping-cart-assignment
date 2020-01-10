@@ -1,7 +1,7 @@
 import React from 'react';
 import './GridItem.scss';
-import PinkButton from '../../../Widgets/Buttons/PinkButton/PinkButton';
-import Hr from '../../../Widgets/HorizontalRow/Hr';
+import PinkButton from '../../../Atoms/Buttons/PinkButton/PinkButton';
+import Hr from '../../../Atoms/HorizontalRow/Hr';
 import * as Constants from '../../../../global-constants';
 
 function GridItem(props) {

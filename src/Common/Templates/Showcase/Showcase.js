@@ -1,6 +1,6 @@
 import React from 'react';
 import './Showcase.scss';
-import PinkButton from '../../Widgets/Buttons/PinkButton/PinkButton';
+import PinkButton from '../../Atoms/Buttons/PinkButton/PinkButton';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { saveData } from '../../Actions';

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.scss';
 import Header from './Header/Header';
-import Hr from './Common/Widgets/HorizontalRow/Hr';
+import Hr from './Common/Atoms/HorizontalRow/Hr';
 import {
   BrowserRouter,
   Switch, Route

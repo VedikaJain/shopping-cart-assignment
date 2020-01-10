@@ -1,6 +1,6 @@
 import React from 'react';
 import './PageView.scss';
-import Form from '../../Widgets/Form/Form';
+import Form from '../../Atoms/Form/Form';
 
 function PageView(props) {
   return (
