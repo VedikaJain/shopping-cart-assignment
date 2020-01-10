@@ -6,6 +6,7 @@ import Grid from '../../Molecules/Grid/Grid';
 import { connect } from 'react-redux';
 import { fetchData, saveData, putData, postData } from '../../Actions/index';
 import { toast } from 'react-toastify';
+import * as Constants from '../../global-constants';
 
 export class Plp extends Component {
 
@@ -17,7 +18,7 @@ export class Plp extends Component {
       cart: [],
       selectedCategory: {},
       cartStatus: '',
-      screenTablet: (window.matchMedia('(min-width: 481px)').matches) ? true : false
+      screenTablet: (window.matchMedia('(' + Constants.MinWidth + Constants.ScreenTablet + ')').matches) ? true : false
     }
   }
 
@@ -39,7 +40,8 @@ export class Plp extends Component {
     }
     if (props.cartStatus !== state.cartStatus) {
       if (props.cartStatus !== 201 && props.cartStatus !== 200) {
-        toast.error('Error updating cart: ' + props.cartStatus, { toastId: 'euc-' + props.cartStatus});
+        toast.error(Constants.ErrorUpdatingCart + props.cartStatus,
+          { toastId: Constants.ErrorCodeUpdatingCart + props.cartStatus});
       }
       return {
         cartStatus: props.cartStatus
@@ -54,9 +56,9 @@ export class Plp extends Component {
   }
 
   componentDidMount() {
-    this.props.fetchData('products');
-    this.props.fetchData('addToCart');
-    this.props.fetchData('categories');
+    this.props.fetchData(Constants.UrlProductsApi);
+    this.props.fetchData(Constants.UrlCartApi);
+    this.props.fetchData(Constants.UrlCategoriesApi);
     window.addEventListener('resize', this.handleResize);
   }
 
@@ -66,12 +68,12 @@ export class Plp extends Component {
   }
 
   selectCategory = (newCategory) => {
-    this.props.saveData('selectedCategory', newCategory);
+    this.props.saveData(Constants.UrlSelectedCategory, newCategory);
   }
 
   handleResize = () => {
     this.setState({
-      screenTablet: (window.matchMedia('(min-width: 481px)').matches) ? true : false
+      screenTablet: (window.matchMedia('(' + Constants.MinWidth + Constants.ScreenTablet + ')').matches) ? true : false
     });
   }
 
@@ -87,26 +89,28 @@ export class Plp extends Component {
       if (productToAdd.stock > 0) {
         newCartItem.stockLeft = productToAdd.stock - 1;
         newCartItem.quantity = 1;
-        this.props.postData('addToCart', newCartItem);
-        this.props.fetchData('addToCart');
+        this.props.postData(Constants.UrlCartApi, newCartItem);
+        this.props.fetchData(Constants.UrlCartApi);
       } else {
-        toast.info( productToAdd.name + ' is out of stock!', { toastId: 'oos-' + productToAdd.id});
+        toast.info( productToAdd.name + Constants.InfoOutOfStock,
+          { toastId: Constants.InfoCodeOutOfStock + productToAdd.id});
       }
     } else {
       if (this.props.cart[index].stockLeft > 0) {
         newCartItem.stockLeft = this.props.cart[index].stockLeft - 1;
         newCartItem.quantity = this.props.cart[index].quantity + 1;
-        this.props.putData('addToCart', newCartItem);
-        this.props.fetchData('addToCart');
+        this.props.putData(Constants.UrlCartApi, newCartItem);
+        this.props.fetchData(Constants.UrlCartApi);
       } else {
-        toast.info( productToAdd.name + ' is out of stock!', { toastId: 'oos-' + productToAdd.id});
+        toast.info( productToAdd.name + Constants.InfoOutOfStock,
+          { toastId: Constants.InfoCodeOutOfStock + productToAdd.id});
       }
     }
   }
 
   render() {
     return (
-      <main className='product-listing-page' aria-label='Categories and Products'>
+      <main className='product-listing-page' aria-label={Constants.CategoriesProducts}>
         {(this.state.screenTablet)
           ? <LeftPane items={this.state.categories}
             selectItem={this.selectCategory}
@@ -117,7 +121,7 @@ export class Plp extends Component {
         }
         <Grid addToCart={this.addToCart}
           category={(this.props.selectedCategory && this.props.selectedCategory.name)
-            ? this.props.selectedCategory.name : 'All categories'}
+            ? this.props.selectedCategory.name : Constants.AllCategories}
           products={
             (this.props.selectedCategory && this.props.selectedCategory.id)
               ? (this.state.products.filter(

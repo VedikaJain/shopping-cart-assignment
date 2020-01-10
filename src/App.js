@@ -5,7 +5,7 @@ import Hr from './Atoms/HorizontalRow/Hr';
 import {
   BrowserRouter,
   Switch, Route
-} from "react-router-dom";
+} from 'react-router-dom';
 import Home from './Organisms/Home/Home';
 import Plp from './Organisms/Plp/Plp';
 import Login from './Organisms/Login/Login';
@@ -16,6 +16,7 @@ import { connect } from 'react-redux';
 import { fetchData } from './Actions/index';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
+import * as Constants from './global-constants';
 
 class App extends Component {
   constructor(props) {
@@ -35,26 +36,26 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.props.fetchData('addToCart');
+    this.props.fetchData(Constants.UrlCartApi);
   }
 
   render() {
     return (
       <BrowserRouter>
-        <div className='app' aria-label='Sabka Bazaar'>
+        <div className='app' aria-label={Constants.SabkaBazaar}>
           <Header cartItems={this.state.cart.reduce(
             (totalItems, cartItem) => cartItem.quantity + totalItems, 0)
           } />
-          <Hr type="hr-blue" />
+          <Hr type='hr-blue' />
           <ToastContainer position={toast.POSITION.TOP_CENTER} autoClose={3000}/>
           <div id='app-container' className='app-container'>
             <Switch>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/home" component={Home} />
-              <Route exact path="/plp" component={Plp} />
-              <Route exact path="/login" component={Login} />
-              <Route exact path="/register" component={Register} />
-              <Route exact path="/cart" component={Cart} />
+              <Route exact path='/' component={Home} />
+              <Route exact path={'/' + Constants.UrlHome} component={Home} />
+              <Route exact path={'/' + Constants.UrlPlp} component={Plp} />
+              <Route exact path={'/' + Constants.UrlLoginApi} component={Login} />
+              <Route exact path={'/' + Constants.UrlRegisterApi} component={Register} />
+              <Route exact path={'/' + Constants.UrlCart}  component={Cart} />
               <Route component={Home} />
             </Switch>
           </div>

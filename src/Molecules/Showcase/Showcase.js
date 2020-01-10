@@ -17,7 +17,7 @@ function Showcase(props) {
     return (
       <figure className='showcase'
         aria-label={cat.name} aria-describedby={cat.description}>
-        {props.imgAlign === 'left' &&
+        {props.imgAlign === Constants.Left &&
           <img src={Constants.UrlPublic + cat.imageUrl} alt={cat.description} className='showcase-image' />}
         <div className='showcase-content'>
           <div className='showcase-content-heading'>{cat.name}</div>
@@ -27,7 +27,7 @@ function Showcase(props) {
           <PinkButton text={Constants.Explore + cat.key} handleClick={selectCategory} 
             ariaLabel={Constants.Explore + cat.key}/>
         </div>
-        {props.imgAlign === 'right' &&
+        {props.imgAlign === Constants.Right &&
           <img src={Constants.UrlPublic + cat.imageUrl} alt={cat.description} className='showcase-image' />}
       </figure>
     )

@@ -5,6 +5,7 @@ import PageView from '../../Molecules/PageView/PageView';
 import { connect } from 'react-redux';
 import { postData, resetPostStatus } from '../../Actions';
 import { toast } from 'react-toastify';
+import * as Constants from '../../global-constants';
 
 class Login extends Component {
   constructor(props) {
@@ -15,16 +16,17 @@ class Login extends Component {
   }
 
   componentWillUnmount() {
-    this.props.resetPostStatus('login');
+    this.props.resetPostStatus(Constants.UrlLoginApi);
   }
 
   static getDerivedStateFromProps = (props, state) => {
     if(props.loginStatus !== state.loginStatus){
       if(props.loginStatus === 201) {
-        toast.success('Successfully logged in!', { toastId: 'sl'});
-        props.history.push('/home');
+        toast.success(Constants.SuccessLogin, { toastId: Constants.SuccessCodeLogin});
+        props.history.push('/' + Constants.UrlHome);
       } else {
-        toast.error('Error during Login: ' + props.loginStatus, { toastId: 'edl-' + props.loginStatus});
+        toast.error(Constants.ErrorLogin + props.loginStatus,
+          { toastId: Constants.ErrorCodeLogin + props.loginStatus});
       }
       return {
         loginStatus: props.loginStatus
@@ -34,15 +36,15 @@ class Login extends Component {
   }
 
   loginUser = (user) => {
-    this.props.postData('login', user);
+    this.props.postData(Constants.UrlLoginApi, user);
   }
 
   render() {
     return (
       <main className='login'
         aria-labelledby='formTitle' aria-describedby='formDescription'>
-        <PageView title="Login"
-          description="Get access to your Orders, Wishlist and Recommendations"
+        <PageView title={Constants.TitleLogin}
+          description={Constants.DescriptionLogin}
           formInputs={formInputs} formSubmit={this.loginUser}
         />
       </main>

@@ -5,6 +5,7 @@ import Showcase from '../../Molecules/Showcase/Showcase';
 import Carousel from '../../Molecules/Carousel/Carousel';
 import Hr from '../../Atoms/HorizontalRow/Hr';
 import { fetchData } from '../../Actions/index';
+import * as Constants from '../../global-constants';
 
 export class Home extends Component {
   constructor(props) {
@@ -30,19 +31,19 @@ export class Home extends Component {
   }
 
   componentDidMount() {
-    this.props.fetchData('categories');
-    this.props.fetchData('banners');
+    this.props.fetchData(Constants.UrlCategoriesApi);
+    this.props.fetchData(Constants.UrlBannersApi);
   }
 
   render() {
     return (
-      <main className='home' aria-label='Home'>
+      <main className='home' aria-label={Constants.Home}>
         <Carousel items={this.state.banners} />
         <div className='home-container'>
           {this.state.categories.map((category, i) =>
             <div key={i}>
-              <Hr type="hr-grey" />
-              <Showcase cat={category} imgAlign={(i % 2) ? 'right' : 'left'} />
+              <Hr type='hr-grey' />
+              <Showcase cat={category} imgAlign={(i % 2) ? Constants.Right : Constants.Left} />
             </div>
           )}
         </div>

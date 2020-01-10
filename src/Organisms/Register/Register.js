@@ -5,6 +5,7 @@ import PageView from '../../Molecules/PageView/PageView';
 import { connect } from 'react-redux';
 import { postData, resetPostStatus } from '../../Actions/index';
 import { toast } from 'react-toastify';
+import * as Constants from '../../global-constants';
 
 class Register extends Component {
   constructor(props) {
@@ -15,16 +16,17 @@ class Register extends Component {
   }
 
   componentWillUnmount() {
-    this.props.resetPostStatus('register');
+    this.props.resetPostStatus(Constants.UrlRegisterApi);
   }
 
   static getDerivedStateFromProps(props, state) {
     if (props.registerStatus !== state.registerStatus) {
       if(props.registerStatus === 201) {
-        toast.success('Registered user successfully!', { toastId: 'sr'});
-        props.history.push(`/home`);        
+        toast.success(Constants.SuccessRegister, { toastId: Constants.SuccessCodeRegister});
+        props.history.push('/' + Constants.UrlHome);        
       } else {
-        toast.error('Error during Signup: ' + props.registerStatus, { toastId: 'edr-' + props.registerStatus});
+        toast.error(Constants.ErrorRegister + props.registerStatus,
+          { toastId: Constants.ErrorCodeRegister + props.registerStatus});
       }
       return {
         registerStatus: props.registerStatus
@@ -34,16 +36,16 @@ class Register extends Component {
   }
 
   registerUser = (user) => {
-    delete user['confirmPassword'];
-    this.props.postData('register', user);
+    delete user[Constants.ConfirmPassword];
+    this.props.postData(Constants.UrlRegisterApi, user);
   }
 
   render() {
     return (
       <main className='register'
         aria-labelledby='formTitle' aria-describedby='formDescription'>
-        <PageView title="Signup"
-          description="We do not share your personal details with anyone."
+        <PageView title={Constants.TitleRegister}
+          description={Constants.DescriptionRegister}
           formInputs={formInputs} formSubmit={this.registerUser}
         />
       </main>

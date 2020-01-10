@@ -10,6 +10,8 @@ export const UrlLoginApi = 'login';
 export const UrlRegisterApi = 'register';
 export const UrlSelectedCategory = 'selectedCategory';
 export const UrlPlp = 'plp';
+export const UrlHome = 'home';
+export const UrlCart = 'cart';
 
 // Image Paths
 export const ImgLowestPrice = '/images/lowest-price.png';
@@ -21,9 +23,12 @@ export const RespCodeCreated = 201;
 
 // Screen Widths
 export const ScreenLaptop = '1025px';
+export const ScreenTablet = '481px';
 
 // Success Messages
 export const SuccessShopping = 'Thank you for shopping with us!';
+export const SuccessLogin = 'Successfully logged in!';
+export const SuccessRegister = 'Registered user successfully!';
 
 // Error Messages
 export const ErrorUpdatingCart = 'Error updating cart: ';
@@ -31,6 +36,8 @@ export const ErrorRetrievingData = 'Error while retrieving data: ';
 export const ErrorAddingData = 'Error while adding data: ';
 export const ErrorUpdatingData = 'Error while updating data: ';
 export const ErrorDeletingData = 'Error while deleting data: ';
+export const ErrorLogin = 'Error signing in: ';
+export const ErrorRegister = 'Error during Signup: ';
 export const ErrorRequired = 'Required';
 export const ErrorEmail = 'Invalid email address';
 export const ErrorPassword = 'Password should be minimum 6 characters long, alphanumeric and without spaces.';
@@ -42,6 +49,8 @@ export const InfoOutOfStock = ' is out of stock!';
 
 // Success Codes
 export const SuccessCodeShopping = 'tfs';
+export const SuccessCodeLogin = 'sl';
+export const SuccessCodeRegister = 'sr';
 
 // Error Codes
 export const ErrorCodeUpdatingCart = 'euc-';
@@ -49,6 +58,8 @@ export const ErrorCodeRetrievingData = 'efd';
 export const ErrorCodeAddingData = 'ead';
 export const ErrorCodeUpdatingData = 'eud';
 export const ErrorCodeDeletingData = 'edd';
+export const ErrorCodeLogin = 'edl-';
+export const ErrorCodeRegister = 'edr-';
 
 // Info Codes
 export const InfoCodeOutOfStock = 'oos-';
@@ -65,7 +76,16 @@ export const IconClose = 'closeIcon';
 export const IconMenu = 'menuIcon';
 export const IconDownArrow = 'downArrowIcon';
 
+// Material UI Variants
+export const VariantSelected = 'selectedMenu';
+export const VariantTemporary = 'temporary';
+
 // Texts, labels and aria-labels
+export const SabkaBazaar = 'Sabka Bazaar';
+export const Logo = 'Sabka Bazaar Logo';
+export const App = 'App';
+export const Home = 'Home';
+export const NavigationMenu = 'Navigation Menu';
 export const GoTo = 'Go to ';
 export const Cart = 'Cart';
 export const MyCart = 'My Cart';
@@ -106,3 +126,12 @@ export const Email = 'email';
 export const Password = 'password';
 export const ConfirmPassword = 'confirmPassword';
 export const Required = 'required';
+export const Copyright = 'Copyright \u00A9 2011-2019 Sabka Bazaar Grocery Supplies Pvt. Ltd';
+export const Right = 'right';
+export const Left = 'left';
+export const TitleLogin = 'Login';
+export const TitleRegister = 'Signup';
+export const DescriptionLogin = 'Get access to your Orders, Wishlist and Recommendations';
+export const DescriptionRegister = 'We do not share your personal details with anyone.';
+export const CategoriesProducts = 'Categories and Products';
+export const AllCategories = 'All categories';

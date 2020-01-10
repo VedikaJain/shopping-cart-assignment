@@ -1,10 +1,11 @@
 import React from 'react';
 import './Footer.scss';
+import * as Constants from '../../global-constants';
 
 function Footer() {
   return (
     <footer>
-      Copyright &copy; 2011-2019 Sabka Bazaar Grocery Supplies Pvt. Ltd 
+      {Constants.Copyright}
     </footer>
   );
 };
