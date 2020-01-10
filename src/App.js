@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import './App.scss';
-import Header from './Header/Header';
+import Header from './Organisms/Header/Header';
 import Hr from './Common/Atoms/HorizontalRow/Hr';
 import {
   BrowserRouter,
   Switch, Route
 } from "react-router-dom";
-import Home from './Home/Home';
-import Plp from './Plp/Plp';
-import Login from './Login/Login';
-import Footer from './Footer/Footer';
-import Register from './Register/Register';
-import Cart from './Cart/Cart';
+import Home from './Organisms/Home/Home';
+import Plp from './Organisms/Plp/Plp';
+import Login from './Organisms/Login/Login';
+import Footer from './Organisms/Footer/Footer';
+import Register from './Organisms/Register/Register';
+import Cart from './Organisms/Cart/Cart';
 import { connect } from 'react-redux';
 import { fetchData } from './Common/Actions/index';
 import { ToastContainer, toast } from 'react-toastify';

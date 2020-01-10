@@ -1,8 +1,8 @@
 import React from 'react';
 import './Header.scss';
 import navigationLinks from './NavLinks.json';
-import CartButton from '../Common/Atoms/Buttons/CartButton/CartButton';
-import IconButton from '../Common/Atoms/Buttons/IconButton/IconButton';
+import CartButton from '../../Common/Atoms/Buttons/CartButton/CartButton';
+import IconButton from '../../Common/Atoms/Buttons/IconButton/IconButton';
 import Cart from '../Cart/Cart';
 import {
   NavLink, withRouter

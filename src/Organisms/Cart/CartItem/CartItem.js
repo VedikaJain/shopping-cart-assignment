@@ -1,7 +1,7 @@
 import React from 'react';
 import './CartItem.scss';
-import * as Constants from '../../global-constants';
-import PinkButton from '../../Common/Atoms/Buttons/PinkButton/PinkButton';
+import * as Constants from '../../../global-constants';
+import PinkButton from '../../../Common/Atoms/Buttons/PinkButton/PinkButton';
 
 function CartItem(props) {
   return (
