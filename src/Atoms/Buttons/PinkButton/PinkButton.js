@@ -10,6 +10,7 @@ function PinkButton(props) {
       className={'pinkbutton '
         + (props.rightContent ? 'pinkbutton-content-side' : 'pinkbutton-content-center')}
       onClick={props.handleClick}
+      onFocus={props.handleFocus}
       addontext={props.addontext}>
       <span className='pinkbutton-text'>{props.text}</span>
       { props.rightContent && 

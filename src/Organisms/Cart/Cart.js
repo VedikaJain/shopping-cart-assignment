@@ -13,7 +13,8 @@ class Cart extends Component {
     super(props);
     this.state = {
       cart: [],
-      cartStatus: ''
+      cartStatus: '',
+      closeCartTabIndex: '-1'
     }
   }
 
@@ -100,7 +101,7 @@ class Cart extends Component {
             </span>}
           </div>
           <IconButton type={Constants.IconClose} ariaLabel={Constants.CloseCart}
-            handleClick={this.props.cartClose} />
+            handleClick={this.props.cartClose} tabIndex={this.state.closeCartTabIndex}/>
         </div>
         <div className='cart-content'>
           {(this.state.cart.length > 0)
@@ -138,7 +139,10 @@ class Cart extends Component {
               : ''}
             ariaLabel={(this.state.cart.length > 0)
               ? Constants.TotalCartValue + Constants.INR + totalPrice + '. ' + Constants.Checkout + '.'
-              : Constants.StartShopping} />
+              : Constants.StartShopping}
+            handleFocus={() => this.setState({
+              closeCartTabIndex: '0'
+            })}/>
         </div>
       </main>
     );

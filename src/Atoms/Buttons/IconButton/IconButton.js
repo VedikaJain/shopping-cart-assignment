@@ -8,7 +8,7 @@ function IconButton(props) {
   return (
     <button className='iconbutton'
       aria-label={props.ariaLabel} aria-controls={props.ariaControls} aria-haspopup={props.ariaHaspopup}
-      onClick={props.handleClick}>
+      onClick={props.handleClick} tabIndex={props.tabIndex || 0}>
       {props.type === Constants.IconMenu && <MenuIcon alt={props.ariaLabel} />}
       {props.type === Constants.IconClose && <CloseIcon alt={props.ariaLabel} />}
     </button>
