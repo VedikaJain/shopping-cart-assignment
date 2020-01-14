@@ -26,7 +26,7 @@
   }
 
   .cart-content {
-    max-height: 38em;
+    max-height: 19.5em;
     overflow-y: auto;
   }
 
@@ -101,6 +101,10 @@
       .iconbutton {
         display: block;
       }
+    }
+
+    .cart-content {
+      max-height: 22.5em;
     }
   }
 }
