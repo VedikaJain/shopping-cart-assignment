@@ -24,6 +24,7 @@ export const RespCodeCreated = 201;
 // Screen Widths
 export const ScreenLaptop = '1025px';
 export const ScreenTablet = '481px';
+export const ScreenMobile = '0px';
 
 // Success Messages
 export const SuccessShopping = 'Thank you for shopping with us!';
