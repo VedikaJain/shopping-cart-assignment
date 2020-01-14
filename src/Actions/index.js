@@ -59,8 +59,8 @@ export const fetchData = (url) => {
             }
         }
         catch (error) {
-            toast.error(Constants.ErrorRetrievingData + error,
-                { toastId: Constants.ErrorCodeRetrievingData });
+            // toast.error(Constants.ErrorRetrievingData + error,
+            //     { toastId: Constants.ErrorCodeRetrievingData });
             throw (error);
         }
     };
@@ -79,8 +79,8 @@ export const postData = (url, data) => {
             };
         }
         catch (error) {
-            toast.error(Constants.ErrorAddingData + error,
-                { toastId: Constants.ErrorCodeAddingData });
+            // toast.error(Constants.ErrorAddingData + error,
+            //     { toastId: Constants.ErrorCodeAddingData });
             throw (error);
         }
     };
@@ -97,8 +97,8 @@ export const putData = (url, data) => {
             };
         }
         catch (error) {
-            toast.error(Constants.ErrorUpdatingData + error,
-                { toastId: Constants.ErrorCodeUpdatingData });
+            // toast.error(Constants.ErrorUpdatingData + error,
+            //     { toastId: Constants.ErrorCodeUpdatingData });
             throw (error);
         }
     };
@@ -115,8 +115,8 @@ export const deleteData = (url, id) => {
             };
         }
         catch (error) {
-            toast.error(Constants.ErrorDeletingData + error,
-                { toastId: Constants.ErrorCodeDeletingData });
+            // toast.error(Constants.ErrorDeletingData + error,
+            //     { toastId: Constants.ErrorCodeDeletingData });
             throw (error);
         }
     };
