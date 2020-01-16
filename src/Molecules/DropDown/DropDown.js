@@ -63,7 +63,7 @@ class DropDown extends Component {
           handleClick={this.handleClick} rightContent={Constants.IconDownArrow} />
         <Menu anchorEl={this.state.anchorEl} keepMounted open={Boolean(this.state.anchorEl)}
           onClose={this.handleClose} className='dropdown-menu'
-          id='categoriesList' aria-label={Constants.Category}>
+          id='categoriesList'>
           {(this.props.items.length > 0)
             ? this.props.items.map((item, i) =>
               <MenuItem key={i} className='dropdown-menu-item'

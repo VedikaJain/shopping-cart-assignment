@@ -30,8 +30,7 @@ function Carousel(props) {
         onChangeIndex={handleStepChange} enableMouseEvents
         aria-live='off' id='carouselSlides'>
         {props.items.map((step, index) => (
-          <div key={step.id} role='group'
-            aria-label={(index + 1)  + Constants.Of + props.items.length + Constants.Offers}>
+          <div key={step.id} role='group'>
             {Math.abs(activeStep - index) <= 2 ? (
               <img className='carousel-slide-image' src={step.bannerImageUrl} alt={step.bannerImageAlt} />
             ) : null}

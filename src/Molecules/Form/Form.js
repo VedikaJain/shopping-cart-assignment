@@ -47,16 +47,14 @@ class Form extends Component {
       (this.props.formInputs && this.props.formInputs.length > 0)
         ? (
           <form autoComplete="off" className='form' onSubmit={(e) => e.preventDefault()}
-            aria-labelledby='formTitle' aria-describedby='formDescription'>
+            aria-labelledby='formTitle'>
             {this.props.formInputs.map((formInput, i) =>
               <TextField key={i} type={formInput.type} name={formInput.name}
                 label={formInput.label} id={formInput.name}
                 required={formInput.validations.indexOf(Constants.Required) !== -1}
                 onChange={(event) => this.handleChange(event, formInput)}
                 error={!formInput.valid && formInput.errorMessage !== ''}
-                helperText={formInput.errorMessage}
-                aria-label={formInput.label}
-                aria-describedby={formInput.errorMessage} />
+                helperText={formInput.errorMessage}/>
             )}
             <PinkButton type='submit' text={this.props.buttonText} ariaLabel={this.props.buttonText}
               handleClick={this.handleSubmit}

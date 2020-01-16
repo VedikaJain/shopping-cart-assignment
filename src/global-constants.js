@@ -16,6 +16,7 @@ export const UrlCart = 'cart';
 // Image Paths
 export const ImgLowestPrice = '/images/lowest-price.png';
 export const ImgCartIcon = '/images/cart.svg';
+export const ImgLogo = '/images/logo.png';
 
 // Response Codes
 export const RespCodeSuccess = 200;
@@ -82,11 +83,10 @@ export const VariantSelected = 'selectedMenu';
 export const VariantTemporary = 'temporary';
 
 // Texts, labels and aria-labels
-export const SabkaBazaar = 'Sabka Bazaar';
-export const Logo = 'Sabka Bazaar Logo';
+export const Logo = 'Logo';
 export const App = 'App';
 export const Home = 'Home';
-export const NavigationMenu = 'Navigation Menu';
+export const Navigation = 'Navigation';
 export const GoTo = 'Go to ';
 export const Cart = 'Cart';
 export const MyCart = 'My Cart';
@@ -101,9 +101,6 @@ export const Checkout = 'Proceed to Checkout';
 export const StartShopping = 'Start Shopping';
 export const ReduceQuantity = 'Reduce quantity';
 export const IncreaseQuantity = 'Increase quantity';
-export const ItemQuantity = 'Item quantity is ';
-export const ItemPrice = 'Item price is ';
-export const TotalItemValue = 'Total item value is ';
 export const TotalCartValue = 'Total cart value is ';
 export const BuyNow = 'Buy Now';
 export const MRP = 'MRP';
@@ -122,7 +119,6 @@ export const Previous = 'PREV';
 export const Next = 'NEXT';
 export const SelectedCategory = 'Selected Category is ';
 export const SelectCategory = 'Select Category';
-export const Category = 'Category';
 export const Email = 'email';
 export const Password = 'password';
 export const ConfirmPassword = 'confirmPassword';

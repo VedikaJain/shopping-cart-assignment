@@ -4,6 +4,7 @@
 
   .griditem-heading {
     grid-area: heading;
+    font-weight: 900;
     text-align: left;
   }
 
@@ -25,7 +26,6 @@
 
   .griditem-footer-text {
     grid-area: footer-text;
-    display: none;
     align-self: center;
   }
 
@@ -43,14 +43,12 @@
     "img description"
     "img footer-button"
     "hr-dotted hr-dotted";
+  padding: 0;
+  margin: 0;
 
   .pinkbutton {
     width: 100%;
     margin-bottom: 0;
-    
-    &::after {
-      content: 'Buy Now @ Rs.' attr(addontext);
-    } 
   }
 
   @media only screen and (min-width: $screen-tablet)  {
@@ -62,7 +60,7 @@
       "hr-dotted hr-dotted";
     
     .griditem-heading {
-      height: 2.5em;
+      height: 3.5em;
     }
   }
 
@@ -76,20 +74,8 @@
     "footer-text footer-button"
     "hr-dotted hr-dotted";
 
-    .griditem-heading {
-      height: 3em;
-    }
-
     .griditem-image {
       height: 15em;
-    }
-
-    .griditem-footer-text {
-      display: block;
-    }
-
-    .pinkbutton:after {
-      content: 'Buy Now';
     }
   }
 }

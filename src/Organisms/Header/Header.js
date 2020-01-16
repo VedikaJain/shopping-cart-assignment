@@ -94,47 +94,49 @@ class Header extends Component {
   render() {
     return (
       <header className='header'>
-        <img alt={Constants.Logo} className='header-logo'></img>
-        {(this.state.screenSize === Constants.ScreenMobile) && <nav aria-label={Constants.App}>
-          <IconButton type={Constants.IconMenu}
-            ariaControls='navigation-menu' ariaHaspopup='true'
-            ariaLabel={Constants.App + ' ' + Constants.NavigationMenu}
-            handleClick={this.handleMenuClick} />
-          <Menu
-            id="navigation-menu"
-            aria-label={Constants.NavigationMenu}
-            anchorEl={this.state.anchorEl}
-            keepMounted
-            open={Boolean(this.state.anchorEl)}
-            onClose={this.handleClose}
-            variant={Constants.VariantSelected}
-          >
-            {navigationLinks.map((navlink, index) =>
-              <MenuItem onClick={() => this.handleMenuItemClick(navlink.url)}
-                selected={this.state.selectedMenuitem === navlink.url}
-                aria-label={navlink.name} key={index}
-                className={(this.state.selectedMenuitem === navlink.url) ? 'navmenu-item-selected' : ''}>
-                {navlink.name}
-              </MenuItem>
-            )}
-          </Menu>
-        </nav>}
+        <img alt={Constants.Logo} className='header-logo'
+          src={Constants.UrlPublic + Constants.ImgLogo} />
+        {(this.state.screenSize === Constants.ScreenMobile)
+          && <nav>
+            <IconButton type={Constants.IconMenu}
+              ariaControls='navigation-menu' ariaHaspopup='true'
+              ariaLabel={Constants.App + ' ' + Constants.Navigation}
+              handleClick={this.handleMenuClick} />
+            <Menu
+              id="navigation-menu"
+              anchorEl={this.state.anchorEl}
+              keepMounted
+              open={Boolean(this.state.anchorEl)}
+              onClose={this.handleClose}
+              variant={Constants.VariantSelected}
+            >
+              {navigationLinks.map((navlink, index) =>
+                <MenuItem onClick={() => this.handleMenuItemClick(navlink.url)}
+                  selected={this.state.selectedMenuitem === navlink.url}
+                  key={index}
+                  className={(this.state.selectedMenuitem === navlink.url) ? 'navmenu-item-selected' : ''}>
+                  {navlink.name}
+                </MenuItem>
+              )}
+            </Menu>
+          </nav>}
         {(this.state.screenSize === Constants.ScreenTablet || this.state.screenSize === Constants.ScreenLaptop)
-          && <nav className='header-links' aria-label={Constants.App}>
+          && <nav className='header-links'>
             {navigationLinks.slice(0, 2).map((navlink, index) =>
               <NavLink activeClassName='header-link-active' to={'/' + navlink.url}
-                aria-label={navlink.name} key={index}
+                key={index}
                 onClick={() => this.handleMenuItemClick(navlink.url)}>{navlink.name}</NavLink>
             )}
           </nav>}
         <div className='header-rightpane'>
-          {(this.state.screenSize === Constants.ScreenTablet || this.state.screenSize === Constants.ScreenLaptop) && <nav className='header-links' aria-label={Constants.App}>
-            {navigationLinks.slice(2).map((navlink, index) =>
-              <NavLink activeClassName='header-link-active' to={'/' + navlink.url}
-                aria-label={navlink.name} key={index}
-                onClick={() => this.handleMenuItemClick(navlink.url)}>{navlink.name}</NavLink>
-            )}
-          </nav>}
+          {(this.state.screenSize === Constants.ScreenTablet || this.state.screenSize === Constants.ScreenLaptop)
+            && <nav className='header-links'>
+              {navigationLinks.slice(2).map((navlink, index) =>
+                <NavLink activeClassName='header-link-active' to={'/' + navlink.url}
+                  key={index}
+                  onClick={() => this.handleMenuItemClick(navlink.url)}>{navlink.name}</NavLink>
+              )}
+            </nav>}
           <CartButton cartItems={this.props.cartItems} handleClick={this.openCart} />
           <Drawer anchor={Constants.Right} open={this.state.isDrawerOpen} onClose={this.toggleDrawer(false)}
             PaperProps={{ className: 'drawer-paper' }}

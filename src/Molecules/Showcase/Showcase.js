@@ -15,20 +15,19 @@ function Showcase(props) {
     }
 
     return (
-      <figure className='showcase'
-        aria-label={cat.name} aria-describedby={cat.description}>
+      <figure className='showcase'>
         {props.imgAlign === Constants.Left &&
-          <img src={Constants.UrlPublic + cat.imageUrl} alt={cat.description} className='showcase-image' />}
+          <img src={Constants.UrlPublic + cat.imageUrl} alt={cat.name} className='showcase-image' />}
         <div className='showcase-content'>
-          <div className='showcase-content-heading'>{cat.name}</div>
-          <figcaption className='showcase-content-description'>
+          <figcaption className='showcase-content-heading'>{cat.name}</figcaption>
+          <div className='showcase-content-description'>
             {cat.description}
-          </figcaption>
+          </div>
           <PinkButton text={Constants.Explore + cat.key} handleClick={selectCategory} 
             ariaLabel={Constants.Explore + cat.key}/>
         </div>
         {props.imgAlign === Constants.Right &&
-          <img src={Constants.UrlPublic + cat.imageUrl} alt={cat.description} className='showcase-image' />}
+          <img src={Constants.UrlPublic + cat.imageUrl} alt={cat.name} className='showcase-image' />}
       </figure>
     )
 }

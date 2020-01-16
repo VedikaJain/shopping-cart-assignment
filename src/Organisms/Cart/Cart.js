@@ -92,10 +92,10 @@ class Cart extends Component {
     const totalPrice = this.state.cart.reduce(
       (totamount, cartItem) => (cartItem.price * cartItem.quantity) + totamount, 0);
     return (
-      <main className='cart' aria-label={Constants.MyCart} aria-describedby='totalitems'>
+      <main className='cart' aria-labelledby='cart-header-mycart' aria-describedby='totalitems'>
         <div className='cart-header'>
           <div>
-            <span className='cart-header-mycart'>{Constants.MyCart} </span>
+            <span className='cart-header-mycart' id='cart-header-mycart'>{Constants.MyCart} </span>
             {totalItems > 0 && <span className='cart-header-totalitems' id='totalitems'>
               ({totalItems} {(totalItems <= 1) ? Constants.Item : (Constants.Item + 's')})
             </span>}

@@ -8,8 +8,7 @@ function Dots(props) {
     [...new Array(props.totalDots)].map((_, index) => 
       <button className='dots' key={index} onClick={() => props.selectDot(index)}
         aria-label={(index + 1) + Constants.Of + props.totalDots + props.altText}>
-        <LensIcon alt={(index + 1) + Constants.Of + props.totalDots + props.altText}
-        className={'dots-icon ' + (props.activeDot === index ? 'dots-icon-active' : '')}/>
+        <LensIcon className={'dots-icon ' + (props.activeDot === index ? 'dots-icon-active' : '')}/>
       </button>
     )
   );

@@ -42,7 +42,7 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <div className='app' aria-label={Constants.SabkaBazaar}>
+        <div className='app'>
           <Header cartItems={this.state.cart.reduce(
             (totalItems, cartItem) => cartItem.quantity + totalItems, 0)
           } />
