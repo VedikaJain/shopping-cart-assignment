@@ -95,7 +95,9 @@ class Header extends Component {
     return (
       <header className='header'>
         <img alt={Constants.Logo} className='header-logo'
-          src={Constants.UrlPublic + Constants.ImgLogo} />
+          src={Constants.UrlPublic + Constants.ImgLogo}
+          srcSet={Constants.UrlPublic + Constants.ImgLogo + ', '
+           + Constants.UrlPublic + Constants.ImgLogo2x + ' 2x'} />
         {(this.state.screenSize === Constants.ScreenMobile)
           && <nav>
             <IconButton type={Constants.IconMenu}

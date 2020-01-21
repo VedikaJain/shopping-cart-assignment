@@ -17,6 +17,7 @@ export const UrlCart = 'cart';
 export const ImgLowestPrice = '/images/lowest-price.png';
 export const ImgCartIcon = '/images/cart.svg';
 export const ImgLogo = '/images/logo.png';
+export const ImgLogo2x = '/images/logo_2x.png';
 
 // Response Codes
 export const RespCodeSuccess = 200;

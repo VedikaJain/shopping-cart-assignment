@@ -52,7 +52,7 @@ class Form extends Component {
               <TextField key={i} type={formInput.type} name={formInput.name}
                 label={formInput.label} id={formInput.name}
                 required={formInput.validations.indexOf(Constants.Required) !== -1}
-                onChange={(event) => this.handleChange(event, formInput)}
+                onBlur={(event) => this.handleChange(event, formInput)}
                 error={!formInput.valid && formInput.errorMessage !== ''}
                 helperText={formInput.errorMessage}/>
             )}
