@@ -7,7 +7,7 @@ function PinkButton(props) {
   return (
     <button disabled={props.disabled} type={props.type}
       aria-label={props.ariaLabel} aria-controls={props.ariaControls} aria-haspopup={props.ariaHaspopup}
-      className={'pinkbutton '
+      className={(props.className ? props.className : '') + ' pinkbutton '
         + (props.rightContent ? 'pinkbutton-content-side' : 'pinkbutton-content-center')}
       onClick={props.handleClick}
       onFocus={props.handleFocus}>

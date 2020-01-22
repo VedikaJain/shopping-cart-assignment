@@ -48,7 +48,7 @@ function GridItem(props) {
             handleClick={() => props.selectGridItem(props.product)} />
         }
       </div>
-      <Hr type='hr-dotted' />
+      <Hr type='hr--dotted' />
     </figure >
   );
 }

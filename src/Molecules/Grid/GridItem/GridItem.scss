@@ -29,8 +29,8 @@
     align-self: center;
   }
 
-  .hr-dotted {
-    grid-area: hr-dotted;
+  .hr--dotted {
+    grid-area: hr;
   }
 
   display: grid;
@@ -42,7 +42,7 @@
     "heading heading"
     "img description"
     "img footer-button"
-    "hr-dotted hr-dotted";
+    "hr hr";
   padding: 0;
   margin: 0;
 
@@ -57,7 +57,7 @@
       "heading heading"
       "img description"
       "footer-button footer-button"
-      "hr-dotted hr-dotted";
+      "hr hr";
     
     .griditem-heading {
       height: 3.5em;
@@ -72,7 +72,7 @@
     "img img"
     "description description"
     "footer-text footer-button"
-    "hr-dotted hr-dotted";
+    "hr hr";
 
     .griditem-image {
       height: 15em;

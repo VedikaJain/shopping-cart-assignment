@@ -2,35 +2,62 @@
 
 .cart {
   font-weight: 600;
-  background-color: $color-grey-1!important;
+  background-color: $color-grey-1;
   padding-top: 1.5em;
   
-  .cart-header {
+  &__header {
     background-color: $color-white-1;
     color: $color-black-1;
     padding: 1em;
     text-align: left;
     display: flex;
     justify-content: space-between;
+  }
 
-    .cart-header-mycart {
+  &__text {
+    &--font-large {
       font-size: large;
       font-weight: 700;
     }
+    
+    &--font-small {
+      font-size: smaller;
+    }
 
-    .iconbutton {
-      padding: 0;
-      color: $color-white-1;
-      display: none;
+    &--padding {
+      padding: 0.5em;
     }
   }
 
-  .cart-content {
+  &__content {
     max-height: 19.5em;
     overflow-y: auto;
+
+    &--empty {
+      text-align: center;
+      background-color: $color-white-1;
+      padding: 0.5em;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+  }
+  
+  &__iconbutton {
+    padding: 0;
+    color: $color-white-1;
+  }
+  
+  &__pinkbutton {
+    width: 100%;
+    border-radius: 4px;
+    padding: 1em!important;
+    margin-bottom: 0.5em!important;
   }
 
-  .cart-lowestprice {
+  &__img-lowestprice {
     text-align: left;
     background-color: $color-white-1;
     margin: 0.5em;
@@ -47,63 +74,27 @@
     }
   }
 
-  .cart-body-font-small {
-    font-size: smaller;
-  }
-  
-  .cart-body-empty {
-    text-align: center;
-    background-color: $color-white-1;
-    padding: 0.5em;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-
-    .cart-body-empty-noitems {
-      font-weight: 700;
-      font-size: large;
-      padding: 0.5em;
-    }
-  }
-
-  .cart-footer {
+  &__footer {
     background-color: $color-white-1;
     padding: 0.5em 1em;
     width: -webkit-fill-available;
     bottom: 0;
     position: absolute;
 
-    &.cart-footer-border {
+    &--border {
       border-top: 2px solid $color-grey-2;
-    }
-
-    .cart-footer-promocode {
-      padding: 0.5em;
-    }
-
-    .pinkbutton {
-      width: 100%;
-      border-radius: 4px;
-      padding: 1em;
-      margin-bottom: 0.5em;
     }
   }
 
   @media only screen and (min-width: $screen-laptop) {
     padding-top: 0;
 
-    .cart-header {
+    &__header {
       background-color: $color-black-1;
       color: $color-white-1;
-
-      .iconbutton {
-        display: block;
-      }
     }
 
-    .cart-content {
+    &__content {
       max-height: 22.5em;
     }
   }

@@ -5,6 +5,7 @@
     background-color: $color-grey-1;
     border: none;
     color: $color-black-1;
+    min-width: auto;
     
     .cartbutton-icon {
         height: 2em;
@@ -14,5 +15,9 @@
     
     &:hover {
         cursor: pointer;
+    }
+
+    @media only screen and (min-width: $screen-tablet)  {
+      min-width: 10em;
     }
 }

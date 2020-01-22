@@ -39,10 +39,10 @@ export class Home extends Component {
     return (
       <main className='home' aria-label={Constants.Home}>
         <Carousel items={this.state.banners} />
-        <div className='home-container'>
+        <div className='home__container'>
           {this.state.categories.map((category, i) =>
             <div key={i}>
-              <Hr type='hr-grey' />
+              <Hr type='hr--grey' />
               <Showcase cat={category} imgAlign={(i % 2) ? Constants.Right : Constants.Left} />
             </div>
           )}

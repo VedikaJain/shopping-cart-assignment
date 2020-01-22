@@ -5,13 +5,15 @@
   grid-template-columns: auto;
   gap: 0.5em;
   margin: 0 0.5em;
-
+  width: 100%;
+  
   .grid-empty {
     grid-column: 1;
     align-self: center;
   }
 
   @media only screen and (min-width: $screen-tablet)  {
+    width: 80%;
     grid-template-columns: auto auto;
     .grid-empty {
       grid-column: 1 / span 2;
@@ -19,6 +21,7 @@
   }
 
   @media only screen and (min-width: $screen-laptop) {
+    width: 80%;
     grid-template-columns: repeat(4, auto);
     .grid-empty {
       grid-column: 1 / span 4;

@@ -12,7 +12,7 @@ function MenuItemButton(props) {
       <p className={props.selected ? 'menuitembutton-selected-text' : ''}>
         {props.text}
       </p>
-      <Hr type='hr-grey-solid' />
+      <Hr type='hr--grey-solid' />
     </button>
   );
 }

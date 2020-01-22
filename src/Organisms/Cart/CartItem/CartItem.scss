@@ -4,41 +4,39 @@
   display: flex;
   flex-direction: row;
   background-color: $color-white-1;
-  margin-top: 1em;
+  margin: 1em 0 0 0;
   padding: 0.5em 1em;
 
-  .cartitem-image {
+  &__image {
     height: 4em;
     margin-right: 0.2em;
   }
 
-  .cartitem-content {
+  &__content {
     width: -webkit-fill-available;
     text-align: left;
-
-    .cartitem-content-heading {
-      font-weight: 700;
-      padding: 0.5em 0;
-    }
-
-    .cartitem-content-quantity, .cartitem-content-quantity > * {
-      margin-right: 1em;
-    }
-
-    .pinkbutton {
-      border-radius: 0.4em;
-      padding: 0.3em 0.8em;
-      display: inline-block;
-    }
   }
 
-  .cartitem-totalprice {
+  &__heading {
+    font-weight: 700;
+    padding: 0.5em 0;
+  }
+
+  &__totalprice {
     font-size: larger;
     align-self: flex-end;
   }
 
-  @media only screen and (min-width: $screen-laptop) {
-    .cartitem-content .pinkbutton {  
+  &__quantity, &__quantity > * {
+    margin-right: 1em;
+  }
+
+  &__pinkbutton {
+    border-radius: 0.4em;
+    padding: 0.3em 0.8em;
+    display: inline-block;
+  
+    @media only screen and (min-width: $screen-laptop) {
       border-radius: 1em;
       padding: 0.3em 0.5em;
     }

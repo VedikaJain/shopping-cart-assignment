@@ -94,18 +94,18 @@ class Header extends Component {
   render() {
     return (
       <header className='header'>
-        <img alt={Constants.Logo} className='header-logo'
+        <img alt={Constants.Logo} className='header__logo'
           src={Constants.UrlPublic + Constants.ImgLogo}
           srcSet={Constants.UrlPublic + Constants.ImgLogo + ', '
            + Constants.UrlPublic + Constants.ImgLogo2x + ' 2x'} />
         {(this.state.screenSize === Constants.ScreenMobile)
-          && <nav>
+          && <nav className='header__nav'>
             <IconButton type={Constants.IconMenu}
-              ariaControls='navigation-menu' ariaHaspopup='true'
+              ariaControls='header__nav-menu' ariaHaspopup='true'
               ariaLabel={Constants.App + ' ' + Constants.Navigation}
               handleClick={this.handleMenuClick} />
             <Menu
-              id="navigation-menu"
+              id='header__nav-menu'
               anchorEl={this.state.anchorEl}
               keepMounted
               open={Boolean(this.state.anchorEl)}
@@ -116,35 +116,36 @@ class Header extends Component {
                 <MenuItem onClick={() => this.handleMenuItemClick(navlink.url)}
                   selected={this.state.selectedMenuitem === navlink.url}
                   key={index}
-                  className={(this.state.selectedMenuitem === navlink.url) ? 'navmenu-item-selected' : ''}>
+                  className={'header__menuitem '
+                    + ((this.state.selectedMenuitem === navlink.url) ? 'header__menuitem--selected' : '')}>
                   {navlink.name}
                 </MenuItem>
               )}
             </Menu>
           </nav>}
         {(this.state.screenSize === Constants.ScreenTablet || this.state.screenSize === Constants.ScreenLaptop)
-          && <nav className='header-links'>
+          && <nav className='header__nav'>
             {navigationLinks.slice(0, 2).map((navlink, index) =>
-              <NavLink activeClassName='header-link-active' to={'/' + navlink.url}
+              <NavLink activeClassName='header__link--active' to={'/' + navlink.url}
                 key={index}
                 onClick={() => this.handleMenuItemClick(navlink.url)}>{navlink.name}</NavLink>
             )}
           </nav>}
-        <div className='header-rightpane'>
+        <div className='header__rightpane'>
           {(this.state.screenSize === Constants.ScreenTablet || this.state.screenSize === Constants.ScreenLaptop)
-            && <nav className='header-links'>
+            && <nav className='header__nav header__nav--right'>
               {navigationLinks.slice(2).map((navlink, index) =>
-                <NavLink activeClassName='header-link-active' to={'/' + navlink.url}
+                <NavLink activeClassName='header__link--active' to={'/' + navlink.url}
                   key={index}
                   onClick={() => this.handleMenuItemClick(navlink.url)}>{navlink.name}</NavLink>
               )}
             </nav>}
           <CartButton cartItems={this.props.cartItems} handleClick={this.openCart} />
           <Drawer anchor={Constants.Right} open={this.state.isDrawerOpen} onClose={this.toggleDrawer(false)}
-            PaperProps={{ className: 'drawer-paper' }}
+            PaperProps={{ className: 'drawer__paper' }}
             ModalProps={{
-              className: 'drawer-modal',
-              container: document.getElementById('app-container')
+              className: 'drawer__modal',
+              container: document.getElementById('app__container')
             }}
             variant={Constants.VariantTemporary}>
             <Cart cartSubmit={this.toggleDrawer(false)} cartClose={this.toggleDrawer(false)} />

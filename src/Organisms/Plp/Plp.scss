@@ -5,23 +5,7 @@
   flex-direction: column;
   width: 100%;
 
-  .leftpane {
-    width: 20%;
-  }
-
-  .dropdown {
-    width: 100%;
-  }
-
-  .grid {
-    width: 100%;
-  }
-
   @media only screen and (min-width: $screen-tablet)  {
     flex-direction: row;
-
-    .grid {
-      width: 80%;
-    }
   }
 }

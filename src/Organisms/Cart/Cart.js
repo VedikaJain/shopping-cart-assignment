@@ -92,45 +92,52 @@ class Cart extends Component {
     const totalPrice = this.state.cart.reduce(
       (totamount, cartItem) => (cartItem.price * cartItem.quantity) + totamount, 0);
     return (
-      <main className='cart' aria-labelledby='cart-header-mycart' aria-describedby='totalitems'>
-        <div className='cart-header'>
+      <main className='cart' aria-labelledby='cart__text-mycart' aria-describedby='cart__text-totalitems'>
+        <div className='cart__header'>
           <div>
-            <span className='cart-header-mycart' id='cart-header-mycart'>{Constants.MyCart} </span>
-            {totalItems > 0 && <span className='cart-header-totalitems' id='totalitems'>
+            <span className='cart__text cart__text--font-large' id='cart__text-mycart'>
+              {Constants.MyCart}
+            </span>
+            {totalItems > 0 && <span id='cart__text-totalitems'>
               ({totalItems} {(totalItems <= 1) ? Constants.Item : (Constants.Item + 's')})
             </span>}
           </div>
-          <IconButton type={Constants.IconClose} ariaLabel={Constants.CloseCart}
-            handleClick={this.props.cartClose} tabIndex={this.state.closeCartTabIndex}/>
-        </div>
-        <div className='cart-content'>
-          {(this.state.cart.length > 0)
-            ? <>
-              {this.state.cart.map((cartItem) =>
-                <CartItem cartItem={cartItem}
-                  addQuantity={this.addQuantity}
-                  reduceQuantity={this.reduceQuantity}
-                  key={cartItem.id} />
-              )}
-              <figure className='cart-lowestprice'>
-                <img src={Constants.UrlPublic + Constants.ImgLowestPrice}
-                  alt={Constants.LowestPriceGuaranteed} />
-                <figcaption className='cart-body-font-small'>{Constants.LowestPrice}</figcaption>
-              </figure>
-            </>
-            : <div className='cart-body-empty'>
-              <div className='cart-body-empty-noitems'>{Constants.CartEmpty}</div>
-              <div className='cart-body-font-small' >{Constants.CartEmptyFavItems}</div>
-            </div>
+          {(window.matchMedia('(' + Constants.MinWidth + Constants.ScreenLaptop + ')').matches) &&
+            <IconButton type={Constants.IconClose} ariaLabel={Constants.CloseCart}
+              handleClick={this.props.cartClose} tabIndex={this.state.closeCartTabIndex}
+              className='cart__iconbutton' />
           }
         </div>
-        <div className={'cart-footer' + ((this.state.cart.length > 0) ? ' cart-footer-border' : '')}>
+        {(this.state.cart.length > 0)
+          ? <div className='cart__content'>
+            {this.state.cart.map((cartItem) =>
+              <CartItem cartItem={cartItem}
+                addQuantity={this.addQuantity}
+                reduceQuantity={this.reduceQuantity}
+                key={cartItem.id} />
+            )}
+            <figure className='cart__img-lowestprice'>
+              <img src={Constants.UrlPublic + Constants.ImgLowestPrice}
+                alt={Constants.LowestPriceGuaranteed} />
+              <figcaption className='cart__text cart__text--font-small'>
+                {Constants.LowestPrice}
+              </figcaption>
+            </figure>
+          </div>
+          : <div className='cart__content cart__content--empty'>
+            <div className='cart__text cart__text--font-large cart__text--padding'>
+              {Constants.CartEmpty}
+            </div>
+            <div className='cart__text cart__text--font-small' >{Constants.CartEmptyFavItems}</div>
+          </div>
+        }
+        <div className={'cart__footer' + ((this.state.cart.length > 0) ? ' cart__footer--border' : '')}>
           {(this.state.cart.length > 0)
-            && <div className='cart-footer-promocode cart-body-font-small'>
+            && <div className='cart__text cart__text--font-small cart__text--padding'>
               {Constants.PromoCode}
             </div>
           }
-          <PinkButton handleClick={this.cartSubmit}
+          <PinkButton className='cart__pinkbutton' handleClick={this.cartSubmit}
             text={(this.state.cart.length > 0)
               ? Constants.Checkout
               : Constants.StartShopping}
@@ -142,7 +149,7 @@ class Cart extends Component {
               : Constants.StartShopping}
             handleFocus={() => this.setState({
               closeCartTabIndex: '0'
-            })}/>
+            })} />
         </div>
       </main>
     );

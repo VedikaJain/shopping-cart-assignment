@@ -4,7 +4,7 @@ import * as Constants from '../../global-constants';
 
 function Footer() {
   return (
-    <footer>
+    <footer className='footer'>
       {Constants.Copyright}
     </footer>
   );

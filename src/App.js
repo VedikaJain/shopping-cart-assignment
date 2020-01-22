@@ -46,9 +46,9 @@ class App extends Component {
           <Header cartItems={this.state.cart.reduce(
             (totalItems, cartItem) => cartItem.quantity + totalItems, 0)
           } />
-          <Hr type='hr-blue' />
+          <Hr type='hr--blue' />
           <ToastContainer position={toast.POSITION.TOP_CENTER} autoClose={3000}/>
-          <div id='app-container' className='app-container'>
+          <div id='app__container' className='app__container'>
             <Switch>
               <Route exact path='/' component={Home} />
               <Route exact path={'/' + Constants.UrlHome} component={Home} />

@@ -3,7 +3,7 @@ import './Hr.scss';
 
 function Hr({type}) {
   return (
-    <hr className={type}/>
+    <hr className={'hr ' + type}/>
   );
 }
 

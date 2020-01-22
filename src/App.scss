@@ -9,12 +9,7 @@
   justify-content: space-between;
   overflow: hidden;
   
-  a {
-    text-decoration: none;
-    color: $color-black-1;
-  }
-
-  .app-container {
+  &__container {
     position: relative;
     width: 100%;
     min-height: 85vh;
@@ -24,4 +19,8 @@
     padding: 0 5em;
   }
 }
-
+  
+a {
+  text-decoration: none;
+  color: $color-black-1;
+}
