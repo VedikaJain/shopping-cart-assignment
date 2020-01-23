@@ -43,7 +43,7 @@ class Register extends Component {
   render() {
     return (
       <main className='register'
-        aria-labelledby='formTitle' aria-describedby='formDescription'>
+        aria-labelledby='form__title' aria-describedby='form__description'>
         <PageView title={Constants.TitleRegister}
           description={Constants.DescriptionRegister}
           formInputs={formInputs} formSubmit={this.registerUser}

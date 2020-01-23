@@ -5,14 +5,14 @@ import * as Constants from '../../global-constants';
 
 function Grid(props) {
   return (
-    <div role='tabpanel' className='grid' id='Grid'
+    <div role='tabpanel' className='grid' id='grid'
       aria-label={Constants.ProductsOf + props.category}>
       {(props.products.length > 0)
         ? props.products.map((product, i) =>
           <GridItem key={i} product={product}
             selectGridItem={props.addToCart} screenSize={props.screenSize}/>
         )
-        : <p className='grid-empty'>
+        : <p className='grid__content grid__content--empty'>
           {Constants.NoAvailableProduct}
         </p>}
     </div>

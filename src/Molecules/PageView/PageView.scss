@@ -5,13 +5,9 @@
   flex-direction: column;
   justify-content: center;
 
-  > div {
+  &__page {
     width: 100%;
     padding-top: 1em;
-  }
-
-  .pageview-rightpage div {
-    margin-bottom: 0.5em;
   }
 
   @media only screen and (min-width: $screen-laptop) {

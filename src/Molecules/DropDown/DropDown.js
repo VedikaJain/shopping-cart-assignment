@@ -51,7 +51,8 @@ class DropDown extends Component {
 
     return (
       <div className='dropdown'>
-        <PinkButton ariaControls="categoriesList" ariaHaspopup="true"
+        <PinkButton ariaControls='dropdown__menu' ariaHaspopup='true'
+          className='dropdown__pinkbutton'
           ariaLabel={(this.state.selectedItem && this.state.selectedItem !== {}
             && this.state.selectedItem.name && this.state.selectedItem.name.length > 0)
             ? Constants.SelectedCategory + this.state.selectedItem.name
@@ -62,21 +63,21 @@ class DropDown extends Component {
             : Constants.SelectCategory}
           handleClick={this.handleClick} rightContent={Constants.IconDownArrow} />
         <Menu anchorEl={this.state.anchorEl} keepMounted open={Boolean(this.state.anchorEl)}
-          onClose={this.handleClose} className='dropdown-menu'
-          id='categoriesList'>
+          onClose={this.handleClose} className='dropdown__menu'
+          id='dropdown__menu'>
           {(this.props.items.length > 0)
             ? this.props.items.map((item, i) =>
-              <MenuItem key={i} className='dropdown-menu-item'
+              <MenuItem key={i} className='dropdown__menuitem'
                 selected={this.state.selectedItem && this.state.selectedItem.id === item.id}
                 onClick={() => this.handleMenuItemClick(item)}>
-                <p className={'dropdown-menuitem-text '
+                <p className={'dropdown__text '
                     + ((this.state.selectedItem && this.state.selectedItem.id === item.id)
-                      ? 'dropdown-menuitem-text-selected' : '')}>
+                      ? 'dropdown__text--selected' : '')}>
                   {item.name}
                 </p>
               </MenuItem>
             )
-            : <span className='dropdown-menu-empty'>
+            : <span className='dropdown__content dropdown__content--empty'>
               {Constants.NoAvailableCategory}
             </span>
           }

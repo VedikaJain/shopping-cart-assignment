@@ -25,10 +25,10 @@ class LeftPane extends Component {
 
   render() {
     return (
-      <div className="leftpane" role="tablist" aria-label='Categories'>
+      <div className='leftpane' role='tablist' aria-label='Categories'>
         {(this.props.items.length > 0)
           ? this.props.items.map((item, i) =>
-            <MenuItemButton key={i} text={item.name} ariaControls='Grid'
+            <MenuItemButton key={i} text={item.name} ariaControls='grid'
               selected={(this.state.selectedItem.id === item.id) ? true : false}
               handleClick={
                 () => (this.state.selectedItem.id === item.id)
@@ -36,7 +36,7 @@ class LeftPane extends Component {
                   : this.setSelectedItem(item)
               }/>
           )
-          : <span className='leftpane-empty'>
+          : <span className='leftpane__content leftpane__content--empty'>
               {Constants.NoAvailableCategory}
             </span>
         }

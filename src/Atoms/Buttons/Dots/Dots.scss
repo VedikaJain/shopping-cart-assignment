@@ -3,6 +3,8 @@
 .dots {
     background: none;
     border: 0;
+    position: sticky;
+    margin-top: 2em;
     
     &:hover {
         cursor: pointer;
@@ -15,5 +17,9 @@
         &.dots-icon-active {
             color: $color-black-1;
         }
+    }
+
+    @media only screen and (min-width: $screen-tablet)  {
+        margin-top: 0;
     }
 }

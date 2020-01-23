@@ -5,11 +5,11 @@ import Form from '../../Molecules/Form/Form';
 function PageView(props) {
   return (
     <div className='pageview'>
-      <div>
-        <h2 id='formTitle'>{props.title}</h2>
-        <p id='formDescription'>{props.description}</p>
+      <div className='pageview__page'>
+        <h2 id='form__title'>{props.title}</h2>
+        <p id='form__description'>{props.description}</p>
       </div>
-      <div className='pageview-rightpage'>
+      <div className='pageview__page'>
         <Form formInputs={props.formInputs} buttonText={props.title} formSubmit={props.formSubmit}/>
       </div>
     </div>

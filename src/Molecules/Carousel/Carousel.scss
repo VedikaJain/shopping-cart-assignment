@@ -4,34 +4,21 @@
   margin-top: 1em;
   position: relative;
 
-  .carousel-slide-image {
+  &__slide {
     width: 100%;
   }
 
-  .carousel-buttons {
+  &__buttons {
     margin-top: -14%;
     padding-bottom: 8%;
     position: sticky;
-  }
 
-  .dots {
-    position: sticky;
-    margin-top: 2em;
-  }
-
-  @media only screen and (min-width: $screen-tablet)  {
-    .carousel-buttons {
+    @media only screen and (min-width: $screen-tablet)  {
       display: flex;
       justify-content: space-between;
     }
 
-    .dots {
-      margin-top: 0;
-    }
-  }
-  
-  @media only screen and (min-width: $screen-laptop)  {
-    .carousel-buttons {
+    @media only screen and (min-width: $screen-laptop)  {
       padding-bottom: 10%;
     }
   }

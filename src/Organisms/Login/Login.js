@@ -42,7 +42,7 @@ class Login extends Component {
   render() {
     return (
       <main className='login'
-        aria-labelledby='formTitle' aria-describedby='formDescription'>
+        aria-labelledby='form__title' aria-describedby='form__description'>
         <PageView title={Constants.TitleLogin}
           description={Constants.DescriptionLogin}
           formInputs={formInputs} formSubmit={this.loginUser}

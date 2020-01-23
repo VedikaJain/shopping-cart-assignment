@@ -5,24 +5,24 @@
   margin: 0;
   flex-direction: row;
 
-  .showcase-content {
+  &__content {
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    .showcase-content-heading {
-      font-weight: 700;
-      font-size: large;
-    }
-    
-    .showcase-content-description {
-      margin: 1.5em 0 2.5em 0;
-      font-size: smaller;
-      font-weight: 600;
-    }
   }
 
-  .showcase-image {
+  &__heading {
+    font-weight: 700;
+    font-size: large;
+  }
+  
+  &__description {
+    margin: 1.5em 0 2.5em 0;
+    font-size: smaller;
+    font-weight: 600;
+  }
+
+  &__image {
     width: 40%;
   }
 }

@@ -28,21 +28,21 @@ function Carousel(props) {
     <div className='carousel' role='region' aria-label={Constants.Ongoing + Constants.Offers}>
       <AutoPlaySwipeableViews axis='x' index={activeStep}
         onChangeIndex={handleStepChange} enableMouseEvents
-        aria-live='off' id='carouselSlides'>
+        aria-live='off' id='carousel__slides'>
         {props.items.map((step, index) => (
           <div key={step.id} role='group'>
             {Math.abs(activeStep - index) <= 2 ? (
-              <img className='carousel-slide-image' src={step.bannerImageUrl} alt={step.bannerImageAlt} />
+              <img className='carousel__slide' src={step.bannerImageUrl} alt={step.bannerImageAlt} />
             ) : null}
           </div>
         ))}
       </AutoPlaySwipeableViews>
       {(props.screenSize === Constants.ScreenTablet
         || props.screenSize === Constants.ScreenLaptop) &&
-        <div className='carousel-buttons'>
-          <GreyButton ariaLabel={Constants.GoTo + Constants.PreviousSlide} ariaControls='carouselSlides'
+        <div className='carousel__buttons'>
+          <GreyButton ariaLabel={Constants.GoTo + Constants.PreviousSlide} ariaControls='carousel__slides'
             handleClick={handleBack} text={Constants.Previous} />
-          <GreyButton ariaLabel={Constants.GoTo + Constants.NextSlide} ariaControls='carouselSlides'
+          <GreyButton ariaLabel={Constants.GoTo + Constants.NextSlide} ariaControls='carousel__slides'
             handleClick={handleNext} text={Constants.Next} />
         </div>}
       <Dots activeDot={activeStep} totalDots={maxSteps} selectDot={handleStepChange} altText={Constants.Offers} />
