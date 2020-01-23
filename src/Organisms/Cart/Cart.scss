@@ -57,21 +57,21 @@
     margin-bottom: 0.5em!important;
   }
 
-  &__img-lowestprice {
+  &__figure {
     text-align: left;
     background-color: $color-white-1;
     margin: 0.5em;
-    padding: 1em;
+    padding: 1em 0;
     display: flex;
     align-items: center;
 
     & > * {
       padding-left: 1.5em;
     }
+  }
 
-    & > img {
-      height: 2.5em;
-    }
+  &__img-lowestprice {
+    height: 2.5em;
   }
 
   &__footer {

@@ -62,8 +62,8 @@ function Header(props) {
         {(props.screenSize === Constants.ScreenTablet || props.screenSize === Constants.ScreenLaptop)
           && <nav className='header__nav'>
             {navigationLinks.slice(0, 2).map((navlink, index) =>
-              <NavLink activeClassName='header__link--active' to={'/' + navlink.url}
-                key={index}
+              <NavLink className='header__link' activeClassName='header__link--active'
+                to={'/' + navlink.url} key={index}
                 onClick={() => handleMenuItemClick(navlink.url)}>{navlink.name}</NavLink>
             )}
           </nav>}
@@ -71,8 +71,8 @@ function Header(props) {
           {(props.screenSize === Constants.ScreenTablet || props.screenSize === Constants.ScreenLaptop)
             && <nav className='header__nav header__nav--right'>
               {navigationLinks.slice(2).map((navlink, index) =>
-                <NavLink activeClassName='header__link--active' to={'/' + navlink.url}
-                  key={index}
+                <NavLink className='header__link' activeClassName='header__link--active'
+                  to={'/' + navlink.url} key={index}
                   onClick={() => handleMenuItemClick(navlink.url)}>{navlink.name}</NavLink>
               )}
             </nav>}

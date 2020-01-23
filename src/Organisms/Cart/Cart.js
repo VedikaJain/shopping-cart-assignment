@@ -116,8 +116,9 @@ class Cart extends Component {
                 reduceQuantity={this.reduceQuantity}
                 key={cartItem.id} />
             )}
-            <figure className='cart__img-lowestprice'>
-              <img src={Constants.UrlPublic + Constants.ImgLowestPrice}
+            <figure className='cart__figure'>
+              <img className='cart__img-lowestprice'
+                src={Constants.UrlPublic + Constants.ImgLowestPrice}
                 alt={Constants.LowestPriceGuaranteed} />
               <figcaption className='cart__text cart__text--font-small'>
                 {Constants.LowestPrice}

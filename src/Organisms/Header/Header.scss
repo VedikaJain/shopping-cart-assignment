@@ -27,20 +27,20 @@
       font-size: small;
       margin-bottom: 0.5em;
     }
-
-    a {
-      color: $color-black-2;
-      font-weight: 600;
-
-      &:not(:last-of-type) {
-        margin-right: 1em;
-      }
-    }
   }
   
-  &__link--active {
-    border-bottom: 0.2em solid $color-black-2;
-    cursor: pointer;
+  &__link {
+    color: $color-black-2;
+    font-weight: 600;
+
+    &:not(:last-of-type) {
+      margin-right: 1em;
+    }
+
+    &--active {
+      border-bottom: 0.2em solid $color-black-2;
+      cursor: pointer;
+    }
   }
   
   &__rightpane {
@@ -53,6 +53,10 @@
   @media only screen and (min-width: $screen-tablet)  {
     &__nav {
       padding: 0 7%;
+
+      &--right {
+        padding: 0;
+      }
     }
 
     &__logo {
