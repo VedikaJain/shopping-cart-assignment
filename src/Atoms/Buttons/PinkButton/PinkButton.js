@@ -8,14 +8,14 @@ function PinkButton(props) {
     <button disabled={props.disabled} type={props.type}
       aria-label={props.ariaLabel} aria-controls={props.ariaControls} aria-haspopup={props.ariaHaspopup}
       className={(props.className ? props.className : '') + ' pinkbutton '
-        + (props.rightContent ? 'pinkbutton-content-side' : 'pinkbutton-content-center')}
+        + (props.rightContent ? 'pinkbutton--justify-space-between' : 'pinkbutton--justify-center')}
       onClick={props.handleClick}
       onFocus={props.handleFocus}>
-      <span className='pinkbutton-text'>{props.text}</span>
+      <span className='pinkbutton__text'>{props.text}</span>
       { props.rightContent && 
         ((props.rightContent === Constants.IconDownArrow)
-          ? <ExpandMoreIcon className='pinkbutton-icon'/>
-          : <span className='pinkbutton-text'>{props.rightContent}</span>)
+          ? <ExpandMoreIcon className='pinkbutton__icon'/>
+          : <span className='pinkbutton__text'>{props.rightContent}</span>)
       }
     </button>
   );

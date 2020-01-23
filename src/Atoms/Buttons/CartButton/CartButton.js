@@ -5,10 +5,10 @@ import * as Constants from '../../../global-constants';
 function CartButton(props) {
   return (
     <button className='cartbutton' onClick={props.handleClick}
-      aria-labelledby='cart__icon' aria-describedby='cart__items'>
+      aria-labelledby='cartbutton__icon' aria-describedby='cartbutton__text'>
       <img src={Constants.UrlPublic + Constants.ImgCartIcon}
-        alt={Constants.GoTo + Constants.Cart} className='cartbutton-icon' id='cart__icon' />
-      <span id='cart__items'>
+        alt={Constants.GoTo + Constants.Cart} className='cartbutton__icon' id='cartbutton__icon' />
+      <span id='cartbutton__text'>
         {props.cartItems} {(props.cartItems <= 1) ? Constants.Item : Constants.Item + 's'}
       </span>
     </button>

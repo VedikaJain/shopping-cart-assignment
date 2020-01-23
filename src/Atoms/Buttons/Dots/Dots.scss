@@ -10,11 +10,11 @@
         cursor: pointer;
     }
 
-    .dots-icon {
+    &__icon {
         font-size: 0.6em;
         color: $color-grey-4;
 
-        &.dots-icon-active {
+        &--active {
             color: $color-black-1;
         }
     }

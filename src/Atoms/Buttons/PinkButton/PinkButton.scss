@@ -8,19 +8,11 @@
     margin-bottom: 1.5em;
     display: flex;
 
-    &.pinkbutton-content-side {
-        justify-content: space-between;
-    }
-
-    &.pinkbutton-content-center {
-        justify-content: center;
-    }
-
-    .pinkbutton-text {
+    &__text {
         align-self: center;
     }
 
-    .pinkbutton-icon {
+    &__icon {
         height: 2em;
         vertical-align: middle;
         width: auto;
@@ -34,5 +26,13 @@
     
     &:hover {
         cursor: pointer;
+    }
+    
+    &--justify-space-between {
+        justify-content: space-between;
+    }
+
+    &--justify-center {
+        justify-content: center;
     }
 }
