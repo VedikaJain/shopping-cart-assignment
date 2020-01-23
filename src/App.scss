@@ -19,6 +19,25 @@
     padding: 0 5em;
   }
 }
+
+.drawer {
+  &__modal {
+    position: absolute!important;
+  }
+
+  &__paper {
+    position: absolute;
+    width: 100%;
+    right: 0;
+    height: -webkit-fill-available;
+    max-height: 32em;
+    outline: 0;
+
+    @media only screen and (min-width: $screen-laptop)  {
+      width: 50%;
+    }
+  } 
+}
   
 a {
   text-decoration: none;

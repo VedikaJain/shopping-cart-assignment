@@ -17,8 +17,7 @@ export class Plp extends Component {
       products: [],
       cart: [],
       selectedCategory: {},
-      cartStatus: '',
-      screenTablet: (window.matchMedia('(' + Constants.MinWidth + Constants.ScreenTablet + ')').matches) ? true : false
+      cartStatus: ''
     }
   }
 
@@ -59,22 +58,14 @@ export class Plp extends Component {
     this.props.fetchData(Constants.UrlProductsApi);
     this.props.fetchData(Constants.UrlCartApi);
     this.props.fetchData(Constants.UrlCategoriesApi);
-    window.addEventListener('resize', this.handleResize);
   }
 
   componentWillUnmount() {
     this.selectCategory({});
-    window.removeEventListener('resize', this.handleResize);
   }
 
   selectCategory = (newCategory) => {
     this.props.saveData(Constants.UrlSelectedCategory, newCategory);
-  }
-
-  handleResize = () => {
-    this.setState({
-      screenTablet: (window.matchMedia('(' + Constants.MinWidth + Constants.ScreenTablet + ')').matches) ? true : false
-    });
   }
 
   addToCart = (productToAdd) => {
@@ -111,7 +102,8 @@ export class Plp extends Component {
   render() {
     return (
       <main className='product-listing-page' aria-label={Constants.CategoriesProducts}>
-        {(this.state.screenTablet)
+        {(this.props.screenSize === Constants.ScreenTablet
+          || this.props.screenSize === Constants.ScreenLaptop)
           ? <LeftPane items={this.state.categories}
             selectItem={this.selectCategory}
             alreadySelected={this.props.selectedCategory} />
@@ -119,7 +111,7 @@ export class Plp extends Component {
             selectItem={this.selectCategory}
             alreadySelected={this.props.selectedCategory} />
         }
-        <Grid addToCart={this.addToCart}
+        <Grid addToCart={this.addToCart} screenSize={this.props.screenSize}
           category={(this.props.selectedCategory && this.props.selectedCategory.name)
             ? this.props.selectedCategory.name : Constants.AllCategories}
           products={

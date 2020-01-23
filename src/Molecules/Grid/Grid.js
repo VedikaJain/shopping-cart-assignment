@@ -8,12 +8,13 @@ function Grid(props) {
     <div role='tabpanel' className='grid' id='Grid'
       aria-label={Constants.ProductsOf + props.category}>
       {(props.products.length > 0)
-        ? props.products.map((product, i)=>
-            <GridItem key={i} product={product} selectGridItem={props.addToCart}/>
-          )
+        ? props.products.map((product, i) =>
+          <GridItem key={i} product={product}
+            selectGridItem={props.addToCart} screenSize={props.screenSize}/>
+        )
         : <p className='grid-empty'>
-            {Constants.NoAvailableProduct}
-          </p>}
+          {Constants.NoAvailableProduct}
+        </p>}
     </div>
   );
 }
