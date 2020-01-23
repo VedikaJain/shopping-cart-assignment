@@ -38,7 +38,7 @@ export class Home extends Component {
   render() {
     return (
       <main className='home' aria-label={Constants.Home}>
-        <Carousel items={this.state.banners} />
+        <Carousel items={this.state.banners} screenSize={this.props.screenSize}/>
         <div className='home__container'>
           {this.state.categories.map((category, i) =>
             <div key={i}>

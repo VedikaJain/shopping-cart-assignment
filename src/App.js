@@ -96,14 +96,15 @@ class App extends Component {
         <ToastContainer position={toast.POSITION.TOP_CENTER} autoClose={3000} />
         <div id='app__container' className='app__container'>
           <Switch>
-            <Route exact path='/' component={Home} />
-            <Route exact path={'/' + Constants.UrlHome} component={Home} />
+            <Route exact path='/' 
+              render={(props) => <Home {...props} screenSize={this.state.screenSize} />} />
+            <Route exact path={'/' + Constants.UrlHome}
+              render={(props) => <Home {...props} screenSize={this.state.screenSize} />} />
             <Route exact path={'/' + Constants.UrlPlp}
               render={(props) => <Plp {...props} screenSize={this.state.screenSize} />} />
             <Route exact path={'/' + Constants.UrlLoginApi} component={Login} />
             <Route exact path={'/' + Constants.UrlRegisterApi} component={Register} />
             <Route exact path={'/' + Constants.UrlCart} component={Cart} />
-            <Route component={Home} />
           </Switch>
           <Drawer anchor={Constants.Right} open={this.state.isDrawerOpen} onClose={this.toggleDrawer(false)}
             PaperProps={{ className: 'drawer__paper' }}

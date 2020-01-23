@@ -37,13 +37,15 @@ function Carousel(props) {
           </div>
         ))}
       </AutoPlaySwipeableViews>
-      <div className='carousel-buttons'>
-        <GreyButton ariaLabel={Constants.GoTo + Constants.PreviousSlide} ariaControls='carouselSlides'
-            handleClick={handleBack} text={Constants.Previous}/>
-        <GreyButton ariaLabel={Constants.GoTo + Constants.NextSlide} ariaControls='carouselSlides'
-            handleClick={handleNext} text={Constants.Next}/>
-      </div>
-      <Dots activeDot={activeStep} totalDots={maxSteps} selectDot={handleStepChange} altText={Constants.Offers}/>
+      {(props.screenSize === Constants.ScreenTablet
+        || props.screenSize === Constants.ScreenLaptop) &&
+        <div className='carousel-buttons'>
+          <GreyButton ariaLabel={Constants.GoTo + Constants.PreviousSlide} ariaControls='carouselSlides'
+            handleClick={handleBack} text={Constants.Previous} />
+          <GreyButton ariaLabel={Constants.GoTo + Constants.NextSlide} ariaControls='carouselSlides'
+            handleClick={handleNext} text={Constants.Next} />
+        </div>}
+      <Dots activeDot={activeStep} totalDots={maxSteps} selectDot={handleStepChange} altText={Constants.Offers} />
     </div>
   );
 }
