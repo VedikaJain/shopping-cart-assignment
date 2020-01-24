@@ -14,10 +14,10 @@ export const UrlHome = 'home';
 export const UrlCart = 'cart';
 
 // Image Paths
-export const ImgLowestPrice = '/images/lowest-price.png';
+export const ImgLowestPrice = '/images/lowest-price.webp';
 export const ImgCartIcon = '/images/cart.svg';
-export const ImgLogo = '/images/logo.png';
-export const ImgLogo2x = '/images/logo_2x.png';
+export const ImgLogo = '/images/logo.webp';
+export const ImgLogo2x = '/images/logo_2x.webp';
 
 // Response Codes
 export const RespCodeSuccess = 200;
