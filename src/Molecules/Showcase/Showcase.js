@@ -25,9 +25,11 @@ function Showcase(props) {
     <figure className='showcase'>
       {props.imgAlign === Constants.Left &&
         <img src={Constants.UrlPublic + cat.imageUrl}
-          sizes={cat.sizes ? cat.sizes : ''}
+          sizes={'(' + Constants.MinWidth + Constants.ScreenLaptop + ') '
+            + 'calc( 0.4 * (' + Constants.MaxViewportWidth + ' - 10em)), '
+            + 'calc( 0.4 * ' + Constants.MaxViewportWidth + ')'}
           srcSet={getSrcSet(cat.srcset)}
-          alt={cat.name} className='showcase__image' />}
+          alt={cat.name} />}
       <div className='showcase__content'>
         <figcaption className='showcase__heading'>{cat.name}</figcaption>
         <div className='showcase__description'>
@@ -38,9 +40,11 @@ function Showcase(props) {
       </div>
       {props.imgAlign === Constants.Right &&
         <img src={Constants.UrlPublic + cat.imageUrl}
-          sizes={cat.sizes ? cat.sizes : ''}
+          sizes={'(' + Constants.MinWidth + Constants.ScreenLaptop + ') '
+            + 'calc( 0.4 * (' + Constants.MaxViewportWidth + ' - 10em)), '
+            + 'calc( 0.4 * ' + Constants.MaxViewportWidth + ')'}
           srcSet={getSrcSet(cat.srcset)}
-          alt={cat.name} className='showcase__image' />}
+          alt={cat.name} />}
     </figure>
   )
 }

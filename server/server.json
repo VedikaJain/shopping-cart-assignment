@@ -60,7 +60,6 @@
       "enabled": true,
       "order": 3,
       "imageUrl": "/images/category/beverages_w_800.webp",
-      "sizes": "(max-width: 800px) 100vw, 800px",
       "srcset": "/images/category/beverages_w_300.webp 300w,/images/category/beverages_w_470.webp 470w,/images/category/beverages_w_594.webp 594w,/images/category/beverages_w_711.webp 711w,/images/category/beverages_w_800.webp 800w",
       "id": "5b675e5e5936635728f9fc30"
     },
@@ -71,7 +70,6 @@
       "enabled": true,
       "order": 2,
       "imageUrl": "/images/category/bakery_w_724.webp",
-      "sizes": "(max-width: 724px) 100vw, 724px",
       "srcset": "/images/category/bakery_w_300.webp 300w,/images/category/bakery_w_724.webp 724w",
       "id": "5b6899123d1a866534f516de"
     },
@@ -82,7 +80,6 @@
       "enabled": true,
       "order": 4,
       "imageUrl": "/images/category/beauty_w_440.webp",
-      "sizes": "(max-width: 440px) 100vw, 440px",
       "srcset": "/images/category/beauty_w_300.webp 300w,/images/category/beauty_w_416.webp 416w,/images/category/beauty_w_440.webp 440w",
       "id": "5b68994e3d1a866534f516df"
     },
@@ -93,7 +90,6 @@
       "enabled": true,
       "order": 5,
       "imageUrl": "/images/category/baby_w_800.webp",
-      "sizes": "(max-width: 800px) 100vw, 800px",
       "srcset": "/images/category/baby_w_300.webp 300w,/images/category/baby_w_484.webp 484w,/images/category/baby_w_637.webp 637w,/images/category/baby_w_766.webp 766w,/images/category/baby_w_800.webp 800w",
       "id": "5b6899683d1a866534f516e0"
     },
@@ -112,7 +108,6 @@
       "enabled": true,
       "order": 1,
       "imageUrl": "/images/category/fruits_w_800.webp",
-      "sizes": "(max-width: 800px) 100vw, 800px",
       "srcset": "/images/category/fruits_w_300.webp 300w,/images/category/fruits_w_471.webp 471w,/images/category/fruits_w_595.webp 595w,/images/category/fruits_w_711.webp 711w,/images/category/fruits_w_800.webp 800w",
       "id": "5b6899953d1a866534f516e2"
     }
