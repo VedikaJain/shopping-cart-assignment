@@ -1,6 +1,5 @@
 {
-  "addToCart": [
-  ],
+  "addToCart": [],
   "login": {
     "email": "a.d@f.in",
     "password": "aaaaa1111"
@@ -13,36 +12,46 @@
   },
   "banners": [
     {
-      "bannerImageUrl": "/images/offers/offer1.jpg",
+      "bannerImageUrl": "/images/offers/offer1_w_1200.webp",
       "bannerImageAlt": "Independence Day Deal - 25% off on shampoo",
+      "sizes": "(max-width: 1200px) 100vw, 1200px",
+      "srcset": "/images/offers/offer1_w_300.webp 300w,/images/offers/offer1_w_854.webp 854w,/images/offers/offer1_w_1200.webp 1200w",
       "isActive": true,
       "order": 1,
       "id": "5b6c38156cb7d770b7010ccc"
     },
     {
-      "bannerImageUrl": "/images/offers/offer2.jpg",
+      "bannerImageUrl": "/images/offers/offer2_w_1200.webp",
       "bannerImageAlt": "Independence Day Deal - Rs120 off on surf",
+      "sizes": "(max-width: 1200px) 100vw, 1200px",
+      "srcset": "/images/offers/offer2_w_300.webp 300w,/images/offers/offer2_w_758.webp 758w,/images/offers/offer2_w_1167.webp 1167w,/images/offers/offer2_w_1200.webp 1200w",
       "isActive": true,
       "order": 2,
       "id": "5b6c38336cb7d770b7010ccd"
     },
     {
-      "bannerImageUrl": "/images/offers/offer3.jpg",
+      "bannerImageUrl": "/images/offers/offer3_w_1200.webp",
       "bannerImageAlt": "Independence Day Deal - Rs99 off on domex",
+      "sizes": "(max-width: 1200px) 100vw, 1200px",
+      "srcset": "/images/offers/offer3_w_300.webp 300w,/images/offers/offer3_w_887.webp 887w,/images/offers/offer3_w_1200.webp 1200w",
       "isActive": true,
       "order": 3,
       "id": "5b6c38456cb7d770b7010cce"
     },
     {
-      "bannerImageUrl": "/images/offers/offer4.jpg",
+      "bannerImageUrl": "/images/offers/offer4_w_1200.webp",
       "bannerImageAlt": "Independence Day Deal - Rs99 off on bodywash",
+      "sizes": "(max-width: 1200px) 100vw, 1200px",
+      "srcset": "/images/offers/offer4_w_300.webp 300w,/images/offers/offer4_w_842.webp 842w,/images/offers/offer4_w_1200.webp 1200w",
       "isActive": true,
       "order": 4,
       "id": "5b6c38576cb7d770b7010ccf"
     },
     {
-      "bannerImageUrl": "/images/offers/offer5.jpg",
+      "bannerImageUrl": "/images/offers/offer5_w_1200.webp",
       "bannerImageAlt": "Independence Day Deal - Rs70 off on tea",
+      "sizes": "(max-width: 1200px) 100vw, 1200px",
+      "srcset": "/images/offers/offer5_w_300.webp 300w,/images/offers/offer5_w_780.webp 780w,/images/offers/offer5_w_1168.webp 1168w,/images/offers/offer5_w_1200.webp 1200w",
       "isActive": true,
       "order": 5,
       "id": "5b6c386b6cb7d770b7010cd0"
@@ -56,8 +65,8 @@
       "enabled": true,
       "order": 3,
       "imageUrl": "/images/category/beverages_w_800.png",
-      "sizes":"(max-width: 800px) 100vw, 800px",
-      "srcset":"/images/category/beverages_w_300.png 300w, /images/category/beverages_w_470.png 470w, /images/category/beverages_w_594.png 594w, /images/category/beverages_w_711.png 711w, /images/category/beverages_w_800.png 800w",
+      "sizes": "(max-width: 800px) 100vw, 800px",
+      "srcset": "/images/category/beverages_w_300.png 300w,/images/category/beverages_w_470.png 470w,/images/category/beverages_w_594.png 594w,/images/category/beverages_w_711.png 711w,/images/category/beverages_w_800.png 800w",
       "id": "5b675e5e5936635728f9fc30"
     },
     {
@@ -67,8 +76,8 @@
       "enabled": true,
       "order": 2,
       "imageUrl": "/images/category/bakery_w_724.png",
-      "sizes":"(max-width: 724px) 100vw, 724px",
-      "srcset": "/images/category/bakery_w_300.png 300w, /images/category/bakery_w_724.png 724w",
+      "sizes": "(max-width: 724px) 100vw, 724px",
+      "srcset": "/images/category/bakery_w_300.png 300w,/images/category/bakery_w_724.png 724w",
       "id": "5b6899123d1a866534f516de"
     },
     {
@@ -78,8 +87,8 @@
       "enabled": true,
       "order": 4,
       "imageUrl": "/images/category/beauty_w_440.png",
-      "sizes":"(max-width: 440px) 100vw, 440px",
-      "srcset":"/images/category/beauty_w_300.png 300w, /images/category/beauty_w_416.png 416w, /images/category/beauty_w_440.png 440w",
+      "sizes": "(max-width: 440px) 100vw, 440px",
+      "srcset": "/images/category/beauty_w_300.png 300w,/images/category/beauty_w_416.png 416w,/images/category/beauty_w_440.png 440w",
       "id": "5b68994e3d1a866534f516df"
     },
     {
@@ -89,8 +98,8 @@
       "enabled": true,
       "order": 5,
       "imageUrl": "/images/category/baby_w_800.png",
-      "sizes":"(max-width: 800px) 100vw, 800px",
-      "srcset": "/images/category/baby_w_300.png 300w, /images/category/baby_w_484.png 484w, /images/category/baby_w_637.png 637w, /images/category/baby_w_766.png 766w, /images/category/baby_w_800.png 800w",
+      "sizes": "(max-width: 800px) 100vw, 800px",
+      "srcset": "/images/category/baby_w_300.png 300w,/images/category/baby_w_484.png 484w,/images/category/baby_w_637.png 637w,/images/category/baby_w_766.png 766w,/images/category/baby_w_800.png 800w",
       "id": "5b6899683d1a866534f516e0"
     },
     {
@@ -108,8 +117,8 @@
       "enabled": true,
       "order": 1,
       "imageUrl": "/images/category/fruits_w_800.png",
-      "sizes":"(max-width: 800px) 100vw, 800px",
-      "srcset":"/images/category/fruits_w_300.png 300w, /images/category/fruits_w_471.png 471w, /images/category/fruits_w_595.png 595w, /images/category/fruits_w_711.png 711w, /images/category/fruits_w_800.png 800w",
+      "sizes": "(max-width: 800px) 100vw, 800px",
+      "srcset": "/images/category/fruits_w_300.png 300w,/images/category/fruits_w_471.png 471w,/images/category/fruits_w_595.png 595w,/images/category/fruits_w_711.png 711w,/images/category/fruits_w_800.png 800w",
       "id": "5b6899953d1a866534f516e2"
     }
   ],

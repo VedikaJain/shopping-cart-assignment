@@ -15,6 +15,9 @@ export function setCategories(cat) {
     return { type: SET_CATEGORIES, payload: cat };
 }
 export function setBanners(ban) {
+    if (ban && ban.length > 0) {
+        ban.sort((banner1, banner2) => banner1.order - banner2.order);
+    }
     return { type: SET_BANNERS, payload: ban };
 }
 export function setProducts(prod) {

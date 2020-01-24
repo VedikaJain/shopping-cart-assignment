@@ -23,6 +23,13 @@ function Carousel(props) {
     setActiveStep(step);
   };
 
+  const getSrcSet = (srcset) => {
+    if (srcset && srcset !== undefined && srcset !== null && srcset !== '') {
+      return srcset.split(',').join(', ' + Constants.UrlPublic);
+    }
+    return '';
+  }
+
   return (
     (maxSteps > 0) &&
     <div className='carousel' role='region' aria-label={Constants.Ongoing + Constants.Offers}>
@@ -32,7 +39,11 @@ function Carousel(props) {
         {props.items.map((step, index) => (
           <div key={step.id} role='group'>
             {Math.abs(activeStep - index) <= 2 ? (
-              <img className='carousel__slide' src={step.bannerImageUrl} alt={step.bannerImageAlt} />
+              <img className='carousel__slide'
+              src={step.bannerImageUrl}
+              sizes={step.sizes ? step.sizes : ''}
+              srcSet={getSrcSet(step.srcset)}
+              alt={step.bannerImageAlt} />
             ) : null}
           </div>
         ))}
