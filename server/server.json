@@ -14,7 +14,6 @@
     {
       "bannerImageUrl": "/images/offers/offer1_w_1200.webp",
       "bannerImageAlt": "Independence Day Deal - 25% off on shampoo",
-      "sizes": "(max-width: 1200px) 100vw, 1200px",
       "srcset": "/images/offers/offer1_w_300.webp 300w,/images/offers/offer1_w_854.webp 854w,/images/offers/offer1_w_1200.webp 1200w",
       "isActive": true,
       "order": 1,
@@ -23,7 +22,6 @@
     {
       "bannerImageUrl": "/images/offers/offer2_w_1200.webp",
       "bannerImageAlt": "Independence Day Deal - Rs120 off on surf",
-      "sizes": "(max-width: 1200px) 100vw, 1200px",
       "srcset": "/images/offers/offer2_w_300.webp 300w,/images/offers/offer2_w_758.webp 758w,/images/offers/offer2_w_1167.webp 1167w,/images/offers/offer2_w_1200.webp 1200w",
       "isActive": true,
       "order": 2,
@@ -32,7 +30,6 @@
     {
       "bannerImageUrl": "/images/offers/offer3_w_1200.webp",
       "bannerImageAlt": "Independence Day Deal - Rs99 off on domex",
-      "sizes": "(max-width: 1200px) 100vw, 1200px",
       "srcset": "/images/offers/offer3_w_300.webp 300w,/images/offers/offer3_w_887.webp 887w,/images/offers/offer3_w_1200.webp 1200w",
       "isActive": true,
       "order": 3,
@@ -41,7 +38,6 @@
     {
       "bannerImageUrl": "/images/offers/offer4_w_1200.webp",
       "bannerImageAlt": "Independence Day Deal - Rs99 off on bodywash",
-      "sizes": "(max-width: 1200px) 100vw, 1200px",
       "srcset": "/images/offers/offer4_w_300.webp 300w,/images/offers/offer4_w_842.webp 842w,/images/offers/offer4_w_1200.webp 1200w",
       "isActive": true,
       "order": 4,
@@ -50,7 +46,6 @@
     {
       "bannerImageUrl": "/images/offers/offer5_w_1200.webp",
       "bannerImageAlt": "Independence Day Deal - Rs70 off on tea",
-      "sizes": "(max-width: 1200px) 100vw, 1200px",
       "srcset": "/images/offers/offer5_w_300.webp 300w,/images/offers/offer5_w_780.webp 780w,/images/offers/offer5_w_1168.webp 1168w,/images/offers/offer5_w_1200.webp 1200w",
       "isActive": true,
       "order": 5,

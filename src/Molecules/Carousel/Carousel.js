@@ -39,9 +39,9 @@ function Carousel(props) {
         {props.items.map((step, index) => (
           <div key={step.id} role='group'>
             {Math.abs(activeStep - index) <= 2 ? (
-              <img className='carousel__slide'
-              src={step.bannerImageUrl}
-              sizes={step.sizes ? step.sizes : ''}
+              <img src={step.bannerImageUrl}
+              sizes={'(' + Constants.MinWidth + Constants.ScreenLaptop + ') '
+                + 'calc(' + Constants.MaxViewportWidth + ' - 10em), ' + Constants.MaxViewportWidth}
               srcSet={getSrcSet(step.srcset)}
               alt={step.bannerImageAlt} />
             ) : null}
