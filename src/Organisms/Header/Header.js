@@ -32,8 +32,7 @@ function Header(props) {
       <header className='header'>
         <img alt={Constants.Logo} className='header__logo'
           src={Constants.UrlPublic + Constants.ImgLogo}
-          srcSet={Constants.UrlPublic + Constants.ImgLogo + ' 1x, '
-            + Constants.UrlPublic + Constants.ImgLogo2x + ' 2x'} />
+          srcSet={Constants.UrlPublic + Constants.ImgLogo2x + ' 2x'} />
         {(props.screenSize === Constants.ScreenMobile)
           && <nav className='header__nav'>
             <IconButton type={Constants.IconMenu}
