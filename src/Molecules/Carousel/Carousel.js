@@ -41,7 +41,7 @@ function Carousel(props) {
             {Math.abs(activeStep - index) <= 2 ? (
               <img src={step.bannerImageUrl}
               sizes={'(' + Constants.MinWidth + Constants.ScreenLaptop + ') '
-                + 'calc(' + Constants.MaxViewportWidth + ' - 10em), ' + Constants.MaxViewportWidth}
+                + 'calc(' + Constants.MaxViewportWidth + ' - 12em), ' + Constants.MaxViewportWidth}
               srcSet={getSrcSet(step.srcset)}
               alt={step.bannerImageAlt} />
             ) : null}
