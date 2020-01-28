@@ -8,8 +8,14 @@ function GridItem(props) {
   return (
     <figure className='griditem'>
       <figcaption className='griditem__heading'>{props.product.name}</figcaption>
-      <img src={Constants.UrlPublic + props.product.imageURL}
-        alt={props.product.name} className='griditem__image' />
+      <div className='griditem__img-container'>
+        <img src={Constants.UrlPublic + props.product.imageURL}
+          alt={props.product.name}
+          srcSet={Constants.UrlPublic + props.product.imageURL + ' 300w'}
+          sizes={Constants.MaxViewportWidth}
+          className='griditem__image'
+          />
+      </div>
       <div className='griditem__description'>
         {props.product.description}
       </div>
@@ -24,7 +30,7 @@ function GridItem(props) {
             ariaLabel={Constants.BuyNow}
             handleClick={() => props.selectGridItem(props.product)} />
           : <PinkButton text={Constants.BuyNow + ' ' + Constants.SignAt + ' '
-              + Constants.INR + props.product.price}
+            + Constants.INR + props.product.price}
             className='griditem__pinkbutton'
             ariaLabel={Constants.BuyNow + ' ' + Constants.SignAt + ' '
               + Constants.INR + props.product.price}
