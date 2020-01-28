@@ -117,8 +117,11 @@ class Cart extends Component {
                 key={cartItem.id} />
             )}
             <figure className='cart__figure'>
-              <img className='cart__img-lowestprice'
-                src={Constants.UrlPublic + Constants.ImgLowestPrice}
+              <img src={Constants.UrlPublic + Constants.ImgLowestPrice}
+                srcSet={Constants.UrlPublic + Constants.ImgLowestPrice + ' 300w'}
+                sizes={'(' + Constants.MinWidth + Constants.ScreenLaptop + ') 20vw, '
+                  + '(' + Constants.MinWidth + Constants.ScreenTablet + ') 30vw, '
+                  + ' 50vw'}
                 alt={Constants.LowestPriceGuaranteed} />
               <figcaption className='cart__text cart__text--font-small'>
                 {Constants.LowestPrice}

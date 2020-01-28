@@ -6,18 +6,24 @@ import PinkButton from '../../../Atoms/Buttons/PinkButton/PinkButton';
 function CartItem(props) {
   return (
     <figure className='cartitem'>
-      <img className='cartitem__image' src={Constants.UrlPublic + props.cartItem.imageURL}
-        alt={props.cartItem.name} />
+      <div className='cartitem__image'>
+        <img src={Constants.UrlPublic + props.cartItem.imageURL}
+          srcSet={Constants.UrlPublic + props.cartItem.imageURL + ' 300w'}
+          sizes={'(' + Constants.MinWidth + Constants.ScreenLaptop + ') 5vw, '
+            + '(' + Constants.MinWidth + Constants.ScreenTablet + ') 8vw, '
+            + ' 15vw'}
+          alt={props.cartItem.name} />
+      </div>
       <div className='cartitem__content'>
         <figcaption className='cartitem__heading'>{props.cartItem.name}</figcaption>
         <div className='cartitem__quantity'>
           <PinkButton className='cartitem__pinkbutton'
             text={Constants.SignMinus} handleClick={() => props.reduceQuantity(props.cartItem)}
-            ariaLabel={Constants.ReduceQuantity}/>
+            ariaLabel={Constants.ReduceQuantity} />
           <span>{props.cartItem.quantity}</span>
           <PinkButton className='cartitem__pinkbutton'
             text={Constants.SignPlus} handleClick={() => props.addQuantity(props.cartItem)}
-            ariaLabel={Constants.IncreaseQuantity}/>
+            ariaLabel={Constants.IncreaseQuantity} />
           <span>{Constants.SignMultiply}</span>
           <span>{Constants.INR + props.cartItem.price}</span>
         </div>

@@ -10,6 +10,7 @@
 
   &__img-container {
     grid-area: img;
+    align-self: center;
   }
   
   &__image {
@@ -78,7 +79,7 @@
     'hr hr';
 
     &__img-container {
-      height: 15em;
+      height: 14em;
     }
   }
 }
