@@ -1,6 +1,6 @@
 // URLS
-export const UrlClient = 'http://localhost:3000/';
-export const UrlServer = 'http://localhost:5000/';
+export const UrlClient = 'http://127.0.0.1:3000/';
+export const UrlServer = 'http://127.0.0.1:5000/';
 export const UrlPublic = process.env.PUBLIC_URL;
 export const UrlCartApi = 'addToCart';
 export const UrlCategoriesApi = 'categories';

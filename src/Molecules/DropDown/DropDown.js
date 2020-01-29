@@ -56,7 +56,7 @@ class DropDown extends Component {
           ariaLabel={(this.state.selectedItem && this.state.selectedItem !== {}
             && this.state.selectedItem.name && this.state.selectedItem.name.length > 0)
             ? Constants.SelectedCategory + this.state.selectedItem.name
-            : Constants.SelectCategory}
+            : ''}
           text={(this.state.selectedItem && this.state.selectedItem !== {}
             && this.state.selectedItem.name && this.state.selectedItem.name.length > 0)
             ? this.state.selectedItem.name
@@ -70,9 +70,9 @@ class DropDown extends Component {
               <MenuItem key={i} className='dropdown__menuitem'
                 selected={this.state.selectedItem && this.state.selectedItem.id === item.id}
                 onClick={() => this.handleMenuItemClick(item)}>
-                <p className={'dropdown__text '
+                <p className={'dropdown__text'
                     + ((this.state.selectedItem && this.state.selectedItem.id === item.id)
-                      ? 'dropdown__text--selected' : '')}>
+                      ? ' dropdown__text--selected' : '')}>
                   {item.name}
                 </p>
               </MenuItem>

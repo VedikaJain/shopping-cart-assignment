@@ -36,9 +36,9 @@ class LeftPane extends Component {
                   : this.setSelectedItem(item)
               }/>
           )
-          : <span className='leftpane__content leftpane__content--empty'>
+          : <p className='leftpane__content leftpane__content--empty'>
               {Constants.NoAvailableCategory}
-            </span>
+            </p>
         }
       </div>
     );

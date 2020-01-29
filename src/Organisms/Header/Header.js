@@ -51,8 +51,8 @@ function Header(props) {
                 <MenuItem onClick={() => handleMenuItemClick(navlink.url)}
                   selected={selectedMenuItem === navlink.url}
                   key={index}
-                  className={'header__menuitem '
-                    + ((selectedMenuItem === navlink.url) ? 'header__menuitem--selected' : '')}>
+                  className={'header__menuitem'
+                    + ((selectedMenuItem === navlink.url) ? ' header__menuitem--selected' : '')}>
                   {navlink.name}
                 </MenuItem>
               )}

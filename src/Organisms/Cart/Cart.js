@@ -150,7 +150,7 @@ class Cart extends Component {
               : ''}
             ariaLabel={(this.state.cart.length > 0)
               ? Constants.TotalCartValue + Constants.INR + totalPrice + '. ' + Constants.Checkout + '.'
-              : Constants.StartShopping}
+              : ''}
             handleFocus={() => this.setState({
               closeCartTabIndex: '0'
             })} />

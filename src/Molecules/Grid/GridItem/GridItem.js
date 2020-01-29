@@ -27,13 +27,10 @@ function GridItem(props) {
         {(props.screenSize === Constants.ScreenLaptop)
           ? <PinkButton text={Constants.BuyNow}
             className='griditem__pinkbutton'
-            ariaLabel={Constants.BuyNow}
             handleClick={() => props.selectGridItem(props.product)} />
           : <PinkButton text={Constants.BuyNow + ' ' + Constants.SignAt + ' '
             + Constants.INR + props.product.price}
             className='griditem__pinkbutton'
-            ariaLabel={Constants.BuyNow + ' ' + Constants.SignAt + ' '
-              + Constants.INR + props.product.price}
             handleClick={() => props.selectGridItem(props.product)} />
         }
       </div>

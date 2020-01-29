@@ -7,8 +7,8 @@ function PinkButton(props) {
   return (
     <button disabled={props.disabled} type={props.type}
       aria-label={props.ariaLabel} aria-controls={props.ariaControls} aria-haspopup={props.ariaHaspopup}
-      className={(props.className ? props.className : '') + ' pinkbutton '
-        + (props.rightContent ? 'pinkbutton--justify-space-between' : 'pinkbutton--justify-center')}
+      className={(props.className ? props.className + ' ' : '') + 'pinkbutton '
+        + (props.rightContent ? 'pinkbutton--space-between' : 'pinkbutton--center')}
       onClick={props.handleClick}
       onFocus={props.handleFocus}>
       <span className='pinkbutton__text'>{props.text}</span>

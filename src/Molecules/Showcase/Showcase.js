@@ -32,11 +32,10 @@ function Showcase(props) {
           alt={cat.name} />}
       <div className='showcase__content'>
         <figcaption className='showcase__heading'>{cat.name}</figcaption>
-        <div className='showcase__description'>
+        <p className='showcase__description'>
           {cat.description}
-        </div>
-        <PinkButton text={Constants.Explore + cat.key} handleClick={selectCategory}
-          ariaLabel={Constants.Explore + cat.key} />
+        </p>
+        <PinkButton text={Constants.Explore + cat.key} handleClick={selectCategory} />
       </div>
       {props.imgAlign === Constants.Right &&
         <img src={Constants.UrlPublic + cat.imageUrl}
